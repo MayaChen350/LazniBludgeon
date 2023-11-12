@@ -60,6 +60,8 @@ namespace LazniCardGame
 
         #endregion
 
+        String[] PlayerCards = { "Allemanie", "Allemapon", "Almahad", "Anglestan", "Canalgeria", "Fitalie", "Garulmonie", "Khenaga", "Mulretonie", "Nitralvie", "Qaland", "Slovannoya", "Starvas", "TheLeaf", "Traicere", "Yedesna" };
+        
         #region CARDS
         // Player cards
         PlayerCard Allemanie = new PlayerCard(3500, 250);
@@ -72,17 +74,14 @@ namespace LazniCardGame
         PlayerCard Khenaga = new PlayerCard(3350, 200);
         PlayerCard Mulretonie = new PlayerCard(3000, 300);
         PlayerCard Nitralvie = new PlayerCard(3250, 250);
-        /*PlayerCard Qaland = new PlayerCard();
-        PlayerCard Slovannoya = new PlayerCard();
-        PlayerCard Starvas = new PlayerCard();
-        PlayerCard TheLeaf = new PlayerCard();
-        PlayerCard Traicere = new PlayerCard();
+        PlayerCard Qaland = new PlayerCard(3500, 225);
+        PlayerCard Slovannoya = new PlayerCard(2850, 350);
+        PlayerCard Starvas = new PlayerCard(3550, 250);
+        PlayerCard TheLeaf = new PlayerCard(3750, 150);
+        /*PlayerCard Traicere = new PlayerCard();
         PlayerCard Yedesna = new PlayerCard();*/
         #endregion
 
-        String[] PlayerCards = { "Allemanie", "Allemapon", "Almahad", "Anglestan", "Canalgeria", "Fitalie", "Garulmonie", "Khenaga", "Mulretonie", "Nitralvie", "Qaland", "Slovannoya", "Starvas", "TheLeaf", "Traicere", "Yedesna" };
-
-        Image[] Cards = new Image[110];
 
         #region PASSIVE ABILITIES
         private void MethodicalPlanning(PlayerCard playerCard)
@@ -91,6 +90,7 @@ namespace LazniCardGame
             // {
             //    playerCard.atk += 50;
             // }
+
         }
         private void TeaTimeTactician(PlayerCard playerCard)
         {
@@ -102,6 +102,5 @@ namespace LazniCardGame
         {
             // PlayerCard.HP = CardHP (Generally 3500);
         }
-
     }
 }
