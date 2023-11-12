@@ -1,0 +1,43 @@
+Similar but different to the original Lazni Card Game.
+There are 4 types of cards; Player, Soldier, Special and Object cards
+There are 16 Player cards
+64 Soldier cards (2 per lazni)
+16 Special cards
+14 Object cards
+For a total of 110 cards
+A Player card is your "main character", they have more powerful effects than soldiers and have a lot of HP, if this card dies, you loose.
+A Soldier card is a basic card, they are weak compared to player cards, having less HP and attack.
+A Special card is essentially a Soldier card on crack, they generally represent multiple laznis
+Objects cards generally are boosts/effects.
+
+A Player card has a set number of HP (generally 3500), an attack power (generally 250) and two abilities not found in Soldier cards.
+
+A Soldier card has a set number of HP (generally 100-200), an attack power (around 75) and one ability, they are useable until death.
+
+A Special card has a set number of HP (Depends on the amount of Laznis on the card), an attack power and one/two abilities, they are useable until death.
+
+A Object card has an effect or attack power, they are useable only once.
+
+A Card with powerful abilities will have less HP/Attack Power
+A Card can be centered around HP, Defense, Attack or Special, this changes their stats to better fix and nerf the card so that it's not too powerful
+Used cards go back in the fishing deck.
+You start with a chosen Player card and 3 secondary cards (Those are fished randomly)
+You can't hit your enemy's Player card unless they have less than 1 soldier/special card left
+You only can fish for new cards once all of your secondary cards have died.
+If your Player card dies, you can continue until you run out of Soldier cards (Objects not included)
+
+All of your cards attack in the same turn, except Objects, you can choose when to use it.
+If you have a full deck, you can kill a card you don't like to fish faster.
+Player cards attack eachothers, Secondary cards choose what to attack.
+You can only fish the turn after getting all of your cards eliminated.
+
+Active Effect: Counts as a turn for the card.
+Passive Effect: The effect is always active and doesn't count as a turn.
+
+MORE NOTES:
+
+For cards that mention "On field/battlefield", it usually means every cards active in game
+That's at least, for a 1v1 game
+haven't thought on what to do in 3+ game
+I also thought of a 2v2, but again, didn't really think thru for cards getting buffs from the number of cards alive
+Ig you could divide the buff they get

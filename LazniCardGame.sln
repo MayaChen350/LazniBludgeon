@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazniCardGame", "LazniCardGame.csproj", "{FC7D76EC-86A3-405A-A1F7-A472D2393376}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazniCardGame", "LazniCardGame.csproj", "{9EE50B16-C61E-4279-9D6B-0B2B7338A57D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FC7D76EC-86A3-405A-A1F7-A472D2393376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC7D76EC-86A3-405A-A1F7-A472D2393376}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC7D76EC-86A3-405A-A1F7-A472D2393376}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC7D76EC-86A3-405A-A1F7-A472D2393376}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EE50B16-C61E-4279-9D6B-0B2B7338A57D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE50B16-C61E-4279-9D6B-0B2B7338A57D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE50B16-C61E-4279-9D6B-0B2B7338A57D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE50B16-C61E-4279-9D6B-0B2B7338A57D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {AC77EA46-3C25-46F9-88CE-86A38A33390D}
+		SolutionGuid = {AF0CE0BC-B475-4F7A-951A-E877470FD74A}
 	EndGlobalSection
 EndGlobal
