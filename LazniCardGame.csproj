@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,7 +69,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\LazniCardGame.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\LazniCardGame.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +87,82 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Allemanie.png" />
+    <Content Include="Allemapon.png" />
+    <Content Include="Almahad.png" />
+    <Content Include="Anglestan.png" />
+    <Content Include="Canalgerie.png" />
+    <Content Include="Fitalie.png" />
+    <Content Include="Garulmonie.png" />
+    <Content Include="Khenaga.png" />
+    <Content Include="Mulretonie.png" />
+    <Content Include="Nitralvie.png" />
+    <Content Include="Qaland.png" />
+    <Content Include="Resources\Images\Cards\Player\Allemanie.png" />
+    <Content Include="Slovanoya.png" />
+    <Content Include="Starvas.png" />
+    <Content Include="TheLeaf.png" />
+    <Content Include="Traicere.png" />
+    <Content Include="Yedesna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Allemapon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Almahad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Anglestan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Canalgerie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Fitalie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Garulmonie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Khenaga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Mulretonie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Nitralvie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Qaland.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Slovanoya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Starvas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\TheLeaf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Traicere.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Yedesna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Cards\Player\Allemanie_A.png" />
+    <Content Include="Resources\Images\Cards\Player\Allemanie_B.png" />
+    <Content Include="Resources\Images\Cards\Player\Allemapon_A.png" />
+    <Content Include="Resources\Images\Cards\Player\Allemapon_B.png" />
+    <Content Include="Resources\Images\Cards\Player\Almahad_A.png" />
+    <Content Include="Resources\Images\Cards\Player\Almahad_B.png" />
+    <Content Include="Resources\Images\Cards\Player\Anglestan_A.png" />
+    <Content Include="Resources\Images\Cards\Player\Anglestan_B.png" />
+    <Content Include="Resources\Images\Cards\Player\Criota_A.png" />
+    <Content Include="Resources\Images\Cards\Player\Criota_B.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

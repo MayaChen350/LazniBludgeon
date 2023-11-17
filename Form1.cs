@@ -1,5 +1,9 @@
 ﻿using System.Windows.Forms;
 using System;
+using Microsoft.CodeAnalysis.Sarif.Driver;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
+using System.Drawing;
 
 namespace LazniCardGame
 {
@@ -8,7 +12,10 @@ namespace LazniCardGame
         public Form1()
         {
             InitializeComponent();
+            SetCards();
         }
+
+        public Random random = new Random();
 
         #region CARDS TYPES
         class PlayerCard
@@ -29,12 +36,14 @@ namespace LazniCardGame
         {
             public int hp;
             public int atk;
+            public string imageLocation;
             // ability1
 
-            public SoldierCard(int Hp, int Atk)
+            public SoldierCard(int Hp, int Atk, string Image)
             {
                 hp = Hp;
                 atk = Atk;
+                imageLocation = Image;
             }
         }
 
@@ -90,18 +99,18 @@ namespace LazniCardGame
         // Soldier cards (64 cards)
         
         //RESERVED FOR THE PROOF OF CONCEPT
-        SoldierCard Allemanie_A = new SoldierCard(150, 50);
-        SoldierCard Allemanie_B = new SoldierCard(100, 100);
-        SoldierCard Allemapon_A = new SoldierCard(150, 75);
-        SoldierCard Allemapon_B = new SoldierCard(100, 25);
-        SoldierCard Almahad_A = new SoldierCard(100, 70);
-        SoldierCard Almahad_B = new SoldierCard(100, 20);
-        SoldierCard Anglestan_A = new SoldierCard(200,35);
-        SoldierCard Anglestan_B = new SoldierCard(150,75);
-        SoldierCard Canalgeria_A = new SoldierCard(350,0);
-        SoldierCard Canalgeria_B = new SoldierCard(150,50);
-        SoldierCard Criota_A = new SoldierCard(150, 90);
-        SoldierCard Criota_B = new SoldierCard(200, 30);
+        SoldierCard Allemanie_A = new SoldierCard(150, 50, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Allemanie_A.png");
+        SoldierCard Allemanie_B = new SoldierCard(100, 100, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Allemanie_B.png");
+        SoldierCard Allemapon_A = new SoldierCard(150, 75, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Allemapon_A.png");
+        SoldierCard Allemapon_B = new SoldierCard(100, 25, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Allemapon_B.png");
+        SoldierCard Almahad_A = new SoldierCard(100, 70, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Almahad_A.png");
+        SoldierCard Almahad_B = new SoldierCard(100, 20, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Almahad_B.png");
+        SoldierCard Anglestan_A = new SoldierCard(200,35, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Anglestan_A.png");
+        SoldierCard Anglestan_B = new SoldierCard(150,75, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Anglestan_B.png");
+        SoldierCard Canalgeria_A = new SoldierCard(350,0, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Canalgerie_A.png");
+        SoldierCard Canalgeria_B = new SoldierCard(150,50, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Canalgerie_B.png");
+        SoldierCard Criota_A = new SoldierCard(150, 90, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Criota_A.png");
+        SoldierCard Criota_B = new SoldierCard(200, 30, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Criota_B.png");
 
         /*SoldierCard Ekota_A = new SoldierCard(100,20);
         SoldierCard Ekota_B = new SoldierCard(150, 50);
@@ -213,20 +222,67 @@ namespace LazniCardGame
         private void AdaptivePunchline() { }
         #endregion
 
+        /// <summary>
+        /// Takes a random character between 'A' and 'B'
+        /// </summary>
+        /// <returns>'A' or 'B'</returns>
+        private char RandomLetter() 
+        {
+            if (random.Next(1) == 0) return 'A'; else return 'b';
+        }
+
+        PlayerCard p1PlayerCardData;
+        SoldierCard p1SecCard1Data;
+        SoldierCard p1SecCard2Data;
+        SoldierCard p1SecCard3Data;
+            
+        PlayerCard p2PlayerCardData;
+        SoldierCard p2SecCard1Data;
+        SoldierCard p2SecCard2Data;
+        SoldierCard p2SecCard3Data;
+
         private void SetCards()
         {
             PictureBox[] p1SecCards = { p1SecondaryCard1, p1SecondaryCard2, p1SecondaryCard3 };
             PictureBox[] p2SecCards = { p2SecondaryCard1, p2SecondaryCard2, p2SecondaryCard3 };
 
-            /*for (int i = 0; i < p1SecCards.Length; i++) 
+            SoldierCard[] p1SecCardsData = { p1SecCard1Data, p1SecCard2Data, p1SecCard3Data  };
+            SoldierCard[] p2SecCardsData = { p2SecCard1Data, p2SecCard2Data, p2SecCard3Data };
+
+            SoldierCard[] soldierCards = { Allemanie_A, Allemanie_B, Allemapon_A, Allemapon_B, Almahad_A, Almahad_B, Anglestan_A, Anglestan_B, Canalgeria_A, Canalgeria_B, Criota_A, Criota_B };
+            Random random = new Random();
+            SoldierCard[] soldierCardsMixUp = (SoldierCard[])soldierCards.Shuffle(random);
+
+            int CardsUsedFromDeck = 0;
+            for (int i = 0; i < p1SecCards.Length; i++)
             {
-                p1SecCards[i] = #RandomCard
-            }*/
+                p1SecCardsData[i] = soldierCardsMixUp[CardsUsedFromDeck];
+                CardsUsedFromDeck++;
+                p1SecCards[i].ImageLocation = p2SecCardsData[i].imageLocation;
+                
+                p2SecCardsData[i] = soldierCardsMixUp[CardsUsedFromDeck];
+                CardsUsedFromDeck++;
+                p2SecCards[i].ImageLocation = p2SecCardsData[i].imageLocation;
+            }
+           
         }
 
         private void SetGame()
         {
-            // PlayerCard.HP = CardHP (Generally 3500);
+            // P1PlayerCard.hp = PlayerCard.hp;
+            SetCards();
+        }
+
+        private void ShowCard(PictureBox pCard)
+        {
+            CardView.Image = pCard.Image;
+            CardView.BackColor = pCard.BackColor;
+           // textHP.Text = pCard.;
+        }
+
+        private void p1SecondaryCard2_Click(object sender, EventArgs e)
+        {
+            ShowCard(p1SecondaryCard2);
         }
     }
 }
