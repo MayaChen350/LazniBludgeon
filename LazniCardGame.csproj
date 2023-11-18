@@ -89,23 +89,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Allemanie.png" />
-    <Content Include="Allemapon.png" />
-    <Content Include="Almahad.png" />
-    <Content Include="Anglestan.png" />
-    <Content Include="Canalgerie.png" />
-    <Content Include="Fitalie.png" />
-    <Content Include="Garulmonie.png" />
-    <Content Include="Khenaga.png" />
-    <Content Include="Mulretonie.png" />
-    <Content Include="Nitralvie.png" />
-    <Content Include="Qaland.png" />
+    <None Include="Resources\Images\Cards\Soldier\Criota_B.png" />
+    <None Include="Resources\Images\Cards\Soldier\Criota_A.png" />
+    <None Include="Resources\Images\Cards\Soldier\Canalgerie_B.png" />
+    <None Include="Resources\Images\Cards\Soldier\Canalgerie_A.png" />
+    <None Include="Resources\Images\Cards\Soldier\Anglestan_B.png" />
+    <None Include="Resources\Images\Cards\Soldier\Anglestan_A.png" />
+    <None Include="Resources\Images\Cards\Soldier\Almahad_B.png" />
+    <None Include="Resources\Images\Cards\Soldier\Almahad_A.png" />
+    <None Include="Resources\Images\Cards\Soldier\Allemapon_B.png" />
+    <None Include="Resources\Images\Cards\Soldier\Allemapon_A.png" />
+    <None Include="Resources\Images\Cards\Soldier\Allemanie_B.png" />
+    <None Include="Resources\Images\Cards\Soldier\Allemanie_A.png" />
+    <None Include="Resources\CardBack.png" />
     <Content Include="Resources\Images\Cards\Player\Allemanie.png" />
-    <Content Include="Slovanoya.png" />
-    <Content Include="Starvas.png" />
-    <Content Include="TheLeaf.png" />
-    <Content Include="Traicere.png" />
-    <Content Include="Yedesna.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Images\Cards\Player\Allemapon.png" />
@@ -151,18 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Images\Cards\Player\Yedesna.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\Images\Cards\Player\Allemanie_A.png" />
-    <Content Include="Resources\Images\Cards\Player\Allemanie_B.png" />
-    <Content Include="Resources\Images\Cards\Player\Allemapon_A.png" />
-    <Content Include="Resources\Images\Cards\Player\Allemapon_B.png" />
-    <Content Include="Resources\Images\Cards\Player\Almahad_A.png" />
-    <Content Include="Resources\Images\Cards\Player\Almahad_B.png" />
-    <Content Include="Resources\Images\Cards\Player\Anglestan_A.png" />
-    <Content Include="Resources\Images\Cards\Player\Anglestan_B.png" />
-    <Content Include="Resources\Images\Cards\Player\Criota_A.png" />
-    <Content Include="Resources\Images\Cards\Player\Criota_B.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

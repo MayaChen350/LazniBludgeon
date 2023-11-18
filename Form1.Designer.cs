@@ -35,7 +35,7 @@
             this.startGameToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.textHP = new System.Windows.Forms.TextBox();
             this.textATK = new System.Windows.Forms.TextBox();
-            this.textMoney = new System.Windows.Forms.TextBox();
+            this.textWallet = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -71,6 +71,9 @@
             this.p1SecondaryCard2 = new System.Windows.Forms.PictureBox();
             this.p1SecondaryCard1 = new System.Windows.Forms.PictureBox();
             this.p1PlayerCard = new System.Windows.Forms.PictureBox();
+            this.btnPlayerCardLeft = new System.Windows.Forms.Button();
+            this.btnPlayerCardRight = new System.Windows.Forms.Button();
+            this.checkBoxPlayerCardConfirm = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CardView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard4)).BeginInit();
@@ -112,8 +115,9 @@
             // startGameToolStripMenuItem1
             // 
             this.startGameToolStripMenuItem1.Name = "startGameToolStripMenuItem1";
-            this.startGameToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.startGameToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.startGameToolStripMenuItem1.Text = "&New game";
+            this.startGameToolStripMenuItem1.Click += new System.EventHandler(this.startGameToolStripMenuItem1_Click);
             // 
             // textHP
             // 
@@ -122,6 +126,7 @@
             this.textHP.Location = new System.Drawing.Point(1068, 671);
             this.textHP.Name = "textHP";
             this.textHP.ReadOnly = true;
+            this.textHP.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textHP.Size = new System.Drawing.Size(49, 20);
             this.textHP.TabIndex = 19;
             // 
@@ -134,16 +139,17 @@
             this.textATK.ReadOnly = true;
             this.textATK.Size = new System.Drawing.Size(49, 20);
             this.textATK.TabIndex = 20;
+            this.textATK.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textMoney
+            // textWallet
             // 
-            this.textMoney.Location = new System.Drawing.Point(36, 439);
-            this.textMoney.Name = "textMoney";
-            this.textMoney.ReadOnly = true;
-            this.textMoney.Size = new System.Drawing.Size(100, 20);
-            this.textMoney.TabIndex = 23;
-            this.textMoney.Text = "Your money :";
-            this.textMoney.Visible = false;
+            this.textWallet.Location = new System.Drawing.Point(36, 439);
+            this.textWallet.Name = "textWallet";
+            this.textWallet.ReadOnly = true;
+            this.textWallet.Size = new System.Drawing.Size(100, 20);
+            this.textWallet.TabIndex = 23;
+            this.textWallet.Text = "Your money :";
+            this.textWallet.Visible = false;
             // 
             // label4
             // 
@@ -234,7 +240,7 @@
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(804, 295);
+            this.label15.Location = new System.Drawing.Point(802, 295);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(61, 13);
             this.label15.TabIndex = 21;
@@ -244,11 +250,12 @@
             // 
             this.labelp1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelp1.AutoSize = true;
-            this.labelp1.Location = new System.Drawing.Point(274, 551);
+            this.labelp1.Location = new System.Drawing.Point(271, 551);
             this.labelp1.Name = "labelp1";
             this.labelp1.Size = new System.Drawing.Size(61, 13);
             this.labelp1.TabIndex = 22;
             this.labelp1.Text = "Player Card";
+            this.labelp1.Visible = false;
             // 
             // label17
             // 
@@ -462,6 +469,7 @@
             this.p2PlayerCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p2PlayerCard.TabIndex = 8;
             this.p2PlayerCard.TabStop = false;
+            this.p2PlayerCard.Click += new System.EventHandler(this.p2PlayerCard_Click);
             // 
             // p2SecondaryCard1
             // 
@@ -473,6 +481,7 @@
             this.p2SecondaryCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p2SecondaryCard1.TabIndex = 7;
             this.p2SecondaryCard1.TabStop = false;
+            this.p2SecondaryCard1.Click += new System.EventHandler(this.p2SecondaryCard1_Click);
             // 
             // p2SecondaryCard2
             // 
@@ -484,6 +493,7 @@
             this.p2SecondaryCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p2SecondaryCard2.TabIndex = 6;
             this.p2SecondaryCard2.TabStop = false;
+            this.p2SecondaryCard2.Click += new System.EventHandler(this.p2SecondaryCard2_Click);
             // 
             // p2SecondaryCard3
             // 
@@ -495,6 +505,7 @@
             this.p2SecondaryCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p2SecondaryCard3.TabIndex = 5;
             this.p2SecondaryCard3.TabStop = false;
+            this.p2SecondaryCard3.Click += new System.EventHandler(this.p2SecondaryCard3_Click);
             // 
             // p1SecondaryCard3
             // 
@@ -506,7 +517,7 @@
             this.p1SecondaryCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p1SecondaryCard3.TabIndex = 4;
             this.p1SecondaryCard3.TabStop = false;
-            this.p1SecondaryCard3.Click += new System.EventHandler(this.p1SecondaryCard2_Click);
+            this.p1SecondaryCard3.Click += new System.EventHandler(this.p1SecondaryCard3_Click);
             // 
             // p1SecondaryCard2
             // 
@@ -530,6 +541,7 @@
             this.p1SecondaryCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p1SecondaryCard1.TabIndex = 2;
             this.p1SecondaryCard1.TabStop = false;
+            this.p1SecondaryCard1.Click += new System.EventHandler(this.p1SecondaryCard1_Click);
             // 
             // p1PlayerCard
             // 
@@ -541,12 +553,49 @@
             this.p1PlayerCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p1PlayerCard.TabIndex = 1;
             this.p1PlayerCard.TabStop = false;
+            this.p1PlayerCard.Click += new System.EventHandler(this.p1PlayerCard_Click);
+            // 
+            // btnPlayerCardLeft
+            // 
+            this.btnPlayerCardLeft.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlayerCardLeft.Location = new System.Drawing.Point(242, 481);
+            this.btnPlayerCardLeft.Name = "btnPlayerCardLeft";
+            this.btnPlayerCardLeft.Size = new System.Drawing.Size(17, 24);
+            this.btnPlayerCardLeft.TabIndex = 39;
+            this.btnPlayerCardLeft.Text = "◄";
+            this.btnPlayerCardLeft.UseVisualStyleBackColor = true;
+            this.btnPlayerCardLeft.Click += new System.EventHandler(this.btnPlayerCardLeft_Click);
+            // 
+            // btnPlayerCardRight
+            // 
+            this.btnPlayerCardRight.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlayerCardRight.Location = new System.Drawing.Point(346, 481);
+            this.btnPlayerCardRight.Name = "btnPlayerCardRight";
+            this.btnPlayerCardRight.Size = new System.Drawing.Size(17, 24);
+            this.btnPlayerCardRight.TabIndex = 40;
+            this.btnPlayerCardRight.Text = "►";
+            this.btnPlayerCardRight.UseVisualStyleBackColor = true;
+            this.btnPlayerCardRight.Click += new System.EventHandler(this.btnPlayerCardRight_Click);
+            // 
+            // checkBoxPlayerCardConfirm
+            // 
+            this.checkBoxPlayerCardConfirm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.checkBoxPlayerCardConfirm.Location = new System.Drawing.Point(255, 567);
+            this.checkBoxPlayerCardConfirm.Name = "checkBoxPlayerCardConfirm";
+            this.checkBoxPlayerCardConfirm.Size = new System.Drawing.Size(97, 17);
+            this.checkBoxPlayerCardConfirm.TabIndex = 41;
+            this.checkBoxPlayerCardConfirm.Text = "Confirm Choice";
+            this.checkBoxPlayerCardConfirm.UseVisualStyleBackColor = true;
+            this.checkBoxPlayerCardConfirm.CheckedChanged += new System.EventHandler(this.checkBoxPlayerCardConfirm_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1629, 719);
+            this.Controls.Add(this.checkBoxPlayerCardConfirm);
+            this.Controls.Add(this.btnPlayerCardRight);
+            this.Controls.Add(this.btnPlayerCardLeft);
             this.Controls.Add(this.menuAbilities);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -563,7 +612,7 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.labelp1);
-            this.Controls.Add(this.textMoney);
+            this.Controls.Add(this.textWallet);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.textATK);
             this.Controls.Add(this.textHP);
@@ -633,9 +682,8 @@
         private System.Windows.Forms.ToolStripMenuItem startGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startGameToolStripMenuItem1;
         private System.Windows.Forms.PictureBox CardView;
-        private System.Windows.Forms.TextBox textHP;
         private System.Windows.Forms.TextBox textATK;
-        private System.Windows.Forms.TextBox textMoney;
+        private System.Windows.Forms.TextBox textWallet;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -654,6 +702,10 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.GroupBox menuAbilities;
         public System.Windows.Forms.ImageList PlayerCardsListTest;
+        private System.Windows.Forms.Button btnPlayerCardLeft;
+        private System.Windows.Forms.Button btnPlayerCardRight;
+        private System.Windows.Forms.CheckBox checkBoxPlayerCardConfirm;
+        private System.Windows.Forms.TextBox textHP;
     }
 }
 
