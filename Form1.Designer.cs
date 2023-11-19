@@ -52,7 +52,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.menuAbilities = new System.Windows.Forms.GroupBox();
             this.PlayerCardsListTest = new System.Windows.Forms.ImageList(this.components);
             this.CardView = new System.Windows.Forms.PictureBox();
             this.p2SecondaryCard4 = new System.Windows.Forms.PictureBox();
@@ -74,6 +73,12 @@
             this.btnPlayerCardLeft = new System.Windows.Forms.Button();
             this.btnPlayerCardRight = new System.Windows.Forms.Button();
             this.checkBoxPlayerCardConfirm = new System.Windows.Forms.CheckBox();
+            this.checkAbility1 = new System.Windows.Forms.CheckBox();
+            this.checkAbility2 = new System.Windows.Forms.CheckBox();
+            this.menuAbilities = new System.Windows.Forms.GroupBox();
+            this.checkAtk = new System.Windows.Forms.CheckBox();
+            this.btnConfirm = new System.Windows.Forms.CheckBox();
+            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CardView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard4)).BeginInit();
@@ -92,6 +97,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.p1SecondaryCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1SecondaryCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1PlayerCard)).BeginInit();
+            this.menuAbilities.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -115,7 +122,7 @@
             // startGameToolStripMenuItem1
             // 
             this.startGameToolStripMenuItem1.Name = "startGameToolStripMenuItem1";
-            this.startGameToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.startGameToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.startGameToolStripMenuItem1.Text = "&New game";
             this.startGameToolStripMenuItem1.Click += new System.EventHandler(this.startGameToolStripMenuItem1_Click);
             // 
@@ -240,9 +247,10 @@
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(802, 295);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(61, 13);
+            this.label15.Size = new System.Drawing.Size(72, 13);
             this.label15.TabIndex = 21;
             this.label15.Text = "Player Card";
             // 
@@ -250,9 +258,10 @@
             // 
             this.labelp1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelp1.AutoSize = true;
+            this.labelp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelp1.Location = new System.Drawing.Point(271, 551);
             this.labelp1.Name = "labelp1";
-            this.labelp1.Size = new System.Drawing.Size(61, 13);
+            this.labelp1.Size = new System.Drawing.Size(72, 13);
             this.labelp1.TabIndex = 22;
             this.labelp1.Text = "Player Card";
             this.labelp1.Visible = false;
@@ -320,17 +329,6 @@
             this.label23.Text = "BONUS Secondary Card";
             this.label23.Visible = false;
             // 
-            // menuAbilities
-            // 
-            this.menuAbilities.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.menuAbilities.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.menuAbilities.Location = new System.Drawing.Point(1417, 42);
-            this.menuAbilities.Name = "menuAbilities";
-            this.menuAbilities.Size = new System.Drawing.Size(200, 665);
-            this.menuAbilities.TabIndex = 38;
-            this.menuAbilities.TabStop = false;
-            this.menuAbilities.Text = "Abilities";
-            // 
             // PlayerCardsListTest
             // 
             this.PlayerCardsListTest.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("PlayerCardsListTest.ImageStream")));
@@ -356,10 +354,11 @@
             // 
             this.CardView.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CardView.BackColor = System.Drawing.Color.Magenta;
+            this.CardView.Image = global::LazniCardGame.Properties.Resources.CardBack;
             this.CardView.Location = new System.Drawing.Point(929, 43);
             this.CardView.Name = "CardView";
-            this.CardView.Size = new System.Drawing.Size(476, 664);
-            this.CardView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.CardView.Size = new System.Drawing.Size(472, 664);
+            this.CardView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.CardView.TabIndex = 18;
             this.CardView.TabStop = false;
             // 
@@ -510,49 +509,53 @@
             // p1SecondaryCard3
             // 
             this.p1SecondaryCard3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.p1SecondaryCard3.BackColor = System.Drawing.Color.Red;
+            this.p1SecondaryCard3.BackColor = System.Drawing.Color.Transparent;
             this.p1SecondaryCard3.Location = new System.Drawing.Point(658, 439);
             this.p1SecondaryCard3.Name = "p1SecondaryCard3";
             this.p1SecondaryCard3.Size = new System.Drawing.Size(78, 109);
             this.p1SecondaryCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p1SecondaryCard3.TabIndex = 4;
             this.p1SecondaryCard3.TabStop = false;
+            this.p1SecondaryCard3.EnabledChanged += new System.EventHandler(this.p1SecondaryCard3_EnabledChanged);
             this.p1SecondaryCard3.Click += new System.EventHandler(this.p1SecondaryCard3_Click);
             // 
             // p1SecondaryCard2
             // 
             this.p1SecondaryCard2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.p1SecondaryCard2.BackColor = System.Drawing.Color.Red;
+            this.p1SecondaryCard2.BackColor = System.Drawing.Color.Transparent;
             this.p1SecondaryCard2.Location = new System.Drawing.Point(524, 439);
             this.p1SecondaryCard2.Name = "p1SecondaryCard2";
             this.p1SecondaryCard2.Size = new System.Drawing.Size(78, 109);
             this.p1SecondaryCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p1SecondaryCard2.TabIndex = 3;
             this.p1SecondaryCard2.TabStop = false;
+            this.p1SecondaryCard2.EnabledChanged += new System.EventHandler(this.p1SecondaryCard2_EnabledChanged);
             this.p1SecondaryCard2.Click += new System.EventHandler(this.p1SecondaryCard2_Click);
             // 
             // p1SecondaryCard1
             // 
             this.p1SecondaryCard1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.p1SecondaryCard1.BackColor = System.Drawing.Color.Red;
+            this.p1SecondaryCard1.BackColor = System.Drawing.Color.Transparent;
             this.p1SecondaryCard1.Location = new System.Drawing.Point(386, 439);
             this.p1SecondaryCard1.Name = "p1SecondaryCard1";
             this.p1SecondaryCard1.Size = new System.Drawing.Size(78, 109);
             this.p1SecondaryCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p1SecondaryCard1.TabIndex = 2;
             this.p1SecondaryCard1.TabStop = false;
+            this.p1SecondaryCard1.EnabledChanged += new System.EventHandler(this.p1SecondaryCard1_EnabledChanged);
             this.p1SecondaryCard1.Click += new System.EventHandler(this.p1SecondaryCard1_Click);
             // 
             // p1PlayerCard
             // 
             this.p1PlayerCard.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.p1PlayerCard.BackColor = System.Drawing.Color.Cyan;
+            this.p1PlayerCard.BackColor = System.Drawing.Color.Transparent;
             this.p1PlayerCard.Location = new System.Drawing.Point(265, 439);
             this.p1PlayerCard.Name = "p1PlayerCard";
             this.p1PlayerCard.Size = new System.Drawing.Size(78, 109);
             this.p1PlayerCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p1PlayerCard.TabIndex = 1;
             this.p1PlayerCard.TabStop = false;
+            this.p1PlayerCard.EnabledChanged += new System.EventHandler(this.p1PlayerCard_EnabledChanged);
             this.p1PlayerCard.Click += new System.EventHandler(this.p1PlayerCard_Click);
             // 
             // btnPlayerCardLeft
@@ -587,6 +590,81 @@
             this.checkBoxPlayerCardConfirm.Text = "Confirm Choice";
             this.checkBoxPlayerCardConfirm.UseVisualStyleBackColor = true;
             this.checkBoxPlayerCardConfirm.CheckedChanged += new System.EventHandler(this.checkBoxPlayerCardConfirm_CheckedChanged);
+            // 
+            // checkAbility1
+            // 
+            this.checkAbility1.BackColor = System.Drawing.Color.Gray;
+            this.checkAbility1.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkAbility1.Location = new System.Drawing.Point(0, 43);
+            this.checkAbility1.Name = "checkAbility1";
+            this.checkAbility1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkAbility1.Size = new System.Drawing.Size(200, 46);
+            this.checkAbility1.TabIndex = 0;
+            this.checkAbility1.Text = "Use Ability 1";
+            this.checkAbility1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkAbility1.UseVisualStyleBackColor = false;
+            // 
+            // checkAbility2
+            // 
+            this.checkAbility2.BackColor = System.Drawing.Color.Gray;
+            this.checkAbility2.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkAbility2.Location = new System.Drawing.Point(0, 95);
+            this.checkAbility2.Name = "checkAbility2";
+            this.checkAbility2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkAbility2.Size = new System.Drawing.Size(200, 46);
+            this.checkAbility2.TabIndex = 1;
+            this.checkAbility2.Text = "Use Ability 2";
+            this.checkAbility2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkAbility2.UseVisualStyleBackColor = false;
+            // 
+            // menuAbilities
+            // 
+            this.menuAbilities.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.menuAbilities.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.menuAbilities.Controls.Add(this.checkAtk);
+            this.menuAbilities.Controls.Add(this.btnConfirm);
+            this.menuAbilities.Controls.Add(this.checkAbility2);
+            this.menuAbilities.Controls.Add(this.checkAbility1);
+            this.menuAbilities.Location = new System.Drawing.Point(1417, 42);
+            this.menuAbilities.Name = "menuAbilities";
+            this.menuAbilities.Size = new System.Drawing.Size(200, 665);
+            this.menuAbilities.TabIndex = 38;
+            this.menuAbilities.TabStop = false;
+            this.menuAbilities.Text = "Abilities";
+            // 
+            // checkAtk
+            // 
+            this.checkAtk.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.checkAtk.BackColor = System.Drawing.Color.Brown;
+            this.checkAtk.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Bold);
+            this.checkAtk.Location = new System.Drawing.Point(3, 509);
+            this.checkAtk.Name = "checkAtk";
+            this.checkAtk.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkAtk.Size = new System.Drawing.Size(197, 89);
+            this.checkAtk.TabIndex = 4;
+            this.checkAtk.Text = "ATTACK";
+            this.checkAtk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkAtk.UseVisualStyleBackColor = false;
+            this.checkAtk.CheckedChanged += new System.EventHandler(this.checkAtk_CheckedChanged);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnConfirm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnConfirm.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.btnConfirm.ForeColor = System.Drawing.Color.Lime;
+            this.btnConfirm.Location = new System.Drawing.Point(3, 620);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnConfirm.Size = new System.Drawing.Size(194, 42);
+            this.btnConfirm.TabIndex = 3;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            // 
+            // form1BindingSource
+            // 
+            this.form1BindingSource.DataSource = typeof(LazniCardGame.Form1);
             // 
             // Form1
             // 
@@ -656,6 +734,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.p1SecondaryCard2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1SecondaryCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1PlayerCard)).EndInit();
+            this.menuAbilities.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -700,12 +780,17 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.GroupBox menuAbilities;
         public System.Windows.Forms.ImageList PlayerCardsListTest;
         private System.Windows.Forms.Button btnPlayerCardLeft;
         private System.Windows.Forms.Button btnPlayerCardRight;
         private System.Windows.Forms.CheckBox checkBoxPlayerCardConfirm;
         private System.Windows.Forms.TextBox textHP;
+        private System.Windows.Forms.CheckBox checkAbility1;
+        private System.Windows.Forms.CheckBox checkAbility2;
+        private System.Windows.Forms.GroupBox menuAbilities;
+        private System.Windows.Forms.CheckBox btnConfirm;
+        private System.Windows.Forms.CheckBox checkAtk;
+        private System.Windows.Forms.BindingSource form1BindingSource;
     }
 }
 

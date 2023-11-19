@@ -1,21 +1,12 @@
 ﻿using System.Windows.Forms;
 using System;
 using Microsoft.CodeAnalysis.Sarif.Driver;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Drawing;
-using System.Collections;
 using System.Collections.Generic;
-using LazniCardGame.Properties;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-using System.Security.Cryptography;
-using System.Reflection;
-
 namespace LazniCardGame
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +14,7 @@ namespace LazniCardGame
         }
 
         public Random random = new Random();
-
+   
         public int playerCardIndex = 0;
 
         #region CARDS TYPES
@@ -92,7 +83,7 @@ namespace LazniCardGame
 
         //RESERVED FOR THE PROOF OF CONCEPT
         PlayerCard Slovannoya = new PlayerCard(2850, 350, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Player\\Slovanoya.png");
-        PlayerCard Allemapon = new PlayerCard(3000, 0,  "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Player\\Allemapon.png");
+        PlayerCard Allemapon = new PlayerCard(3000, 0, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Player\\Allemapon.png");
         PlayerCard Anglestan = new PlayerCard(3450, 100, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Player\\Anglestan.png");
         PlayerCard Garulmonie = new PlayerCard(3400, 150, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Player\\Garulmonie.png");
 
@@ -301,6 +292,10 @@ namespace LazniCardGame
 
         private void SetGame()
         {
+            checkAbility1.Enabled = false;
+            checkAbility2.Enabled = false;
+            checkAtk.Enabled = false;
+            btnConfirm.Enabled = false;
             SetCards();
         }
 
@@ -310,6 +305,10 @@ namespace LazniCardGame
             CardView.ImageLocation = pCardData.imageLocation;
             textHP.Text = pCardData.hp.ToString();
             textATK.Text = pCardData.atk.ToString();
+            checkAbility1.Enabled = true;
+            checkAbility2.Enabled = true;
+            checkAtk.Enabled = true;
+            btnConfirm.Enabled = true;
         }
 
         private void ShowCard(SoldierCard[] pCardData, int index)
@@ -318,6 +317,10 @@ namespace LazniCardGame
             CardView.ImageLocation = pCardData[index].imageLocation;
             textHP.Text = pCardData[index].hp.ToString();
             textATK.Text = pCardData[index].atk.ToString();
+            checkAbility1.Enabled = true;
+            checkAbility2.Enabled = true;
+            checkAtk.Enabled = true;
+            btnConfirm.Enabled = true;
         }
 
         #region GAME INTERACTION METHODS
@@ -390,12 +393,12 @@ namespace LazniCardGame
         private void p2SecondaryCard7_Click(object sender, EventArgs e)
         {
         }*/
-        
+
         private void btnPlayerCardLeft_Click(object sender, EventArgs e)
         {
             // Verify if the index is at the minimum, if yes change it to the maximum
-            if (playerCardIndex != 0)  playerCardIndex--;
-            else playerCardIndex = playerCards.Length -1;
+            if (playerCardIndex != 0) playerCardIndex--;
+            else playerCardIndex = playerCards.Length - 1;
 
             // Refresh the player card data
             p1PlayerCardData = playerCards[playerCardIndex];
@@ -408,13 +411,13 @@ namespace LazniCardGame
         private void btnPlayerCardRight_Click(object sender, EventArgs e)
         {
             // Verify if the index is at the maximum, if yes change it to the minimum
-            if (playerCardIndex != playerCards.Length -1) playerCardIndex++;
+            if (playerCardIndex != playerCards.Length - 1) playerCardIndex++;
             else playerCardIndex = 0;
 
             // Refresh the player card data
             p1PlayerCardData = playerCards[playerCardIndex];
             p1PlayerCard.ImageLocation = p1PlayerCardData.imageLocation;
-            
+
             // Show the new current card in the ViewCard picture box
             ShowCard(p1PlayerCardData);
         }
@@ -436,10 +439,59 @@ namespace LazniCardGame
         private void startGameToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             // FOR NOW 
-            // Reshuffle the cards
-            SetCards();
+            // Reset the game
+            SetGame();
+        }
+
+        // Disable the player cards if the checkAtk check box is enabled
+        private void checkAtk_CheckedChanged(object sender, EventArgs e)
+        {
+            p1PlayerCard.Enabled = !p1PlayerCard.Enabled;
+            p1SecondaryCard1.Enabled = !p1SecondaryCard1.Enabled;
+            p1SecondaryCard2.Enabled = !p1SecondaryCard2.Enabled;
+            p1SecondaryCard3.Enabled = !p1SecondaryCard3.Enabled;
+            Console.WriteLine("States changed");
+        }
+
+        // CARDS ENABLED/DISABLE STATES
+
+        // arrays containing all the images for the enabled states
+        System.Drawing.Image[] originalImages = new System.Drawing.Image[4];
+
+        /// <summary>
+        /// Lower the opacity of the card if it is disabled or change it back to its original oppacity from the originalImages array
+        /// </summary>
+        /// <param name="pCard">The card that is going to get enabled/disabled</param>
+        /// <param name="pOriginalImageIndex">The index of the original image of the card in originalImages[]</param>
+        private void CardEnabledStateChange(PictureBox pCard, int pOriginalImageIndex)
+        {
+            if (pCard.Enabled == false)
+            {
+                originalImages[pOriginalImageIndex] = pCard.Image;
+                pCard.Image = Utils.SetImageOpacity(pCard.Image, .5F);
+            }
+            else pCard.Image = originalImages[pOriginalImageIndex];
+        }
+
+
+        private void p1SecondaryCard1_EnabledChanged(object sender, EventArgs e)
+        {
+            CardEnabledStateChange(p1SecondaryCard1, 0);
+        }
+        private void p1SecondaryCard2_EnabledChanged(object sender, EventArgs e)
+        {
+            CardEnabledStateChange(p1SecondaryCard2, 1);
+        }
+
+        private void p1SecondaryCard3_EnabledChanged(object sender, EventArgs e)
+        {
+            CardEnabledStateChange(p1SecondaryCard3, 2);
+        }
+
+        private void p1PlayerCard_EnabledChanged(object sender, EventArgs e)
+        {
+            CardEnabledStateChange(p1PlayerCard, 3);
         }
         #endregion
-
     }
 }
