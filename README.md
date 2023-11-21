@@ -1,5 +1,8 @@
 # LazniCardGame
+
+-----
 (WORK IN PROGRESS)
+
 
 CREDITS:
 
@@ -34,6 +37,8 @@ Tristou (Tristan)
 
 Giratina_Shiny/MayaChen350 (Khenaga)
 
+-----
+
 Artworks:
 
 Hayxu (knows how to draw)
@@ -43,9 +48,11 @@ Birbio56
 Giratina_Shiny/MayaChen350
 
 
+-----
 
 Game programmed by MayaChen350 (knows how to make games)
 
+-----
 
 Special Thanks to:
 
@@ -60,3 +67,6 @@ Emie
 Flou
 
 Lexybooky
+
+-----
+
