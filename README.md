@@ -7,6 +7,7 @@ Based on the original game conceived by @Hayxu and Tristou
 
 Based on the original characters (Laznis) of:
 
+
 @Hayxu (Creator of Laznis)
 
 Bingisdead (Almahad, Fitalie, Suedemark)
@@ -42,9 +43,12 @@ Birbio56
 Giratina_Shiny/MayaChen350
 
 
+
 Game programmed by @MayaChen350 (knows how to make games)
 
+
 Special Thanks to:
+
 Nyx
 
 Lyzi
