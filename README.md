@@ -1,4 +1,4 @@
-# LazniCardGame
+# Lazni Sphere Wars
 
 -----
 (WORK IN PROGRESS)
