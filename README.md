@@ -8,6 +8,8 @@ CREDITS:
 
 Based on the original game conceived by Hayxu and Tristou
 
+Cards design by Hayxu
+
 Based on the original characters (Laznis) of:
 
 
