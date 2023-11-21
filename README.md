@@ -41,7 +41,7 @@ Giratina_Shiny/MayaChen350 (Khenaga)
 
 Artworks:
 
-Hayxu (knows how to draw)
+Hayxu (knows how to draw balls)
 
 Birbio56
 
