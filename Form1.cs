@@ -2,6 +2,7 @@
 using System;
 using Microsoft.CodeAnalysis.Sarif.Driver;
 using System.Collections.Generic;
+using System.Drawing;
 namespace LazniCardGame
 {
     public partial class Form1 : Form
@@ -16,6 +17,8 @@ namespace LazniCardGame
         public Random random = new Random();
    
         public int playerCardIndex = 0;
+
+        bool IsAttacking = false;
 
         #region CARDS TYPES
         class PlayerCard
@@ -296,8 +299,15 @@ namespace LazniCardGame
             checkAbility2.Enabled = false;
             checkAtk.Enabled = false;
             btnConfirm.Enabled = false;
+            Console.WriteLine("All ability panel buttons set to False.");
             SetCards();
+            Console.WriteLine("Game set.");
         }
+
+        /// <summary>
+        /// Type of the card shown. TRUE if a Secondary. FALSE if a Player Card.
+        /// </summary>
+        bool IsCardShownSecondary;
 
         private void ShowCard(PlayerCard pCardData)
         {
@@ -305,10 +315,20 @@ namespace LazniCardGame
             CardView.ImageLocation = pCardData.imageLocation;
             textHP.Text = pCardData.hp.ToString();
             textATK.Text = pCardData.atk.ToString();
-            checkAbility1.Enabled = true;
-            checkAbility2.Enabled = true;
-            checkAtk.Enabled = true;
-            btnConfirm.Enabled = true;
+            if (pCardData != p2PlayerCardData || IsAttacking == true)
+            {
+                checkAbility1.Enabled = true;
+                checkAbility2.Enabled = true;
+                checkAtk.Enabled = true;
+                IsCardShownSecondary = false;
+            }
+            else
+            {
+                checkAbility1.Enabled = false;
+                checkAbility2.Enabled = false;
+                btnConfirm.Enabled = false;
+            }
+            Console.WriteLine(/*pCardData + */"Player card data loaded.");
         }
 
         private void ShowCard(SoldierCard[] pCardData, int index)
@@ -317,10 +337,23 @@ namespace LazniCardGame
             CardView.ImageLocation = pCardData[index].imageLocation;
             textHP.Text = pCardData[index].hp.ToString();
             textATK.Text = pCardData[index].atk.ToString();
-            checkAbility1.Enabled = true;
-            checkAbility2.Enabled = true;
-            checkAtk.Enabled = true;
-            btnConfirm.Enabled = true;
+            if (pCardData != p2SecCardsData || IsAttacking == true)
+            {
+                checkAbility1.Enabled = true;
+                checkAbility2.Enabled = true;
+                checkAtk.Enabled = true;
+                IsCardShownSecondary = true;
+            }
+            else 
+            { 
+                checkAbility1.Enabled = false;
+                checkAbility2.Enabled = false;
+                btnConfirm.Enabled = false;
+                IsCardShownSecondary = false;
+            }
+          
+            Console.WriteLine("All ability panel buttons set to " + checkAbility1.Enabled + ".");
+            Console.WriteLine(/*pCardData[index] + */"Soldier card data loaded.");
         }
 
         #region GAME INTERACTION METHODS
@@ -406,6 +439,7 @@ namespace LazniCardGame
 
             // Show the new current card in the ViewCard picture box
             ShowCard(p1PlayerCardData);
+            Console.WriteLine(/*playerCards[playerCardIndex] +*/  "Another player card is now shown.");
         }
 
         private void btnPlayerCardRight_Click(object sender, EventArgs e)
@@ -420,25 +454,18 @@ namespace LazniCardGame
 
             // Show the new current card in the ViewCard picture box
             ShowCard(p1PlayerCardData);
+            Console.WriteLine(/*playerCards[playerCardIndex] +*/ "Another player card is now shown.");
         }
 
         private void checkBoxPlayerCardConfirm_CheckedChanged(object sender, EventArgs e)
         {
             // If the box is checked, disable the controls (possibility to make them invisible in the future)
-            if (checkBoxPlayerCardConfirm.Checked)
-            {
-                btnPlayerCardLeft.Enabled = false;
-                btnPlayerCardRight.Enabled = false;
-            }
-            else
-            {
-                btnPlayerCardLeft.Enabled = true;
-                btnPlayerCardRight.Enabled = true;
-            }
+                btnPlayerCardLeft.Enabled = !btnPlayerCardLeft.Enabled;
+                btnPlayerCardRight.Enabled = !btnPlayerCardRight.Enabled;            
         }
         private void startGameToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            // FOR NOW 
+            // FOR NOW
             // Reset the game
             SetGame();
         }
@@ -446,17 +473,63 @@ namespace LazniCardGame
         // Disable the player cards if the checkAtk check box is enabled
         private void checkAtk_CheckedChanged(object sender, EventArgs e)
         {
+            IsAttacking = !IsAttacking;
+            btnConfirm.Enabled = !btnConfirm.Enabled;
             p1PlayerCard.Enabled = !p1PlayerCard.Enabled;
             p1SecondaryCard1.Enabled = !p1SecondaryCard1.Enabled;
             p1SecondaryCard2.Enabled = !p1SecondaryCard2.Enabled;
             p1SecondaryCard3.Enabled = !p1SecondaryCard3.Enabled;
-            Console.WriteLine("States changed");
+        #if DEBUG
+            Console.WriteLine("Enabled states changed.");
+        #endif
+            // If the box is checked, higlights the card(s) which can be attacked, which depends of the attacking card used
+            // Those actions are made depending of if the player cards are disabled, which should be disabled while the other player's cards are highlighted.
+            if (!p1PlayerCard.Enabled)
+            {
+                // If the card is a SECONDARY card, it can only attack other secondary cards
+                // EXCEPT if there is only the Player Card remaining or ability says otherwise (Later)
+                if (IsCardShownSecondary)
+                {
+                    // Highlight player 2's Secondary cards
+                    RedBorderpanel1.BackColor = Color.Red;
+                    RedBorderpanel2.BackColor = Color.Red;
+                    RedBorderpanel3.BackColor = Color.Red;
+                    // Disable player's 2 Player card
+                    p2PlayerCard.Enabled = false;
+
+                }
+                // If the card is not a Secondary card (PLAYER card), it can only attack the other's player card
+                else
+                {                    
+                    // Highlight player 2's Player card
+                    RedBorderPlayer_panel.BackColor = Color.Red;
+                    // Disable player 2's Secondary cards
+                    p2SecondaryCard1.Enabled = false;
+                    p2SecondaryCard2.Enabled = false;
+                    p2SecondaryCard3.Enabled = false;
+                }
+            }
+            // If the box is unchecked, remove the borders and enable the cards
+            else
+            {
+                p2PlayerCard.Enabled = true;
+                p2SecondaryCard1.Enabled = true;
+                p2SecondaryCard2.Enabled = true;
+                p2SecondaryCard3.Enabled = true;
+                RedBorderpanel1.BackColor = Color.Transparent;
+                RedBorderpanel2.BackColor = Color.Transparent;
+                RedBorderpanel3.BackColor = Color.Transparent;
+                RedBorderPlayer_panel.BackColor = Color.Transparent;
+            }
+#if DEBUG
+            Console.WriteLine("Borders added.");
+            #endif
         }
 
         // CARDS ENABLED/DISABLE STATES
 
         // arrays containing all the images for the enabled states
-        System.Drawing.Image[] originalImages = new System.Drawing.Image[4];
+        System.Drawing.Image[] originalImages = new System.Drawing.Image[8];
 
         /// <summary>
         /// Lower the opacity of the card if it is disabled or change it back to its original oppacity from the originalImages array
@@ -491,6 +564,26 @@ namespace LazniCardGame
         private void p1PlayerCard_EnabledChanged(object sender, EventArgs e)
         {
             CardEnabledStateChange(p1PlayerCard, 3);
+        }
+        
+        private void p2PlayerCard_EnabledChanged(object sender, EventArgs e)
+        {
+            CardEnabledStateChange(p2PlayerCard, 4);
+        }
+
+        private void p2SecondaryCard1_EnabledChanged(object sender, EventArgs e)
+        {
+            CardEnabledStateChange(p2SecondaryCard1, 5);
+        }
+
+        private void p2SecondaryCard2_EnabledChanged(object sender, EventArgs e)
+        {
+            CardEnabledStateChange(p2SecondaryCard2, 6);
+        }
+
+        private void p2SecondaryCard3_EnabledChanged(object sender, EventArgs e)
+        {
+            CardEnabledStateChange(p2SecondaryCard3, 7);
         }
         #endregion
     }
