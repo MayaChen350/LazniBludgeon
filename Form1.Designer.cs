@@ -130,9 +130,9 @@
             // startGameToolStripMenuItem1
             // 
             this.startGameToolStripMenuItem1.Name = "startGameToolStripMenuItem1";
-            this.startGameToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.startGameToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.startGameToolStripMenuItem1.Text = "&New game";
-            this.startGameToolStripMenuItem1.Click += new System.EventHandler(this.startGameToolStripMenuItem1_Click);
+            this.startGameToolStripMenuItem1.Click += new System.EventHandler(this.StartGameToolStripMenuItem1_Click);
             // 
             // textHP
             // 
@@ -579,7 +579,7 @@
             this.btnPlayerCardLeft.TabIndex = 39;
             this.btnPlayerCardLeft.Text = "◄";
             this.btnPlayerCardLeft.UseVisualStyleBackColor = true;
-            this.btnPlayerCardLeft.Click += new System.EventHandler(this.btnPlayerCardLeft_Click);
+            this.btnPlayerCardLeft.Click += new System.EventHandler(this.BtnPlayerCardLeft_Click);
             // 
             // btnPlayerCardRight
             // 
@@ -590,7 +590,7 @@
             this.btnPlayerCardRight.TabIndex = 40;
             this.btnPlayerCardRight.Text = "►";
             this.btnPlayerCardRight.UseVisualStyleBackColor = true;
-            this.btnPlayerCardRight.Click += new System.EventHandler(this.btnPlayerCardRight_Click);
+            this.btnPlayerCardRight.Click += new System.EventHandler(this.BtnPlayerCardRight_Click);
             // 
             // checkBoxPlayerCardConfirm
             // 
@@ -601,7 +601,7 @@
             this.checkBoxPlayerCardConfirm.TabIndex = 41;
             this.checkBoxPlayerCardConfirm.Text = "Confirm Choice";
             this.checkBoxPlayerCardConfirm.UseVisualStyleBackColor = true;
-            this.checkBoxPlayerCardConfirm.CheckedChanged += new System.EventHandler(this.checkBoxPlayerCardConfirm_CheckedChanged);
+            this.checkBoxPlayerCardConfirm.CheckedChanged += new System.EventHandler(this.CheckBoxPlayerCardConfirm_CheckedChanged);
             // 
             // checkAbility1
             // 
@@ -657,7 +657,7 @@
             this.checkAtk.Text = "ATTACK";
             this.checkAtk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkAtk.UseVisualStyleBackColor = false;
-            this.checkAtk.CheckedChanged += new System.EventHandler(this.checkAtk_CheckedChanged);
+            this.checkAtk.CheckedChanged += new System.EventHandler(this.CheckAtk_CheckedChanged);
             // 
             // btnConfirm
             // 

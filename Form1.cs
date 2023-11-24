@@ -1,8 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using Microsoft.CodeAnalysis.Sarif.Driver;
 using System;
-using Microsoft.CodeAnalysis.Sarif.Driver;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Windows.Forms;
 namespace LazniCardGame
 {
     public partial class Form1 : Form
@@ -15,7 +15,7 @@ namespace LazniCardGame
         }
 
         public Random random = new Random();
-   
+
         public int playerCardIndex = 0;
 
         bool IsAttacking = false;
@@ -25,11 +25,11 @@ namespace LazniCardGame
         {
             public int hp;
             public int atk;
-            public string imageLocation;
+            public Bitmap imageLocation;
             // ability1
             // ability2
 
-            public PlayerCard(int Hp, int Atk, string Image)
+            public PlayerCard(int Hp, int Atk, Bitmap Image)
             {
                 hp = Hp;
                 atk = Atk;
@@ -41,7 +41,7 @@ namespace LazniCardGame
         {
             public int hp;
             public int atk;
-            public string imageLocation;
+            public Bitmap imageLocation;
             // ability1
 
             public SoldierCard()
@@ -49,7 +49,7 @@ namespace LazniCardGame
 
             }
 
-            public SoldierCard(int Hp, int Atk, string Image)
+            public SoldierCard(int Hp, int Atk, Bitmap Image)
             {
                 hp = Hp;
                 atk = Atk;
@@ -79,16 +79,16 @@ namespace LazniCardGame
 
         #endregion
 
-        String[] PlayerCards = { "Allemanie", "Allemapon", "Almahad", "Anglestan", "Canalgeria", "Fitalie", "Garulmonie", "Khenaga", "Mulretonie", "Nitralvie", "Qaland", "Slovannoya", "Starvas", "TheLeaf", "Traicere", "Yedesna" };
+        string[] PlayerCards = { "Allemanie", "Allemapon", "Almahad", "Anglestan", "Canalgeria", "Fitalie", "Garulmonie", "Khenaga", "Mulretonie", "Nitralvie", "Qaland", "Slovannoya", "Starvas", "TheLeaf", "Traicere", "Yedesna" };
 
         #region CARDS (110 CARDS)
         // Player cards (16 cards)
 
         //RESERVED FOR THE PROOF OF CONCEPT
-        PlayerCard Slovannoya = new PlayerCard(2850, 350, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Player\\Slovanoya.png");
-        PlayerCard Allemapon = new PlayerCard(3000, 0, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Player\\Allemapon.png");
-        PlayerCard Anglestan = new PlayerCard(3450, 100, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Player\\Anglestan.png");
-        PlayerCard Garulmonie = new PlayerCard(3400, 150, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Player\\Garulmonie.png");
+        PlayerCard Slovannoya = new PlayerCard(2850, 350, Properties.Resources.Slovanoya);
+        PlayerCard Allemapon = new PlayerCard(3000, 0, Properties.Resources.Allemapon);
+        PlayerCard Anglestan = new PlayerCard(3450, 100, Properties.Resources.Anglestan);
+        PlayerCard Garulmonie = new PlayerCard(3400, 150, Properties.Resources.Garulmonie);
 
         /*PlayerCard Allemanie = new PlayerCard(3500, 250);
         //Allemapon
@@ -109,18 +109,18 @@ namespace LazniCardGame
         // Soldier cards (64 cards)
 
         //RESERVED FOR THE PROOF OF CONCEPT
-        SoldierCard Allemanie_A = new SoldierCard(150, 50, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Allemanie_A.png");
-        SoldierCard Allemanie_B = new SoldierCard(100, 100, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Allemanie_B.png");
-        SoldierCard Allemapon_A = new SoldierCard(150, 75, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Allemapon_A.png");
-        SoldierCard Allemapon_B = new SoldierCard(100, 25, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Allemapon_B.png");
-        SoldierCard Almahad_A = new SoldierCard(100, 70, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Almahad_A.png");
-        SoldierCard Almahad_B = new SoldierCard(100, 20, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Almahad_B.png");
-        SoldierCard Anglestan_A = new SoldierCard(200, 35, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Anglestan_A.png");
-        SoldierCard Anglestan_B = new SoldierCard(150, 75, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Anglestan_B.png");
-        SoldierCard Canalgeria_A = new SoldierCard(350, 0, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Canalgerie_A.png");
-        SoldierCard Canalgeria_B = new SoldierCard(150, 50, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Canalgerie_B.png");
-        SoldierCard Criota_A = new SoldierCard(150, 90, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Criota_A.png");
-        SoldierCard Criota_B = new SoldierCard(200, 30, "C:\\Users\\GChen\\Dev\\Desktop\\Projects\\LazniCardGame\\Resources\\Images\\Cards\\Soldier\\Criota_B.png");
+        SoldierCard Allemanie_A = new SoldierCard(150, 50, Properties.Resources.Allemanie_A);
+        SoldierCard Allemanie_B = new SoldierCard(100, 100, Properties.Resources.Allemanie_B);
+        SoldierCard Allemapon_A = new SoldierCard(150, 75, Properties.Resources.Allemapon_A);
+        SoldierCard Allemapon_B = new SoldierCard(100, 25, Properties.Resources.Allemapon_B);
+        SoldierCard Almahad_A = new SoldierCard(100, 70, Properties.Resources.Almahad_A);
+        SoldierCard Almahad_B = new SoldierCard(100, 20, Properties.Resources.Almahad_B);
+        SoldierCard Anglestan_A = new SoldierCard(200, 35, Properties.Resources.Anglestan_A);
+        SoldierCard Anglestan_B = new SoldierCard(150, 75, Properties.Resources.Anglestan_B);
+        SoldierCard Canalgeria_A = new SoldierCard(350, 0, Properties.Resources.Canalgerie_A);
+        SoldierCard Canalgeria_B = new SoldierCard(150, 50, Properties.Resources.Canalgerie_B);
+        SoldierCard Criota_A = new SoldierCard(150, 90, Properties.Resources.Criota_A);
+        SoldierCard Criota_B = new SoldierCard(200, 30, Properties.Resources.Criota_B);
 
         /*SoldierCard Ekota_A = new SoldierCard(100,20);
         SoldierCard Ekota_B = new SoldierCard(150, 50);
@@ -256,12 +256,12 @@ namespace LazniCardGame
 
             // player card value is the first one by default
             p1PlayerCardData = playerCards[playerCardIndex];
-            p1PlayerCard.ImageLocation = p1PlayerCardData.imageLocation;
+            p1PlayerCard.Image = p1PlayerCardData.imageLocation;
 
             // cpu player card value is random
             int cpuCardIndex = random.Next(0, playerCards.Length);
             p2PlayerCardData = playerCards[cpuCardIndex];
-            p2PlayerCard.ImageLocation = playerCards[cpuCardIndex].imageLocation;
+            p2PlayerCard.Image = playerCards[cpuCardIndex].imageLocation;
 
 
             //SECONDARY CARDS
@@ -284,11 +284,11 @@ namespace LazniCardGame
             {
                 // Initiate each secondary cards on the player side
                 p1SecCardsData[i] = soldierCardsMixUp[CardsUsedFromDeck];
-                p1SecCardsImages[i].ImageLocation = soldierCardsMixUp[CardsUsedFromDeck].imageLocation;
+                p1SecCardsImages[i].Image = soldierCardsMixUp[CardsUsedFromDeck].imageLocation;
                 CardsUsedFromDeck++;
                 // Initiate each secondary cards on the other player side
                 p2SecCardsData[i] = soldierCardsMixUp[CardsUsedFromDeck];
-                p2SecCardsImages[i].ImageLocation = soldierCardsMixUp[CardsUsedFromDeck].imageLocation;
+                p2SecCardsImages[i].Image = soldierCardsMixUp[CardsUsedFromDeck].imageLocation;
                 CardsUsedFromDeck++;
             }
         }
@@ -299,9 +299,11 @@ namespace LazniCardGame
             checkAbility2.Enabled = false;
             checkAtk.Enabled = false;
             btnConfirm.Enabled = false;
+            #if DEBUG
             Console.WriteLine("All ability panel buttons set to False.");
             SetCards();
             Console.WriteLine("Game set.");
+            #endif
         }
 
         /// <summary>
@@ -312,7 +314,7 @@ namespace LazniCardGame
         private void ShowCard(PlayerCard pCardData)
         {
             // Change the ViewCard picture box and its labels for the selected Player card in the parameter
-            CardView.ImageLocation = pCardData.imageLocation;
+            CardView.Image = pCardData.imageLocation;
             textHP.Text = pCardData.hp.ToString();
             textATK.Text = pCardData.atk.ToString();
             if (pCardData != p2PlayerCardData || IsAttacking == true)
@@ -328,13 +330,15 @@ namespace LazniCardGame
                 checkAbility2.Enabled = false;
                 btnConfirm.Enabled = false;
             }
+            #if DEBUG
             Console.WriteLine(/*pCardData + */"Player card data loaded.");
+            #endif
         }
 
         private void ShowCard(SoldierCard[] pCardData, int index)
         {
             // Change the ViewCard picture box and its labels for the selected Soldier card in the parameters
-            CardView.ImageLocation = pCardData[index].imageLocation;
+            CardView.Image = pCardData[index].imageLocation;
             textHP.Text = pCardData[index].hp.ToString();
             textATK.Text = pCardData[index].atk.ToString();
             if (pCardData != p2SecCardsData || IsAttacking == true)
@@ -344,16 +348,17 @@ namespace LazniCardGame
                 checkAtk.Enabled = true;
                 IsCardShownSecondary = true;
             }
-            else 
-            { 
+            else
+            {
                 checkAbility1.Enabled = false;
                 checkAbility2.Enabled = false;
                 btnConfirm.Enabled = false;
                 IsCardShownSecondary = false;
             }
-          
+            #if DEBUG
             Console.WriteLine("All ability panel buttons set to " + checkAbility1.Enabled + ".");
             Console.WriteLine(/*pCardData[index] + */"Soldier card data loaded.");
+            #endif
         }
 
         #region GAME INTERACTION METHODS
@@ -427,7 +432,7 @@ namespace LazniCardGame
         {
         }*/
 
-        private void btnPlayerCardLeft_Click(object sender, EventArgs e)
+        private void BtnPlayerCardLeft_Click(object sender, EventArgs e)
         {
             // Verify if the index is at the minimum, if yes change it to the maximum
             if (playerCardIndex != 0) playerCardIndex--;
@@ -435,14 +440,14 @@ namespace LazniCardGame
 
             // Refresh the player card data
             p1PlayerCardData = playerCards[playerCardIndex];
-            p1PlayerCard.ImageLocation = p1PlayerCardData.imageLocation;
+            p1PlayerCard.Image = p1PlayerCardData.imageLocation;
 
             // Show the new current card in the ViewCard picture box
             ShowCard(p1PlayerCardData);
             Console.WriteLine(/*playerCards[playerCardIndex] +*/  "Another player card is now shown.");
         }
 
-        private void btnPlayerCardRight_Click(object sender, EventArgs e)
+        private void BtnPlayerCardRight_Click(object sender, EventArgs e)
         {
             // Verify if the index is at the maximum, if yes change it to the minimum
             if (playerCardIndex != playerCards.Length - 1) playerCardIndex++;
@@ -450,20 +455,20 @@ namespace LazniCardGame
 
             // Refresh the player card data
             p1PlayerCardData = playerCards[playerCardIndex];
-            p1PlayerCard.ImageLocation = p1PlayerCardData.imageLocation;
+            p1PlayerCard.Image = p1PlayerCardData.imageLocation;
 
             // Show the new current card in the ViewCard picture box
             ShowCard(p1PlayerCardData);
             Console.WriteLine(/*playerCards[playerCardIndex] +*/ "Another player card is now shown.");
         }
 
-        private void checkBoxPlayerCardConfirm_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxPlayerCardConfirm_CheckedChanged(object sender, EventArgs e)
         {
             // If the box is checked, disable the controls (possibility to make them invisible in the future)
-                btnPlayerCardLeft.Enabled = !btnPlayerCardLeft.Enabled;
-                btnPlayerCardRight.Enabled = !btnPlayerCardRight.Enabled;            
+            btnPlayerCardLeft.Enabled = !btnPlayerCardLeft.Enabled;
+            btnPlayerCardRight.Enabled = !btnPlayerCardRight.Enabled;
         }
-        private void startGameToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void StartGameToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             // FOR NOW
             // Reset the game
@@ -471,7 +476,7 @@ namespace LazniCardGame
         }
 
         // Disable the player cards if the checkAtk check box is enabled
-        private void checkAtk_CheckedChanged(object sender, EventArgs e)
+        private void CheckAtk_CheckedChanged(object sender, EventArgs e)
         {
             IsAttacking = !IsAttacking;
             btnConfirm.Enabled = !btnConfirm.Enabled;
@@ -479,9 +484,9 @@ namespace LazniCardGame
             p1SecondaryCard1.Enabled = !p1SecondaryCard1.Enabled;
             p1SecondaryCard2.Enabled = !p1SecondaryCard2.Enabled;
             p1SecondaryCard3.Enabled = !p1SecondaryCard3.Enabled;
-        #if DEBUG
+            #if DEBUG
             Console.WriteLine("Enabled states changed.");
-        #endif
+            #endif
             // If the box is checked, higlights the card(s) which can be attacked, which depends of the attacking card used
             // Those actions are made depending of if the player cards are disabled, which should be disabled while the other player's cards are highlighted.
             if (!p1PlayerCard.Enabled)
@@ -500,7 +505,7 @@ namespace LazniCardGame
                 }
                 // If the card is not a Secondary card (PLAYER card), it can only attack the other's player card
                 else
-                {                    
+                {
                     // Highlight player 2's Player card
                     RedBorderPlayer_panel.BackColor = Color.Red;
                     // Disable player 2's Secondary cards
@@ -521,7 +526,7 @@ namespace LazniCardGame
                 RedBorderpanel3.BackColor = Color.Transparent;
                 RedBorderPlayer_panel.BackColor = Color.Transparent;
             }
-#if DEBUG
+            #if DEBUG
             Console.WriteLine("Borders added.");
             #endif
         }
@@ -565,7 +570,7 @@ namespace LazniCardGame
         {
             CardEnabledStateChange(p1PlayerCard, 3);
         }
-        
+
         private void p2PlayerCard_EnabledChanged(object sender, EventArgs e)
         {
             CardEnabledStateChange(p2PlayerCard, 4);
