@@ -295,12 +295,24 @@ namespace LazniCardGame
 
         private void SetGame()
         {
+            // Reset the selected card view
+            CardView.Image = Properties.Resources.CardBack;
+            textHP.Text = " ";
+            textATK.Text = " ";
+
+
+            // Activate the player card selector
+            checkBoxPlayerCardConfirm.Enabled = true;
+            btnPlayerCardLeft.Enabled = true;
+            btnPlayerCardRight.Enabled = true;
+
+            // Make invisible the ability menu panel and disable its buttons
+            menuAbilities.Visible = false;
             checkAbility1.Enabled = false;
             checkAbility2.Enabled = false;
             checkAtk.Enabled = false;
             btnConfirm.Enabled = false;
             #if DEBUG
-            Console.WriteLine("All ability panel buttons set to False.");
             SetCards();
             Console.WriteLine("Game set.");
             #endif
@@ -317,6 +329,7 @@ namespace LazniCardGame
             CardView.Image = pCardData.imageLocation;
             textHP.Text = pCardData.hp.ToString();
             textATK.Text = pCardData.atk.ToString();
+            // If the card selected is a ennemy card do not enable the ability panel menu
             if (pCardData != p2PlayerCardData || IsAttacking == true)
             {
                 checkAbility1.Enabled = true;
@@ -328,6 +341,7 @@ namespace LazniCardGame
             {
                 checkAbility1.Enabled = false;
                 checkAbility2.Enabled = false;
+                checkAtk.Enabled = false;
                 btnConfirm.Enabled = false;
             }
             #if DEBUG
@@ -341,6 +355,7 @@ namespace LazniCardGame
             CardView.Image = pCardData[index].imageLocation;
             textHP.Text = pCardData[index].hp.ToString();
             textATK.Text = pCardData[index].atk.ToString();
+            // If the card selected is a ennemy card do not enable the ability panel menu
             if (pCardData != p2SecCardsData || IsAttacking == true)
             {
                 checkAbility1.Enabled = true;
@@ -352,7 +367,7 @@ namespace LazniCardGame
             {
                 checkAbility1.Enabled = false;
                 checkAbility2.Enabled = false;
-                btnConfirm.Enabled = false;
+                checkAtk.Enabled = false;
                 IsCardShownSecondary = false;
             }
             #if DEBUG
@@ -464,9 +479,12 @@ namespace LazniCardGame
 
         private void CheckBoxPlayerCardConfirm_CheckedChanged(object sender, EventArgs e)
         {
-            // If the box is checked, disable the controls (possibility to make them invisible in the future)
-            btnPlayerCardLeft.Enabled = !btnPlayerCardLeft.Enabled;
-            btnPlayerCardRight.Enabled = !btnPlayerCardRight.Enabled;
+            // If the box is checked, disable the controls (possibility to make them invisible in the future) and make the ability panel appears
+            checkBoxPlayerCardConfirm.Checked = false;
+            btnPlayerCardLeft.Enabled = false;
+            btnPlayerCardRight.Enabled = false;
+            menuAbilities.Visible = true;
+            checkBoxPlayerCardConfirm.Enabled = false;
         }
         private void StartGameToolStripMenuItem1_Click(object sender, EventArgs e)
         {
