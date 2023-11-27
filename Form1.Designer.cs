@@ -144,7 +144,6 @@
             this.textHP.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textHP.Size = new System.Drawing.Size(49, 20);
             this.textHP.TabIndex = 19;
-            this.textHP.Text = " ";
             // 
             // textATK
             // 
@@ -155,7 +154,6 @@
             this.textATK.ReadOnly = true;
             this.textATK.Size = new System.Drawing.Size(49, 20);
             this.textATK.TabIndex = 20;
-            this.textATK.Text = " ";
             this.textATK.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textWallet
@@ -608,7 +606,6 @@
             // checkAbility1
             // 
             this.checkAbility1.BackColor = System.Drawing.Color.Gray;
-            this.checkAbility1.Enabled = false;
             this.checkAbility1.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkAbility1.Location = new System.Drawing.Point(0, 43);
             this.checkAbility1.Name = "checkAbility1";
@@ -622,7 +619,6 @@
             // checkAbility2
             // 
             this.checkAbility2.BackColor = System.Drawing.Color.Gray;
-            this.checkAbility2.Enabled = false;
             this.checkAbility2.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkAbility2.Location = new System.Drawing.Point(0, 95);
             this.checkAbility2.Name = "checkAbility2";
@@ -647,13 +643,11 @@
             this.menuAbilities.TabIndex = 38;
             this.menuAbilities.TabStop = false;
             this.menuAbilities.Text = "Abilities";
-            this.menuAbilities.Visible = false;
             // 
             // checkAtk
             // 
             this.checkAtk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkAtk.BackColor = System.Drawing.Color.Brown;
-            this.checkAtk.Enabled = false;
             this.checkAtk.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Bold);
             this.checkAtk.Location = new System.Drawing.Point(3, 509);
             this.checkAtk.Name = "checkAtk";
