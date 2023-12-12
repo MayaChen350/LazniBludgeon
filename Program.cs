@@ -16,5 +16,5 @@ namespace LazniCardGame
             Application.Run(new Form1());
         }
     }
-    
+
 }

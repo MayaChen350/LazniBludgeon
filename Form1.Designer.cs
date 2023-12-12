@@ -680,6 +680,7 @@
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.CheckedChanged += new System.EventHandler(this.btnConfirm_CheckedChanged);
             // 
             // RedBorderpanel1
             // 

@@ -78,6 +78,7 @@
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,7 +120,7 @@
     <None Include="Resources\Images\Cards\Soldier\Allemapon_A.png" />
     <None Include="Resources\Images\Cards\Soldier\Allemanie_B.png" />
     <None Include="Resources\Images\Cards\Soldier\Allemanie_A.png" />
-    <None Include="Resources\CardBack.png" />
+    <EmbeddedResource Include="Resources\CardBack.png" />
     <Content Include="Resources\Images\Cards\Player\Allemanie.png" />
   </ItemGroup>
   <ItemGroup>
