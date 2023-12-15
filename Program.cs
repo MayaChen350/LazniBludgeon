@@ -13,7 +13,7 @@ namespace LazniCardGame
         static void Main()
         {
             Console.WriteLine("Debug Console");
-            Application.Run(new Form1());
+            Application.Run(new Game());
         }
     }
 

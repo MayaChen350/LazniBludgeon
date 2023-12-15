@@ -5,10 +5,10 @@ using System.Drawing;
 using System.Windows.Forms;
 namespace LazniCardGame
 {
-    public partial class Form1 : Form
+    public partial class Game : Form
     {
 
-        public Form1()
+        public Game()
         {
             InitializeComponent();
             SetGame();
@@ -21,220 +21,6 @@ namespace LazniCardGame
         public int playerCardIndex = 0;
 
         bool IsAttacking = false;
-
-
-        #region CARDS TYPES
-        class PlayerCard
-        {
-            public int hp;
-            public int atk;
-            public Bitmap imageLocation;
-            // ability1
-            // ability2
-
-            public PlayerCard(int Hp, int Atk, Bitmap Image)
-            {
-                hp = Hp;
-                atk = Atk;
-                imageLocation = Image;
-            }
-        }
-
-        class SoldierCard
-        {
-            public int hp;
-            public int atk;
-            public Bitmap imageLocation;
-            public PictureBox cardInGame;
-            // ability1
-
-            public SoldierCard()
-            {
-
-            }
-
-            public SoldierCard(int Hp, int Atk, Bitmap Image)
-            {
-                hp = Hp;
-                atk = Atk;
-                imageLocation = Image;
-            }
-        }
-
-        class SpecialCard
-        {
-            public int hp;
-            public int atk;
-            //ability1
-            //ability2
-
-            public SpecialCard(int Hp, int Atk)
-            {
-                hp = Hp;
-                atk = Atk;
-            }
-        }
-
-        class ObjectCard
-        {
-            public int atk;
-            //effect
-        }
-
-        #endregion
-
-        string[] PlayerCards = { "Allemanie", "Allemapon", "Almahad", "Anglestan", "Canalgeria", "Fitalie", "Garulmonie", "Khenaga", "Mulretonie", "Nitralvie", "Qaland", "Slovannoya", "Starvas", "TheLeaf", "Traicere", "Yedesna" };
-
-        #region CARDS (110 CARDS)
-        // Player cards (16 cards)
-
-        //RESERVED FOR THE PROOF OF CONCEPT
-        PlayerCard Slovannoya = new PlayerCard(2850, 350, Properties.Resources.Slovanoya);
-        PlayerCard Allemapon = new PlayerCard(3000, 0, Properties.Resources.Allemapon);
-        PlayerCard Anglestan = new PlayerCard(3450, 100, Properties.Resources.Anglestan);
-        PlayerCard Garulmonie = new PlayerCard(3400, 150, Properties.Resources.Garulmonie);
-
-        /*PlayerCard Allemanie = new PlayerCard(3500, 250);
-        //Allemapon
-        PlayerCard Almahad = new PlayerCard(3500, 250);
-        //Anglestan
-        PlayerCard Canalgeria = new PlayerCard(3500, 200);
-        PlayerCard Fitalie = new PlayerCard(4000, 250);
-        //Garulmonie
-        PlayerCard Khenaga = new PlayerCard(3350, 200);
-        PlayerCard Mulretonie = new PlayerCard(3000, 300);
-        PlayerCard Nitralvie = new PlayerCard(3250, 250);
-        PlayerCard Qaland = new PlayerCard(3500, 225);
-        //Slovannoya 
-        PlayerCard Starvas = new PlayerCard(3550, 250);
-        PlayerCard TheLeaf = new PlayerCard(3750, 150);
-        PlayerCard Traicere = new PlayerCard(3600, 100);
-        PlayerCard Yedesna = new PlayerCard(3350, 250);*/
-        // Soldier cards (64 cards)
-
-        //RESERVED FOR THE PROOF OF CONCEPT
-        SoldierCard Allemanie_A = new SoldierCard(150, 50, Properties.Resources.Allemanie_A);
-        SoldierCard Allemanie_B = new SoldierCard(100, 100, Properties.Resources.Allemanie_B);
-        SoldierCard Allemapon_A = new SoldierCard(150, 75, Properties.Resources.Allemapon_A);
-        SoldierCard Allemapon_B = new SoldierCard(100, 25, Properties.Resources.Allemapon_B);
-        SoldierCard Almahad_A = new SoldierCard(100, 70, Properties.Resources.Almahad_A);
-        SoldierCard Almahad_B = new SoldierCard(100, 20, Properties.Resources.Almahad_B);
-        SoldierCard Anglestan_A = new SoldierCard(200, 35, Properties.Resources.Anglestan_A);
-        SoldierCard Anglestan_B = new SoldierCard(150, 75, Properties.Resources.Anglestan_B);
-        SoldierCard Canalgeria_A = new SoldierCard(350, 0, Properties.Resources.Canalgerie_A);
-        SoldierCard Canalgeria_B = new SoldierCard(150, 50, Properties.Resources.Canalgerie_B);
-        SoldierCard Criota_A = new SoldierCard(150, 90, Properties.Resources.Criota_A);
-        SoldierCard Criota_B = new SoldierCard(200, 30, Properties.Resources.Criota_B);
-
-        /*SoldierCard Ekota_A = new SoldierCard(100,20);
-        SoldierCard Ekota_B = new SoldierCard(150, 50);
-        SoldierCard Finlonie_A = new SoldierCard(200,30);
-        SoldierCard Finlonie_B = new SoldierCard(200, 100);
-        SoldierCard Fitalie_A = new SoldierCard(150, 50);
-        SoldierCard Fitalie_B = new SoldierCard(150, 70);
-        SoldierCard Garulmonie_A = new SoldierCard(300, 10);
-        SoldierCard Garulmonie_B = new SoldierCard(150, 75);
-        SoldierCard Hongoru_A = new SoldierCard(150, 60);
-        SoldierCard Hongoru_B = new SoldierCard(200, 0);
-        SoldierCard Kaenia_A = new SoldierCard(100, 40);
-        SoldierCard Kaenia_B = new SoldierCard(180, 60);
-        SoldierCard Khenaga_A = new SoldierCard(150, 40);
-        SoldierCard Khenaga_B = new SoldierCard(150, 75);
-        SoldierCard Lirigant_A = new SoldierCard(175, 50);
-        SoldierCard Lirigant_B = new SoldierCard(150, 80);
-        SoldierCard Mageria_A = new SoldierCard(100, 50);
-        SoldierCard Mageria_B = new SoldierCard(150,50);
-        SoldierCard Maréquie_A = new SoldierCard(150, 50);
-        SoldierCard Maréquie_B = new SoldierCard(140, 40);*/
-        /* SoldierCard Mulretonie_A = new SoldierCard();
-         SoldierCard Mulretonie_B = new SoldierCard();
-         SoldierCard Neolantis_A = new SoldierCard();
-         SoldierCard Neolantis_B = new SoldierCard();
-         SoldierCard Nitralvie_A = new SoldierCard();
-         SoldierCard Nitralvie_B = new SoldierCard();
-         SoldierCard Onriance_A = new SoldierCard();
-         SoldierCard Onriance_B = new SoldierCard();
-         SoldierCard Qaland_A = new SoldierCard();
-         SoldierCard Qaland_B = new SoldierCard();
-         SoldierCard Slovanoya_A = new SoldierCard();
-         SoldierCard Slovanoya_B = new SoldierCard();
-         SoldierCard Starvas_A = new SoldierCard();
-         SoldierCard Starvas_B = new SoldierCard();
-         SoldierCard Suedemark_A = new SoldierCard();
-         SoldierCard Suedemark_B = new SoldierCard();
-         SoldierCard Suelly_A = new SoldierCard();
-         SoldierCard Suelly_B = new SoldierCard();
-         SoldierCard Tekay_A = new SoldierCard();
-         SoldierCard Tekay_B = new SoldierCard();
-         SoldierCard TheLeaf_A = new SoldierCard();
-         SoldierCard TheLeaf_B = new SoldierCard();
-         SoldierCard Traicere_A = new SoldierCard();
-         SoldierCard Traicere_B = new SoldierCard();
-         SoldierCard Tristan_A = new SoldierCard();
-         SoldierCard Tristan_B = new SoldierCard();
-         SoldierCard Tujar_A = new SoldierCard();
-         SoldierCard Tujar_B = new SoldierCard();
-         SoldierCard Ukraimea_A = new SoldierCard();
-         SoldierCard Ukraimea_B = new SoldierCard();
-         SoldierCard Yedesna_A = new SoldierCard();
-         SoldierCard Yedesna_B = new SoldierCard();*/
-        // Special cards (16 cards)
-        /* SpecialCard
-         SpecialCard
-         SpecialCard
-         SpecialCard
-         SpecialCard
-         SpecialCard
-         SpecialCard
-         SpecialCard
-         SpecialCard
-         SpecialCard
-         SpecialCard
-         SpecialCard
-         SpecialCard
-         SpecialCard
-         SpecialCard
-         SpecialCard*/
-        // Object cards (14 cards)
-        /*ObjectCard
-        ObjectCard
-        ObjectCard
-        ObjectCard
-        ObjectCard
-        ObjectCard
-        ObjectCard
-        ObjectCard
-        ObjectCard
-        ObjectCard
-        ObjectCard
-        ObjectCard
-        ObjectCard
-        ObjectCard*/
-        #endregion
-
-
-        #region PASSIVE ABILITIES
-        private void MethodicalPlanning(PlayerCard playerCard)
-        {
-            //foreach (SoldierCard card in #ALLSoldiersInTheField) 
-            // {
-            //    playerCard.atk += 50;
-            // }
-
-        }
-        private void TeaTimeTactician(PlayerCard playerCard) { }
-        private void StrategicMentorship() { }
-        private void StrategicRetreat() { }
-        private void StandUpRoutine() { }
-
-
-        #endregion
-
-        #region ACTIVE ABILITIES
-        private void StoicResolve() { }
-        private void DebatingDynamo() { }
-        private void AdaptivePunchline() { }
-        #endregion
 
         // empty player cards' data
         PlayerCard p1PlayerCardData;
@@ -345,8 +131,9 @@ namespace LazniCardGame
             CardView.Image = pCardData.imageLocation;
             textHP.Text = pCardData.hp.ToString();
             textATK.Text = pCardData.atk.ToString();
-            viewedCardSoldier = null;
+            // Log in the current card viewed 
             viewedCardPlayer = pCardData;
+            viewedCardSoldier = null;
             // If the card selected is a ennemy card do not enable the ability panel menu
             if (pCardData != p2PlayerCardData || IsAttacking == true)
             {
@@ -375,8 +162,9 @@ namespace LazniCardGame
             CardView.Image = pCardData[index].imageLocation;
             textHP.Text = pCardData[index].hp.ToString();
             textATK.Text = pCardData[index].atk.ToString();
-            viewedCardPlayer = null;
+            // Log in the current card viewed 
             viewedCardSoldier = pCardData[index];
+            viewedCardPlayer = null;
             // If the card selected is a ennemy card do not enable the ability panel menu
             if (pCardData != p2SecCardsData || IsAttacking)
             {
@@ -404,21 +192,28 @@ namespace LazniCardGame
         private void AttackCardCalculation(PlayerCard pCardAtk, PlayerCard pCardDef)
         {
             // cardDef.hp - cardAtk.atk × (100% -cardDef.def%)
-            pCardDef.hp = pCardDef.hp - pCardAtk.atk/*(1 - pCardDef.def)*/;
+            pCardDef.hp -= pCardAtk.atk/*(1 - pCardDef.def)*/;
+
+        }
+
+        private void AttackCardCalculation(PlayerCard pCardAtk, SoldierCard pCardDef)
+        {
+            // cardDef.hp - cardAtk.atk × (100% -cardDef.def%)
+            pCardDef.hp -= pCardAtk.atk/*(1 - pCardDef.def)*/;
 
         }
 
         private void AttackCardCalculation(SoldierCard pCardAtk, SoldierCard pCardDef)
         {
             // card.hp - card.atk × (100% -card.def%)
-            pCardDef.hp = pCardDef.hp - pCardAtk.atk/*(1 - pCardDef.def)*/;
+            pCardDef.hp -= pCardAtk.atk/*(1 - pCardDef.def)*/;
 
         }
 
         private void AttackCardCalculation(SoldierCard pCardAtk, PlayerCard pCardDef)
         {
             // card.hp - card.atk × (100% -card.def%)
-            pCardDef.hp = pCardDef.hp - pCardAtk.atk/*(1 - pCardDef.def)*/;
+            pCardDef.hp -= pCardAtk.atk/*(1 - pCardDef.def)*/;
 
         }
 
@@ -554,7 +349,7 @@ namespace LazniCardGame
                 attackingCardPlayer = null;
             }
 
-            // Disable the player cards if the checkAtk check box is enabled
+            // Disable the player's cards if the checkAtk check box is enabled
             IsAttacking = !IsAttacking;
             p1PlayerCard.Enabled = !p1PlayerCard.Enabled;
             p1SecondaryCard1.Enabled = !p1SecondaryCard1.Enabled;
@@ -565,8 +360,7 @@ namespace LazniCardGame
             Console.WriteLine("Enabled states changed.");
 #endif
             // If the box is checked, higlights the card(s) which can be attacked, which depends of the attacking card used
-            // Those actions are made depending of if the player cards are disabled, which should be disabled while the other player's cards are highlighted.
-            if (!p1PlayerCard.Enabled)
+            if (IsAttacking)
             {
                 // If the card is a SECONDARY card, it can only attack other secondary cards
                 // EXCEPT if there is only the Player Card remaining or ability says otherwise (Later)
@@ -611,7 +405,7 @@ namespace LazniCardGame
         // CARDS ENABLED/DISABLE STATES
 
         // arrays containing all the images for the enabled states
-        System.Drawing.Image[] originalImages = new System.Drawing.Image[8];
+        Image[] originalImages = new System.Drawing.Image[8];
 
         /// <summary>
         /// Lower the opacity of the card if it is disabled or change it back to its original oppacity from the originalImages array
@@ -671,26 +465,38 @@ namespace LazniCardGame
 
         private void btnConfirm_CheckedChanged(object sender, EventArgs e)
         {
-            if (attackingCardPlayer != null)
+            // If the attacking card is a player card and the other player card is alive then it'll attack it
+            if (attackingCardPlayer != null && p2PlayerCard.Visible)
             {
                 p1PlayerCard.Visible = false;
                 AttackCardCalculation(attackingCardPlayer, viewedCardPlayer);
             }
-            else
+            // If the attacking card is a player card but the other player card is NOT alive then it'll attack a secondary card
+            else if (attackingCardPlayer != null)
+            {
+                p1PlayerCard.Visible = false;
+                AttackCardCalculation(attackingCardPlayer, viewedCardSoldier);
+            }
+            // Otherwise it is most likely another secondary card so it will attack another secondary card
+            else if (p2SecondaryCard1.Visible && p2SecondaryCard2.Visible && p2SecondaryCard3.Visible)
             {
                 attackingCardSoldier.cardInGame.Visible = false;
                 AttackCardCalculation(attackingCardSoldier, viewedCardSoldier);
             }
+            // In the case all other secondary cards have died, secondary cards can attack the other player card
+            else
+            {
+                attackingCardSoldier.cardInGame.Visible = false;
+                AttackCardCalculation(attackingCardSoldier, viewedCardPlayer);
+            }
+
 
             CardView.Image = BackOfTheCard;
 
             btnConfirm.Checked = false;
             checkAtk.Checked = false;
-            
-            if (p1PlayerCard.Visible == false
-                && p1SecondaryCard1.Visible == false
-                && p1SecondaryCard2.Visible == false
-                && p1SecondaryCard3.Visible == false)
+
+            if (!p1PlayerCard.Visible && !p1SecondaryCard1.Visible && !p1SecondaryCard2.Visible && !p1SecondaryCard3.Visible)
             {
                 p1PlayerCard.Visible = true;
                 p1SecondaryCard1.Visible = true;

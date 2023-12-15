@@ -52,6 +52,9 @@
   <PropertyGroup>
     <StartupObject>LazniCardGame.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -66,18 +69,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cards.cs" />
     <Compile Include="EnumerableExtensions.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Game.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Game.Designer.cs">
+      <DependentUpon>Game.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Game.resx">
+      <DependentUpon>Game.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -121,6 +125,8 @@
     <None Include="Resources\Images\Cards\Soldier\Allemanie_B.png" />
     <None Include="Resources\Images\Cards\Soldier\Allemanie_A.png" />
     <EmbeddedResource Include="Resources\CardBack.png" />
+    <None Include="Resources\AppIcon.ico" />
+    <Content Include="AppIcon.ico" />
     <Content Include="Resources\Images\Cards\Player\Allemanie.png" />
   </ItemGroup>
   <ItemGroup>
