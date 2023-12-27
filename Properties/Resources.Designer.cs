@@ -233,6 +233,16 @@ namespace LazniCardGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CardBack1 {
+            get {
+                object obj = ResourceManager.GetObject("CardBack1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Criota_A {
             get {
                 object obj = ResourceManager.GetObject("Criota_A", resourceCulture);
@@ -327,6 +337,16 @@ namespace LazniCardGame.Properties {
             get {
                 object obj = ResourceManager.GetObject("Starvas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon The_Lazni_Face_TM {
+            get {
+                object obj = ResourceManager.GetObject("The_Lazni_Face_TM", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

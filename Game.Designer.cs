@@ -62,13 +62,13 @@
             this.checkAtk = new System.Windows.Forms.CheckBox();
             this.btnConfirm = new System.Windows.Forms.CheckBox();
             this.RedBorderpanel1 = new System.Windows.Forms.Panel();
+            this.p2SecondaryCard3 = new System.Windows.Forms.PictureBox();
             this.RedBorderpanel2 = new System.Windows.Forms.Panel();
+            this.p2SecondaryCard2 = new System.Windows.Forms.PictureBox();
             this.RedBorderpanel3 = new System.Windows.Forms.Panel();
+            this.p2SecondaryCard1 = new System.Windows.Forms.PictureBox();
             this.RedBorderPlayer_panel = new System.Windows.Forms.Panel();
             this.p2PlayerCard = new System.Windows.Forms.PictureBox();
-            this.p2SecondaryCard1 = new System.Windows.Forms.PictureBox();
-            this.p2SecondaryCard2 = new System.Windows.Forms.PictureBox();
-            this.p2SecondaryCard3 = new System.Windows.Forms.PictureBox();
             this.CardView = new System.Windows.Forms.PictureBox();
             this.p2SecondaryCard4 = new System.Windows.Forms.PictureBox();
             this.p2SecondaryCard7 = new System.Windows.Forms.PictureBox();
@@ -85,13 +85,13 @@
             this.menuStrip1.SuspendLayout();
             this.menuAbilities.SuspendLayout();
             this.RedBorderpanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard3)).BeginInit();
             this.RedBorderpanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard2)).BeginInit();
             this.RedBorderpanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard1)).BeginInit();
             this.RedBorderPlayer_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p2PlayerCard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CardView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard7)).BeginInit();
@@ -478,6 +478,20 @@
             this.RedBorderpanel1.Size = new System.Drawing.Size(85, 116);
             this.RedBorderpanel1.TabIndex = 42;
             // 
+            // p2SecondaryCard3
+            // 
+            this.p2SecondaryCard3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.p2SecondaryCard3.BackColor = System.Drawing.Color.Transparent;
+            this.p2SecondaryCard3.Location = new System.Drawing.Point(4, 4);
+            this.p2SecondaryCard3.Margin = new System.Windows.Forms.Padding(0);
+            this.p2SecondaryCard3.Name = "p2SecondaryCard3";
+            this.p2SecondaryCard3.Size = new System.Drawing.Size(78, 109);
+            this.p2SecondaryCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p2SecondaryCard3.TabIndex = 5;
+            this.p2SecondaryCard3.TabStop = false;
+            this.p2SecondaryCard3.EnabledChanged += new System.EventHandler(this.p2SecondaryCard3_EnabledChanged);
+            this.p2SecondaryCard3.Click += new System.EventHandler(this.p2SecondaryCard3_Click);
+            // 
             // RedBorderpanel2
             // 
             this.RedBorderpanel2.BackColor = System.Drawing.Color.Transparent;
@@ -488,6 +502,19 @@
             this.RedBorderpanel2.Size = new System.Drawing.Size(85, 116);
             this.RedBorderpanel2.TabIndex = 44;
             // 
+            // p2SecondaryCard2
+            // 
+            this.p2SecondaryCard2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.p2SecondaryCard2.BackColor = System.Drawing.Color.Transparent;
+            this.p2SecondaryCard2.Location = new System.Drawing.Point(4, 4);
+            this.p2SecondaryCard2.Name = "p2SecondaryCard2";
+            this.p2SecondaryCard2.Size = new System.Drawing.Size(78, 109);
+            this.p2SecondaryCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p2SecondaryCard2.TabIndex = 6;
+            this.p2SecondaryCard2.TabStop = false;
+            this.p2SecondaryCard2.EnabledChanged += new System.EventHandler(this.p2SecondaryCard2_EnabledChanged);
+            this.p2SecondaryCard2.Click += new System.EventHandler(this.p2SecondaryCard2_Click);
+            // 
             // RedBorderpanel3
             // 
             this.RedBorderpanel3.BackColor = System.Drawing.Color.Transparent;
@@ -497,6 +524,19 @@
             this.RedBorderpanel3.Name = "RedBorderpanel3";
             this.RedBorderpanel3.Size = new System.Drawing.Size(85, 116);
             this.RedBorderpanel3.TabIndex = 45;
+            // 
+            // p2SecondaryCard1
+            // 
+            this.p2SecondaryCard1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.p2SecondaryCard1.BackColor = System.Drawing.Color.Transparent;
+            this.p2SecondaryCard1.Location = new System.Drawing.Point(4, 4);
+            this.p2SecondaryCard1.Name = "p2SecondaryCard1";
+            this.p2SecondaryCard1.Size = new System.Drawing.Size(78, 109);
+            this.p2SecondaryCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p2SecondaryCard1.TabIndex = 7;
+            this.p2SecondaryCard1.TabStop = false;
+            this.p2SecondaryCard1.EnabledChanged += new System.EventHandler(this.p2SecondaryCard1_EnabledChanged);
+            this.p2SecondaryCard1.Click += new System.EventHandler(this.p2SecondaryCard1_Click);
             // 
             // RedBorderPlayer_panel
             // 
@@ -512,6 +552,7 @@
             // 
             this.p2PlayerCard.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2PlayerCard.BackColor = System.Drawing.Color.Transparent;
+            this.p2PlayerCard.Image = global::LazniCardGame.Properties.Resources.CardBack;
             this.p2PlayerCard.Location = new System.Drawing.Point(4, 4);
             this.p2PlayerCard.Name = "p2PlayerCard";
             this.p2PlayerCard.Size = new System.Drawing.Size(78, 109);
@@ -520,46 +561,6 @@
             this.p2PlayerCard.TabStop = false;
             this.p2PlayerCard.EnabledChanged += new System.EventHandler(this.p2PlayerCard_EnabledChanged);
             this.p2PlayerCard.Click += new System.EventHandler(this.p2PlayerCard_Click);
-            // 
-            // p2SecondaryCard1
-            // 
-            this.p2SecondaryCard1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.p2SecondaryCard1.BackColor = System.Drawing.Color.Transparent;
-            this.p2SecondaryCard1.Location = new System.Drawing.Point(4, 4);
-            this.p2SecondaryCard1.Name = "p2SecondaryCard1";
-            this.p2SecondaryCard1.Size = new System.Drawing.Size(78, 109);
-            this.p2SecondaryCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p2SecondaryCard1.TabIndex = 7;
-            this.p2SecondaryCard1.TabStop = false;
-            this.p2SecondaryCard1.EnabledChanged += new System.EventHandler(this.p2SecondaryCard1_EnabledChanged);
-            this.p2SecondaryCard1.Click += new System.EventHandler(this.p2SecondaryCard1_Click);
-            // 
-            // p2SecondaryCard2
-            // 
-            this.p2SecondaryCard2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.p2SecondaryCard2.BackColor = System.Drawing.Color.Transparent;
-            this.p2SecondaryCard2.Location = new System.Drawing.Point(4, 4);
-            this.p2SecondaryCard2.Name = "p2SecondaryCard2";
-            this.p2SecondaryCard2.Size = new System.Drawing.Size(78, 109);
-            this.p2SecondaryCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p2SecondaryCard2.TabIndex = 6;
-            this.p2SecondaryCard2.TabStop = false;
-            this.p2SecondaryCard2.EnabledChanged += new System.EventHandler(this.p2SecondaryCard2_EnabledChanged);
-            this.p2SecondaryCard2.Click += new System.EventHandler(this.p2SecondaryCard2_Click);
-            // 
-            // p2SecondaryCard3
-            // 
-            this.p2SecondaryCard3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.p2SecondaryCard3.BackColor = System.Drawing.Color.Transparent;
-            this.p2SecondaryCard3.Location = new System.Drawing.Point(4, 4);
-            this.p2SecondaryCard3.Margin = new System.Windows.Forms.Padding(0);
-            this.p2SecondaryCard3.Name = "p2SecondaryCard3";
-            this.p2SecondaryCard3.Size = new System.Drawing.Size(78, 109);
-            this.p2SecondaryCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p2SecondaryCard3.TabIndex = 5;
-            this.p2SecondaryCard3.TabStop = false;
-            this.p2SecondaryCard3.EnabledChanged += new System.EventHandler(this.p2SecondaryCard3_EnabledChanged);
-            this.p2SecondaryCard3.Click += new System.EventHandler(this.p2SecondaryCard3_Click);
             // 
             // CardView
             // 
@@ -766,6 +767,7 @@
             this.Controls.Add(this.p1SecondaryCard1);
             this.Controls.Add(this.p1PlayerCard);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Game";
             this.Text = "The Lazni Card Game (ALPHA)";
@@ -773,13 +775,13 @@
             this.menuStrip1.PerformLayout();
             this.menuAbilities.ResumeLayout(false);
             this.RedBorderpanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard3)).EndInit();
             this.RedBorderpanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard2)).EndInit();
             this.RedBorderpanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard1)).EndInit();
             this.RedBorderPlayer_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.p2PlayerCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CardView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard7)).EndInit();

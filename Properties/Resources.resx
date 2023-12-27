@@ -118,86 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Allemanie" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Player\Allemanie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Allemanie_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Soldier\Allemanie_A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Allemanie_B" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Soldier\Allemanie_B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Allemapon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Player\Allemapon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Allemapon_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Soldier\Allemapon_A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Allemapon_B" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Soldier\Allemapon_B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Almahad" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Player\Almahad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Almahad_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Soldier\Almahad_A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Almahad_B" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Soldier\Almahad_B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Anglestan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Player\Anglestan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Anglestan_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Soldier\Anglestan_A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Anglestan_B" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Soldier\Anglestan_B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="AppIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AppIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Canalgerie" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Player\Canalgerie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Canalgerie_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Soldier\Canalgerie_A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Canalgerie_B" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Soldier\Canalgerie_B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CardBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CardBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Criota_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Soldier\Criota_A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Criota_B" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Soldier\Criota_B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fitalie" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Player\Fitalie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Garulmonie" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Player\Garulmonie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Khenaga" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Player\Khenaga.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Mulretonie" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Player\Mulretonie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Nitralvie" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Player\Nitralvie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Qaland" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\Cards\Player\Qaland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Slovanoya" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Player\Slovanoya.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Starvas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\Cards\Player\Starvas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TheLeaf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\Cards\Player\TheLeaf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,7 +130,88 @@
   <data name="Traicere" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\Cards\Player\Traicere.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Anglestan_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Soldier\Anglestan_A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Allemapon_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Soldier\Allemapon_A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Garulmonie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Player\Garulmonie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Almahad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Player\Almahad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Almahad_B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Soldier\Almahad_B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Canalgerie_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Soldier\Canalgerie_A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Allemanie_B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Soldier\Allemanie_B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Nitralvie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Player\Nitralvie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Khenaga" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Player\Khenaga.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="The_Lazni_Face_TM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\The-Lazni-Face-TM.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Canalgerie_B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Soldier\Canalgerie_B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Anglestan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Player\Anglestan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mulretonie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Player\Mulretonie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Allemapon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Player\Allemapon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Allemanie_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Soldier\Allemanie_A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Slovanoya" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Player\Slovanoya.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Anglestan_B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Soldier\Anglestan_B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Allemapon_B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Soldier\Allemapon_B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Yedesna" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\Cards\Player\Yedesna.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fitalie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Player\Fitalie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Canalgerie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Player\Canalgerie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Criota_B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Soldier\Criota_B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Almahad_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Soldier\Almahad_A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Starvas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Player\Starvas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Allemanie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Player\Allemanie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Criota_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Cards\Soldier\Criota_A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CardBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CardBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CardBack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CardBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

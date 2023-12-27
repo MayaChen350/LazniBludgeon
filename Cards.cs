@@ -8,6 +8,7 @@ namespace LazniCardGame
         public int hp;
         public int atk;
         public Bitmap imageLocation;
+        public PictureBox cardInGame;
         // ability1
         // ability2
 
@@ -62,7 +63,7 @@ namespace LazniCardGame
     {
         // readonly string[] PlayerCards = { "Allemanie", "Allemapon", "Almahad", "Anglestan", "Canalgeria", "Fitalie", "Garulmonie", "Khenaga", "Mulretonie", "Nitralvie", "Qaland", "Slovannoya", "Starvas", "TheLeaf", "Traicere", "Yedesna" };
         // If we ever need it
-        
+
         #region CARDS (110 CARDS)
         // Player cards (16 cards)
 
