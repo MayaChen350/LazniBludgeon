@@ -5,34 +5,36 @@ namespace LazniCardGame
     #region CARDS TYPES
     class PlayerCard
     {
-        public int hp;
-        public int atk;
-        public Bitmap imageLocation;
-        public PictureBox cardInGame;
+        public int Hp;
+        public int Atk;
+        public Bitmap ImageLocation;
+        public PictureBox CardInGame;
+        public bool Used;
         // ability1
         // ability2
 
         public PlayerCard(int Hp, int Atk, Bitmap Image)
         {
-            hp = Hp;
-            atk = Atk;
-            imageLocation = Image;
+            this.Hp = Hp;
+            this.Atk = Atk;
+            ImageLocation = Image;
         }
     }
 
     class SoldierCard
     {
-        public int hp;
-        public int atk;
-        public Bitmap imageLocation;
-        public PictureBox cardInGame;
+        public int Hp;
+        public int Atk;
+        public Bitmap ImageLocation;
+        public PictureBox CardInGame;
+        public bool Used;
         // ability1
 
         public SoldierCard(int Hp, int Atk, Bitmap Image)
         {
-            hp = Hp;
-            atk = Atk;
-            imageLocation = Image;
+            this.Hp = Hp;
+            this.Atk = Atk;
+            ImageLocation = Image;
         }
     }
 
