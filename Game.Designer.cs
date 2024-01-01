@@ -158,6 +158,7 @@
             // 
             // textWallet
             // 
+            this.textWallet.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textWallet.Location = new System.Drawing.Point(36, 439);
             this.textWallet.Name = "textWallet";
             this.textWallet.ReadOnly = true;
@@ -360,6 +361,7 @@
             // 
             // btnPlayerCardLeft
             // 
+            this.btnPlayerCardLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPlayerCardLeft.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlayerCardLeft.Location = new System.Drawing.Point(242, 481);
             this.btnPlayerCardLeft.Name = "btnPlayerCardLeft";
@@ -371,6 +373,7 @@
             // 
             // btnPlayerCardRight
             // 
+            this.btnPlayerCardRight.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPlayerCardRight.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlayerCardRight.Location = new System.Drawing.Point(346, 481);
             this.btnPlayerCardRight.Name = "btnPlayerCardRight";
@@ -470,6 +473,7 @@
             // 
             // RedBorderpanel1
             // 
+            this.RedBorderpanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RedBorderpanel1.BackColor = System.Drawing.Color.Transparent;
             this.RedBorderpanel1.Controls.Add(this.p2SecondaryCard3);
             this.RedBorderpanel1.Location = new System.Drawing.Point(381, 176);
@@ -494,6 +498,7 @@
             // 
             // RedBorderpanel2
             // 
+            this.RedBorderpanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RedBorderpanel2.BackColor = System.Drawing.Color.Transparent;
             this.RedBorderpanel2.Controls.Add(this.p2SecondaryCard2);
             this.RedBorderpanel2.Location = new System.Drawing.Point(519, 176);
@@ -517,6 +522,7 @@
             // 
             // RedBorderpanel3
             // 
+            this.RedBorderpanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RedBorderpanel3.BackColor = System.Drawing.Color.Transparent;
             this.RedBorderpanel3.Controls.Add(this.p2SecondaryCard1);
             this.RedBorderpanel3.Location = new System.Drawing.Point(653, 176);
@@ -540,6 +546,7 @@
             // 
             // RedBorderPlayer_panel
             // 
+            this.RedBorderPlayer_panel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RedBorderPlayer_panel.BackColor = System.Drawing.Color.Transparent;
             this.RedBorderPlayer_panel.Controls.Add(this.p2PlayerCard);
             this.RedBorderPlayer_panel.Location = new System.Drawing.Point(791, 176);
@@ -588,6 +595,7 @@
             // 
             // p2SecondaryCard7
             // 
+            this.p2SecondaryCard7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2SecondaryCard7.BackColor = System.Drawing.Color.Olive;
             this.p2SecondaryCard7.Location = new System.Drawing.Point(265, 42);
             this.p2SecondaryCard7.Name = "p2SecondaryCard7";

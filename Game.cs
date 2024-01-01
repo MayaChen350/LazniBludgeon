@@ -17,7 +17,7 @@ namespace LazniCardGame
 
         public static readonly Image BackOfTheCard = Properties.Resources.CardBack;
 
-        public Random random = new Random();
+        public static Random random = new Random();
 
         public int playerCardIndex = 0;
 
@@ -79,7 +79,7 @@ namespace LazniCardGame
             soldierCards = new SoldierCard[] { Allemanie_A, Allemanie_B, Allemapon_A, Allemapon_B, Almahad_A, Almahad_B, Anglestan_A, Anglestan_B, Canalgeria_A, Canalgeria_B, Criota_A, Criota_B };
 
             // shuffled array of the soldier cards
-            IList<SoldierCard> soldierCardsMixUp = EnumerableExtensions.Shuffle(soldierCards, random);
+            IList<SoldierCard> soldierCardsMixUp = soldierCards.Shuffle();
 
             int CardsUsedFromDeck = 0;
             for (int i = 0; i < p1SecCards.Length; i++)
@@ -98,8 +98,11 @@ namespace LazniCardGame
             }
         }
 
-        private void SetOpponentPlayerCard()
+        private void SetOpponent()
         {
+            // Set the opponent attack's pattern
+            noOpponentPlay = random.Next(0, 4);
+
             // Enable the card
             p2PlayerCard.Enabled = true;
 
@@ -160,7 +163,7 @@ namespace LazniCardGame
             p1SecondaryCard1.Enabled = true;
             p1SecondaryCard2.Enabled = true;
             p1SecondaryCard3.Enabled = true;
-
+            
         }
 
         /// <summary>
@@ -422,6 +425,11 @@ namespace LazniCardGame
 #endif
         }
 
+        /// <summary>
+        /// This button start the game in sort.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CheckBoxPlayerCardConfirm_CheckedChanged(object sender, EventArgs e)
         {
             // If the box is checked, make the player card controls invisible (small possibility to make them only disabled instead again in the future) and make the ability panel appears
@@ -436,7 +444,7 @@ namespace LazniCardGame
                 Console.WriteLine("Player card chosen.");
                 Console.WriteLine("Player card chosen.");
 #endif
-                SetOpponentPlayerCard();
+                SetOpponent();
 #if DEBUG
                 Console.WriteLine("-------------------------------");
 #endif
@@ -630,9 +638,12 @@ namespace LazniCardGame
                 // If each cards have played, finish the player's turn
                 if (!p1PlayerCard.Enabled && !p1SecondaryCard1.Enabled && !p1SecondaryCard2.Enabled && !p1SecondaryCard3.Enabled)
                 {
+#if DEBUG
+                    Console.WriteLine("Player turn is over.");
+#endif
                     SetForTurn();
-
                     // Start the opponent's turn
+                    OpponentTurn();
                 }
             }
         }
