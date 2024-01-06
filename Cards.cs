@@ -13,11 +13,11 @@ namespace LazniCardGame
         // ability1
         // ability2
 
-        public PlayerCard(int Hp, int Atk, Bitmap Image)
+        public PlayerCard(int hp, int atk, Bitmap image)
         {
-            this.Hp = Hp;
-            this.Atk = Atk;
-            ImageLocation = Image;
+            Hp = hp;
+            Atk = atk;
+            ImageLocation = image;
         }
     }
 
@@ -30,11 +30,11 @@ namespace LazniCardGame
         public bool Used;
         // ability1
 
-        public SoldierCard(int Hp, int Atk, Bitmap Image)
+        public SoldierCard(int hp, int atk, Bitmap image)
         {
-            this.Hp = Hp;
-            this.Atk = Atk;
-            ImageLocation = Image;
+            Hp = hp;
+            Atk = atk;
+            ImageLocation = image;
         }
     }
 
@@ -46,10 +46,10 @@ namespace LazniCardGame
          //ability1
          //ability2
 
-         public SpecialCard(int Hp, int Atk)
+         public SpecialCard(int hp, int atk)
          {
-             hp = Hp;
-             atk = Atk;
+             hp = hp;
+             atk = atk;
          }
      }
 
@@ -63,14 +63,14 @@ namespace LazniCardGame
 
     public partial class Game
     {
-        // readonly string[] PlayerCards = { "Allemanie", "Allemapon", "Almahad", "Anglestan", "Canalgeria", "Fitalie", "Garulmonie", "Khenaga", "Mulretonie", "Nitralvie", "Qaland", "Slovannoya", "Starvas", "TheLeaf", "Traicere", "Yedesna" };
+        // readonly string[] PlayerCards = { "Allemanie", "Allemapon", "Almahad", "Anglestan", "Canalgeria", "Fitalie", "Garulmonie", "Khenaga", "Mulretonie", "Nitralvie", "Qaland", "Slovanoya", "Starvas", "TheLeaf", "Traicere", "Yedesna" };
         // If we ever need it
 
         #region CARDS (110 CARDS)
         // Player cards (16 cards)
 
         //RESERVED FOR THE PROOF OF CONCEPT
-        PlayerCard Slovannoya = new PlayerCard(2850, 350, Properties.Resources.Slovanoya);
+        PlayerCard Slovanoya = new PlayerCard(2850, 350, Properties.Resources.Slovanoya);
         PlayerCard Allemapon = new PlayerCard(3000, 0, Properties.Resources.Allemapon);
         PlayerCard Anglestan = new PlayerCard(3450, 100, Properties.Resources.Anglestan);
         PlayerCard Garulmonie = new PlayerCard(3400, 150, Properties.Resources.Garulmonie);
@@ -86,7 +86,7 @@ namespace LazniCardGame
         PlayerCard Mulretonie = new PlayerCard(3000, 300);
         PlayerCard Nitralvie = new PlayerCard(3250, 250);
         PlayerCard Qaland = new PlayerCard(3500, 225);
-        //Slovannoya 
+        //Slovanoya 
         PlayerCard Starvas = new PlayerCard(3550, 250);
         PlayerCard TheLeaf = new PlayerCard(3750, 150);
         PlayerCard Traicere = new PlayerCard(3600, 100);
@@ -100,6 +100,8 @@ namespace LazniCardGame
         SoldierCard Allemapon_B = new SoldierCard(100, 25, Properties.Resources.Allemapon_B);
         SoldierCard Almahad_A = new SoldierCard(100, 70, Properties.Resources.Almahad_A);
         SoldierCard Almahad_B = new SoldierCard(100, 20, Properties.Resources.Almahad_B);
+        // SoldierCard Amelandia_A
+        // SoldierCard Amelandia_B
         SoldierCard Anglestan_A = new SoldierCard(200, 35, Properties.Resources.Anglestan_A);
         SoldierCard Anglestan_B = new SoldierCard(150, 75, Properties.Resources.Anglestan_B);
         SoldierCard Canalgeria_A = new SoldierCard(350, 0, Properties.Resources.Canalgerie_A);
@@ -117,48 +119,46 @@ namespace LazniCardGame
         SoldierCard Garulmonie_B = new SoldierCard(150, 75);
         SoldierCard Hongoru_A = new SoldierCard(150, 60);
         SoldierCard Hongoru_B = new SoldierCard(200, 0);
+        SoldierCard Huanvana_A
+        SoldierCard Huanvana_B
         SoldierCard Kaenia_A = new SoldierCard(100, 40);
         SoldierCard Kaenia_B = new SoldierCard(180, 60);
+        SoldierCard Kalontia_A
+        SoldierCard Kalontia_B
         SoldierCard Khenaga_A = new SoldierCard(150, 40);
         SoldierCard Khenaga_B = new SoldierCard(150, 75);
-        SoldierCard Lirigant_A = new SoldierCard(175, 50);
-        SoldierCard Lirigant_B = new SoldierCard(150, 80);
         SoldierCard Mageria_A = new SoldierCard(100, 50);
         SoldierCard Mageria_B = new SoldierCard(150,50);
         SoldierCard Maréquie_A = new SoldierCard(150, 50);
-        SoldierCard Maréquie_B = new SoldierCard(140, 40);*/
-        /* SoldierCard Mulretonie_A = new SoldierCard();
-         SoldierCard Mulretonie_B = new SoldierCard();
-         SoldierCard Neolantis_A = new SoldierCard();
-         SoldierCard Neolantis_B = new SoldierCard();
-         SoldierCard Nitralvie_A = new SoldierCard();
-         SoldierCard Nitralvie_B = new SoldierCard();
-         SoldierCard Onriance_A = new SoldierCard();
-         SoldierCard Onriance_B = new SoldierCard();
-         SoldierCard Qaland_A = new SoldierCard();
-         SoldierCard Qaland_B = new SoldierCard();
-         SoldierCard Slovanoya_A = new SoldierCard();
-         SoldierCard Slovanoya_B = new SoldierCard();
-         SoldierCard Starvas_A = new SoldierCard();
-         SoldierCard Starvas_B = new SoldierCard();
-         SoldierCard Suedemark_A = new SoldierCard();
-         SoldierCard Suedemark_B = new SoldierCard();
-         SoldierCard Suelly_A = new SoldierCard();
-         SoldierCard Suelly_B = new SoldierCard();
-         SoldierCard Tekay_A = new SoldierCard();
-         SoldierCard Tekay_B = new SoldierCard();
-         SoldierCard TheLeaf_A = new SoldierCard();
-         SoldierCard TheLeaf_B = new SoldierCard();
-         SoldierCard Traicere_A = new SoldierCard();
-         SoldierCard Traicere_B = new SoldierCard();
-         SoldierCard Tristan_A = new SoldierCard();
-         SoldierCard Tristan_B = new SoldierCard();
-         SoldierCard Tujar_A = new SoldierCard();
-         SoldierCard Tujar_B = new SoldierCard();
-         SoldierCard Ukraimea_A = new SoldierCard();
-         SoldierCard Ukraimea_B = new SoldierCard();
-         SoldierCard Yedesna_A = new SoldierCard();
-         SoldierCard Yedesna_B = new SoldierCard();*/
+        SoldierCard Maréquie_B = new SoldierCard(140, 40);
+        SoldierCard Mulretonie_A = new SoldierCard();
+        SoldierCard Mulretonie_B = new SoldierCard();
+        SoldierCard Neolantis_A = new SoldierCard();
+        SoldierCard Neolantis_B = new SoldierCard();
+        SoldierCard Nitralvie_A = new SoldierCard();
+        SoldierCard Nitralvie_B = new SoldierCard();
+        SoldierCard Onriance_A = new SoldierCard();
+        SoldierCard Onriance_B = new SoldierCard();
+        SoldierCard Qaland_A = new SoldierCard();
+        SoldierCard Qaland_B = new SoldierCard();
+        SoldierCard Qetu_A
+        SoldierCard Qetu_B
+        SoldierCard Slovanoya_A = new SoldierCard();
+        SoldierCard Slovanoya_B = new SoldierCard();
+        SoldierCard Starvas_A = new SoldierCard();
+        SoldierCard Starvas_B = new SoldierCard();
+        SoldierCard Tekay_A = new SoldierCard();
+        SoldierCard Tekay_B = new SoldierCard();
+        SoldierCard TheLeaf_A = new SoldierCard();
+        SoldierCard TheLeaf_B = new SoldierCard();
+        SoldierCard Traicere_A = new SoldierCard();
+        SoldierCard Traicere_B = new SoldierCard();
+        SoldierCard Tristan_A = new SoldierCard();
+        SoldierCard Tristan_B = new SoldierCard();
+        SoldierCard Tujar_A = new SoldierCard();
+        SoldierCard Tujar_B = new SoldierCard();
+        SoldierCard Yedesna_A = new SoldierCard();
+        SoldierCard Yedesna_B = new SoldierCard();*/
         // Special cards (16 cards)
         /* SpecialCard
          SpecialCard

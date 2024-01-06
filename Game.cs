@@ -52,7 +52,7 @@ namespace LazniCardGame
         {
             //PLAYER CARDS
             // arrays of all the current player cards in the game
-            playerCards = new PlayerCard[] { Slovannoya, Allemapon, Anglestan, Garulmonie };
+            playerCards = new PlayerCard[] { Slovanoya, Allemapon, Anglestan, Garulmonie };
 
 
             // player card value is the first one by default
@@ -107,7 +107,7 @@ namespace LazniCardGame
             p2PlayerCard.Enabled = true;
 
             // arrays of all the current player cards in the game
-            playerCards = new PlayerCard[] { Slovannoya, Allemapon, Anglestan, Garulmonie };
+            playerCards = new PlayerCard[] { Slovanoya, Allemapon, Anglestan, Garulmonie };
 
             // opponent player card value is random
             int cpuCardIndex = random.Next(0, playerCards.Length);
@@ -461,8 +461,8 @@ namespace LazniCardGame
         private void CheckAtk_CheckedChanged(object sender, EventArgs e)
         {
             // Log the viewed card as the attacking card
-            attackingCardPlayer = viewedCardPlayer != null ? viewedCardPlayer : null;
-            attackingCardSoldier = viewedCardPlayer != null ? null : viewedCardSoldier;
+            attackingCardPlayer = viewedCardPlayer ?? null;
+            attackingCardSoldier = viewedCardSoldier ?? null;
 #if DEBUG
             if (viewedCardPlayer != null)
             {
