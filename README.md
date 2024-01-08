@@ -16,15 +16,13 @@ Based on the original characters (Laznis) of:
 
 Hayxu (Creator of Laznis)
 
-Bingisdead (Almahad, Fitalie, Suedemark)
+Bingisdead (Almahad, Fitalie)
 
 Coldcross (Qaland, Allemapon, Garulmonie, Mulretonie, Maréquie)
 
 Dar0ix (Yedesna)
 
-Joey (TheLeaf, Lirigant)
-
-Opefulee (Suelly)
+Joey (TheLeaf)
 
 Lorkatoka (Canalgeria, Khenaga)
 
@@ -72,6 +70,8 @@ Flou
 Lexybooky
 
 Dregdom
+
+Opefulee
 
 -----
 
