@@ -1,0 +1,4 @@
+Anything lazni MUST follow that one line.
+No antialiased rendering.
+
+hello i am in yoyur computerds
