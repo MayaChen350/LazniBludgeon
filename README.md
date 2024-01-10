@@ -3,8 +3,9 @@
 -----
 (WORK IN PROGRESS)
 
+For game's rules and mechanics, read Rules.txt
 
-CREDITS:
+### CREDITS:
 
 Based on the original game conceived by Hayxu and Tristou
 
