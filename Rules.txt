@@ -37,7 +37,3 @@ Passive Effect: The effect is always active and doesn't count as a turn.
 MORE NOTES:
 
 For cards that mention "On field/battlefield", it usually means every cards active in game
-That's at least, for a 1v1 game
-haven't thought on what to do in 3+ game
-I also thought of a 2v2, but again, didn't really think thru for cards getting buffs from the number of cards alive
-Ig you could divide the buff they get
