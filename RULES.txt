@@ -37,3 +37,8 @@ Passive Effect: The effect is always active and doesn't count as a turn.
 MORE NOTES:
 
 For cards that mention "On field/battlefield", it usually means every cards active in game
+
+Cards fished after a full wipe out come with random stats, they can range from -20% to +20%
+
+In game, there are two of every cards. (As in, duplicates)
+This is a gamerule that can be turned off, or edited
