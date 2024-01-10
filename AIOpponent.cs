@@ -23,10 +23,8 @@ namespace LazniCardGame
             // Player card
             AttackCardCalculation(p2PlayerCardData, p1PlayerCardData);
 
-            AttackEachCardSeperately(cardChosenByOpponent);
-
             // Secondary cards (depends of which attack pattern the opponent uses)
-            /*switch (noOpponentPlay)
+            switch (noOpponentPlay)
             {
                 case 0:
                     AttackEachCardSeperately(cardChosenByOpponent);
@@ -37,7 +35,7 @@ namespace LazniCardGame
                 case 2:
                     AlternateBetweenEach(cardChosenByOpponent);
                     break;
-            }*/
+            }
             UpdateCards();
         }
 
