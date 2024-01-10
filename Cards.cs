@@ -1,15 +1,14 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+
 namespace LazniCardGame
 {
     #region CARDS TYPES
     class PlayerCard
     {
-        public int Hp;
-        public int Atk;
-        public Bitmap ImageLocation;
-        public PictureBox CardInGame;
-        public bool Used;
+        readonly public int Hp;
+        readonly public int Atk;
+        readonly public Bitmap ImageLocation;
         // ability1
         // ability2
 
@@ -23,11 +22,9 @@ namespace LazniCardGame
 
     class SoldierCard
     {
-        public int Hp;
-        public int Atk;
-        public Bitmap ImageLocation;
-        public PictureBox CardInGame;
-        public bool Used;
+        readonly public int Hp;
+        readonly public int Atk;
+        readonly public Bitmap ImageLocation;
         // ability1
 
         public SoldierCard(int hp, int atk, Bitmap image)
@@ -36,6 +33,24 @@ namespace LazniCardGame
             Atk = atk;
             ImageLocation = image;
         }
+    }
+
+    class MainCard
+    {
+        public int Hp;
+        public int Atk;
+        public Bitmap ImageLocation;
+        public PictureBox CardInGame;
+        public bool Used;
+    }
+
+    class SecondaryCard
+    {
+        public int Hp;
+        public int Atk;
+        public Bitmap ImageLocation;
+        public PictureBox CardInGame;
+        public bool Used;
     }
 
     // UNUSED FOR NOW
@@ -70,10 +85,10 @@ namespace LazniCardGame
         // Player cards (16 cards)
 
         //RESERVED FOR THE PROOF OF CONCEPT
-        PlayerCard Slovanoya = new PlayerCard(2850, 350, Properties.Resources.Slovanoya);
-        PlayerCard Allemapon = new PlayerCard(3000, 0, Properties.Resources.Allemapon);
-        PlayerCard Anglestan = new PlayerCard(3450, 100, Properties.Resources.Anglestan);
-        PlayerCard Garulmonie = new PlayerCard(3400, 150, Properties.Resources.Garulmonie);
+        readonly PlayerCard Slovanoya = new PlayerCard(2850, 350, Properties.Resources.Slovanoya);
+        readonly PlayerCard Allemapon = new PlayerCard(3000, 0, Properties.Resources.Allemapon);
+        readonly PlayerCard Anglestan = new PlayerCard(3450, 100, Properties.Resources.Anglestan);
+        readonly PlayerCard Garulmonie = new PlayerCard(3400, 150, Properties.Resources.Garulmonie);
 
         /*PlayerCard Allemanie = new PlayerCard(3500, 250);
         //Allemapon
@@ -94,20 +109,20 @@ namespace LazniCardGame
         // Soldier cards (64 cards)
 
         //RESERVED FOR THE PROOF OF CONCEPT
-        SoldierCard Allemanie_A = new SoldierCard(150, 50, Properties.Resources.Allemanie_A);
-        SoldierCard Allemanie_B = new SoldierCard(100, 100, Properties.Resources.Allemanie_B);
-        SoldierCard Allemapon_A = new SoldierCard(150, 75, Properties.Resources.Allemapon_A);
-        SoldierCard Allemapon_B = new SoldierCard(100, 25, Properties.Resources.Allemapon_B);
-        SoldierCard Almahad_A = new SoldierCard(100, 70, Properties.Resources.Almahad_A);
-        SoldierCard Almahad_B = new SoldierCard(100, 20, Properties.Resources.Almahad_B);
+        readonly SoldierCard Allemanie_A = new SoldierCard(150, 50, Properties.Resources.Allemanie_A);
+        readonly SoldierCard Allemanie_B = new SoldierCard(100, 100, Properties.Resources.Allemanie_B);
+        readonly SoldierCard Allemapon_A = new SoldierCard(150, 75, Properties.Resources.Allemapon_A);
+        readonly SoldierCard Allemapon_B = new SoldierCard(100, 25, Properties.Resources.Allemapon_B);
+        readonly SoldierCard Almahad_A = new SoldierCard(100, 70, Properties.Resources.Almahad_A);
+        readonly SoldierCard Almahad_B = new SoldierCard(100, 20, Properties.Resources.Almahad_B);
         // SoldierCard Amelandia_A
         // SoldierCard Amelandia_B
-        SoldierCard Anglestan_A = new SoldierCard(200, 35, Properties.Resources.Anglestan_A);
-        SoldierCard Anglestan_B = new SoldierCard(150, 75, Properties.Resources.Anglestan_B);
-        SoldierCard Canalgeria_A = new SoldierCard(350, 0, Properties.Resources.Canalgerie_A);
-        SoldierCard Canalgeria_B = new SoldierCard(150, 50, Properties.Resources.Canalgerie_B);
-        SoldierCard Criota_A = new SoldierCard(150, 90, Properties.Resources.Criota_A);
-        SoldierCard Criota_B = new SoldierCard(200, 30, Properties.Resources.Criota_B);
+        readonly SoldierCard Anglestan_A = new SoldierCard(200, 35, Properties.Resources.Anglestan_A);
+        readonly SoldierCard Anglestan_B = new SoldierCard(150, 75, Properties.Resources.Anglestan_B);
+        readonly SoldierCard Canalgeria_A = new SoldierCard(350, 0, Properties.Resources.Canalgerie_A);
+        readonly SoldierCard Canalgeria_B = new SoldierCard(150, 50, Properties.Resources.Canalgerie_B);
+        readonly SoldierCard Criota_A = new SoldierCard(150, 90, Properties.Resources.Criota_A);
+        readonly SoldierCard Criota_B = new SoldierCard(200, 30, Properties.Resources.Criota_B);
 
         /*SoldierCard Ekota_A = new SoldierCard(100,20);
         SoldierCard Ekota_B = new SoldierCard(150, 50);

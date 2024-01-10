@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+
 namespace LazniCardGame
 {
     public partial class Game : Form
@@ -24,8 +25,8 @@ namespace LazniCardGame
         bool IsAttacking = false;
 
         // empty player cards' data
-        PlayerCard p1PlayerCardData;
-        PlayerCard p2PlayerCardData;
+        MainCard p1PlayerCardData = new MainCard();
+        MainCard p2PlayerCardData = new MainCard();
         PlayerCard[] playerCards;
 
 
@@ -33,20 +34,27 @@ namespace LazniCardGame
         PictureBox[] p1SecCards;
         PictureBox[] p2SecCards;
 
-        // arrays of the empty secondary cards' data
-        SoldierCard[] p1SecCardsData;
-        SoldierCard[] p2SecCardsData;
+        // empty secondary cards' data
+        SecondaryCard[] p1SecCardsData = new SecondaryCard[3];
+        SecondaryCard[] p2SecCardsData = new SecondaryCard[3];
+
+        SecondaryCard p1SecondaryCardData1 = new SecondaryCard();
+        SecondaryCard p1SecondaryCardData2 = new SecondaryCard();
+        SecondaryCard p1SecondaryCardData3 = new SecondaryCard();
+        SecondaryCard p2SecondaryCardData1 = new SecondaryCard();
+        SecondaryCard p2SecondaryCardData2 = new SecondaryCard();
+        SecondaryCard p2SecondaryCardData3 = new SecondaryCard();
         SoldierCard[] soldierCards;
 
         // card currently viewed
-        PlayerCard viewedCardPlayer;
+        MainCard viewedCardPlayer;
 
-        SoldierCard viewedCardSoldier;
+        SecondaryCard viewedCardSoldier;
 
         // card attacking
-        PlayerCard attackingCardPlayer;
+        MainCard attackingCardPlayer;
 
-        SoldierCard attackingCardSoldier;
+        SecondaryCard attackingCardSoldier;
 
         private void SetCards()
         {
@@ -56,7 +64,9 @@ namespace LazniCardGame
 
 
             // player card value is the first one by default
-            p1PlayerCardData = playerCards[playerCardIndex];
+            p1PlayerCardData.Hp = playerCards[playerCardIndex].Hp;
+            p1PlayerCardData.Atk = playerCards[playerCardIndex].Atk;
+            p1PlayerCardData.ImageLocation = playerCards[playerCardIndex].ImageLocation;
             p1PlayerCard.Image = p1PlayerCardData.ImageLocation;
 
             // Opponent player card's value is set with another method called when the player card is chosen
@@ -72,8 +82,8 @@ namespace LazniCardGame
             p2SecCards = new PictureBox[] { p2SecondaryCard1, p2SecondaryCard2, p2SecondaryCard3 };
 
             // arrays of the empty cards' data
-            p1SecCardsData = new SoldierCard[3];
-            p2SecCardsData = new SoldierCard[3];
+            p1SecCardsData = new SecondaryCard[] { p1SecondaryCardData1, p1SecondaryCardData2, p1SecondaryCardData3 };
+            p2SecCardsData = new SecondaryCard[] { p2SecondaryCardData1, p2SecondaryCardData2, p2SecondaryCardData3 };
 
             // arrays of all the current soldier cards in the game
             soldierCards = new SoldierCard[] { Allemanie_A, Allemanie_B, Allemapon_A, Allemapon_B, Almahad_A, Almahad_B, Anglestan_A, Anglestan_B, Canalgeria_A, Canalgeria_B, Criota_A, Criota_B };
@@ -85,16 +95,36 @@ namespace LazniCardGame
             for (int i = 0; i < p1SecCards.Length; i++)
             {
                 // Initiate each secondary cards on the player side
-                p1SecCardsData[i] = soldierCardsMixUp[CardsUsedFromDeck];
+                p1SecCardsData[i].Hp = soldierCardsMixUp[CardsUsedFromDeck].Hp;
+                p1SecCardsData[i].Atk = soldierCardsMixUp[CardsUsedFromDeck].Atk;
+                p1SecCardsData[i].ImageLocation = soldierCardsMixUp[CardsUsedFromDeck].ImageLocation;
                 p1SecCards[i].Image = soldierCardsMixUp[CardsUsedFromDeck].ImageLocation;
                 p1SecCardsData[i].CardInGame = p1SecCards[i];
                 CardsUsedFromDeck++;
 
                 // Initiate each secondary cards on the other player side
-                p2SecCardsData[i] = soldierCardsMixUp[CardsUsedFromDeck];
+                p2SecCardsData[i].Hp = soldierCardsMixUp[CardsUsedFromDeck].Hp;
+                p2SecCardsData[i].Atk = soldierCardsMixUp[CardsUsedFromDeck].Atk;
+                p2SecCardsData[i].ImageLocation = soldierCardsMixUp[CardsUsedFromDeck].ImageLocation;
                 p2SecCards[i].Image = soldierCardsMixUp[CardsUsedFromDeck].ImageLocation;
                 p2SecCardsData[i].CardInGame = p2SecCards[i];
                 CardsUsedFromDeck++;
+            }
+
+            // Activate all the cards in case
+            p1PlayerCard.Visible = true;
+            p1PlayerCard.Enabled = true;
+
+            p2PlayerCard.Visible = true;
+            p2PlayerCard.Enabled = true;
+            
+            for (int i = 0; i < p1SecCards.Length; i++)
+            {
+                p1SecCards[i].Visible = true;
+                p1SecCards[i].Enabled = true;
+
+                p2SecCards[i].Visible = true;
+                p2SecCards[i].Enabled = true;
             }
         }
 
@@ -115,7 +145,9 @@ namespace LazniCardGame
                 cpuCardIndex = random.Next(0, playerCards.Length);
 
             // Load the card
-            p2PlayerCardData = playerCards[cpuCardIndex];
+            p2PlayerCardData.Hp = playerCards[cpuCardIndex].Hp;
+            p2PlayerCardData.Atk = playerCards[cpuCardIndex].Atk;
+            p2PlayerCardData.ImageLocation = playerCards[cpuCardIndex].ImageLocation;
             p2PlayerCard.Image = playerCards[cpuCardIndex].ImageLocation;
 
             // Link the player card data to the card in game
@@ -163,7 +195,7 @@ namespace LazniCardGame
             p1SecondaryCard1.Enabled = true;
             p1SecondaryCard2.Enabled = true;
             p1SecondaryCard3.Enabled = true;
-            
+
         }
 
         /// <summary>
@@ -171,7 +203,7 @@ namespace LazniCardGame
         /// </summary>
         bool IsCardShownSecondary;
 
-        private void ShowCard(PlayerCard pCardData)
+        private void ShowCard(MainCard pCardData)
         {
             // Change the ViewCard picture box and its labels for the selected Player card in the parameter
             CardView.Image = pCardData.ImageLocation;
@@ -205,7 +237,7 @@ namespace LazniCardGame
 #endif
         }
 
-        private void ShowCard(SoldierCard[] pCardData, int index)
+        private void ShowCard(SecondaryCard[] pCardData, int index)
         {
             // Change the ViewCard picture box and its labels for the selected Soldier card in the parameters
             CardView.Image = pCardData[index].ImageLocation;
@@ -239,7 +271,7 @@ namespace LazniCardGame
 #endif
         }
 
-        private void AttackCardCalculation(PlayerCard pCardAtk, PlayerCard pCardDef)
+        private void AttackCardCalculation(MainCard pCardAtk, MainCard pCardDef)
         {
             // cardDef.hp - cardAtk.atk × (100% -cardDef.def%)
             pCardDef.Hp -= pCardAtk.Atk/*(1 - pCardDef.def)*/;
@@ -249,7 +281,7 @@ namespace LazniCardGame
 #endif
         }
 
-        private void AttackCardCalculation(PlayerCard pCardAtk, SoldierCard pCardDef)
+        private void AttackCardCalculation(MainCard pCardAtk, SecondaryCard pCardDef)
         {
             // cardDef.hp - cardAtk.atk × (100% -cardDef.def%)
             pCardDef.Hp -= pCardAtk.Atk/*(1 - pCardDef.def)*/;
@@ -259,7 +291,7 @@ namespace LazniCardGame
 #endif
         }
 
-        private void AttackCardCalculation(SoldierCard pCardAtk, SoldierCard pCardDef)
+        private void AttackCardCalculation(SecondaryCard pCardAtk, SecondaryCard pCardDef)
         {
             // card.hp - card.atk × (100% -card.def%)
             pCardDef.Hp -= pCardAtk.Atk/*(1 - pCardDef.def)*/;
@@ -269,7 +301,7 @@ namespace LazniCardGame
 #endif
         }
 
-        private void AttackCardCalculation(SoldierCard pCardAtk, PlayerCard pCardDef)
+        private void AttackCardCalculation(SecondaryCard pCardAtk, MainCard pCardDef)
         {
             // card.hp - card.atk × (100% -card.def%)
             pCardDef.Hp -= pCardAtk.Atk/*(1 - pCardDef.def)*/;
@@ -284,7 +316,8 @@ namespace LazniCardGame
         /// </summary>
         private void UpdateCards()
         {
-            foreach (SoldierCard cards in p2SecCardsData)
+            #region P2 Cards
+            foreach (SecondaryCard cards in p2SecCardsData)
             {
 #if DEBUG
                 Console.WriteLine($"Card has {cards.Hp}hp.");
@@ -307,15 +340,34 @@ namespace LazniCardGame
                 Console.WriteLine("P2 Card visibility set to false. You won!");
             Console.WriteLine("-------------------------------");
 #endif
+            #endregion
 
-            /*foreach (SoldierCard cards in p1SecCardsData)
+            #region P1 Cards
+            foreach (SecondaryCard cards in p1SecCardsData)
             {
 #if DEBUG
-                Console.WriteLine($"Card has {cards.hp}hp.");
+                Console.WriteLine($"Card has {cards.Hp}hp.");
 #endif
-                if (cards.hp <= 0)
-                    cards.cardInGame.Visible = false;
-            }*/
+                // Disable cards when their hp reached 0
+                cards.CardInGame.Visible = cards.Hp > 0;
+#if DEBUG
+                if (cards.Hp <= 0)
+                    Console.WriteLine("Card visibility set to false.");
+                Console.WriteLine("-------------------------------");
+#endif
+            }
+
+#if DEBUG
+            Console.WriteLine($"P1 Card has {p1PlayerCardData.Hp}hp.");
+#endif
+            p1PlayerCardData.CardInGame.Visible = p1PlayerCardData.Hp > 0;
+#if DEBUG
+            if (p2PlayerCardData.Hp <= 0)
+                Console.WriteLine("P1 Card visibility set to false. You lost!");
+            Console.WriteLine("-------------------------------");
+#endif
+            #endregion
+
         }
 
         #region GAME INTERACTION METHODS
@@ -396,7 +448,9 @@ namespace LazniCardGame
             else playerCardIndex = playerCards.Length - 1;
 
             // Refresh the player card data
-            p1PlayerCardData = playerCards[playerCardIndex];
+            p1PlayerCardData.Hp = playerCards[playerCardIndex].Hp;
+            p1PlayerCardData.Atk = playerCards[playerCardIndex].Atk;
+            p1PlayerCardData.ImageLocation = playerCards[playerCardIndex].ImageLocation;
             p1PlayerCard.Image = p1PlayerCardData.ImageLocation;
 
             // Show the new current card in the ViewCard picture box
@@ -414,7 +468,9 @@ namespace LazniCardGame
             else playerCardIndex = 0;
 
             // Refresh the player card data
-            p1PlayerCardData = playerCards[playerCardIndex];
+            p1PlayerCardData.Hp = playerCards[playerCardIndex].Hp;
+            p1PlayerCardData.Atk = playerCards[playerCardIndex].Atk;
+            p1PlayerCardData.ImageLocation = playerCards[playerCardIndex].ImageLocation;
             p1PlayerCard.Image = p1PlayerCardData.ImageLocation;
 
             // Show the new current card in the ViewCard picture box
@@ -581,8 +637,9 @@ namespace LazniCardGame
         {
             CardEnabledStateChange(p2SecondaryCard3, 7);
         }
-        #endregion
-
+        /// <summary>
+        /// Starts an attack
+        /// </summary>
         private void btnConfirm_CheckedChanged(object sender, EventArgs e)
         {
             if (btnConfirm.Checked)
@@ -647,5 +704,6 @@ namespace LazniCardGame
                 }
             }
         }
+        #endregion
     }
 }

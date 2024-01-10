@@ -17,13 +17,13 @@ namespace LazniCardGame
             Console.WriteLine("-------------------------------");
 #endif
             // Which cards each opponent cards will attack
-            IList<SoldierCard> cardChosenByOpponent = p1SecCardsData.Shuffle();
+            IList<SecondaryCard> cardChosenByOpponent = p1SecCardsData.Shuffle();
 
 
             // Player card
             AttackCardCalculation(p2PlayerCardData, p1PlayerCardData);
 
-            AttachEachCardAtATime(cardChosenByOpponent);
+            AttackEachCardSeperately(cardChosenByOpponent);
 
             // Secondary cards (depends of which attack pattern the opponent uses)
             /*switch (noOpponentPlay)
@@ -38,6 +38,7 @@ namespace LazniCardGame
                     AlternateBetweenEach(cardChosenByOpponent);
                     break;
             }*/
+            UpdateCards();
         }
 
         private int HowManyp2CardLeft()
@@ -48,7 +49,7 @@ namespace LazniCardGame
             return count;
         }
 
-        private void AttackEachCardSeperately(IList<SoldierCard> p1Cards)
+        private void AttackEachCardSeperately(IList<SecondaryCard> p1Cards)
         {
             // Secondary Cards
             int numberOfCards = HowManyp2CardLeft();
@@ -56,11 +57,11 @@ namespace LazniCardGame
                 AttackCardCalculation(p2SecCardsData[i], p1Cards[i]);
         }
 
-        private void AttachEachCardAtATime(IList<SoldierCard> p1Cards)
+        private void AttachEachCardAtATime(IList<SecondaryCard> p1Cards)
         {
 
         }
 
-        private void AlternateBetweenEach(IList<SoldierCard> p1Cards) { }
+        private void AlternateBetweenEach(IList<SecondaryCard> p1Cards) { }
     }
 }
