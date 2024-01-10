@@ -9,7 +9,7 @@ For game's rules and mechanics, read Rules.txt
 
 Based on the original game conceived by Hayxu and Tristou
 
-Card designs by Hayxu
+Card Text, Design and Art by Hayxu
 
 -----
 
