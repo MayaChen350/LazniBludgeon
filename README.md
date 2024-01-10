@@ -1,4 +1,4 @@
-# Lazni Sphere Wars
+# Lazni Legends
 
 -----
 (WORK IN PROGRESS)
