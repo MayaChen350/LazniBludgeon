@@ -1,4 +1,4 @@
-# Lazni Legends
+# Lazni Bludgeon
 
 -----
 (WORK IN PROGRESS)
