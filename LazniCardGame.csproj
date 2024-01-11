@@ -73,6 +73,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cards.cs" />
+    <Compile Include="Cheats.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="Game.cs">
       <SubType>Form</SubType>

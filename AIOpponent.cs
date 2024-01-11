@@ -19,11 +19,11 @@ namespace LazniCardGame
             // Which cards each opponent cards will attack
             IList<SecondaryCard> cardChosenByOpponent = p1SecCardsData.Shuffle();
 
-
             // Player card
             AttackCardCalculation(p2PlayerCardData, p1PlayerCardData);
 
-            // Secondary cards (depends of which attack pattern the opponent uses)
+            AttackEachCardSeperately(cardChosenByOpponent);
+          /*  // Secondary cards (depends of which attack pattern the opponent uses)
             switch (noOpponentPlay)
             {
                 case 0:
@@ -35,7 +35,7 @@ namespace LazniCardGame
                 case 2:
                     AlternateBetweenEach(cardChosenByOpponent);
                     break;
-            }
+            }*/
             UpdateCards();
         }
 
@@ -47,12 +47,37 @@ namespace LazniCardGame
             return count;
         }
 
+        private int[] CardAttackedIndexes(IList<SecondaryCard> p1Cards)
+        {
+            int[] indexes = new int[3];
+            int numberOfCards = HowManyp2CardLeft();
+            for (int i = 0; i < numberOfCards; i++)
+            {
+                if (p1Cards[i].Hp <= 0)
+                {
+                    i -= 2;
+                    continue;
+                }
+                indexes[i] = i;
+            }
+#if DEBUG
+            Console.Write("Opponent cards will attack:");
+            for (int i = 0; i < numberOfCards - 1; i++)
+                Console.Write($" {indexes[i]}");
+            Console.WriteLine($" {indexes[numberOfCards - 1]}");
+            Console.WriteLine("-------------------------------");
+#endif
+            return indexes;
+        }
+
         private void AttackEachCardSeperately(IList<SecondaryCard> p1Cards)
         {
             // Secondary Cards
             int numberOfCards = HowManyp2CardLeft();
-            for (int i = 0; i < numberOfCards; i++)
-                AttackCardCalculation(p2SecCardsData[i], p1Cards[i]);
+            int[] indexes = CardAttackedIndexes(p1Cards);
+            for (int i = 0; i < p2SecCardsData.Length; i++)
+                AttackCardCalculation(p2SecCardsData[i], p1Cards[indexes[i]]);
+
         }
 
         private void AttachEachCardAtATime(IList<SecondaryCard> p1Cards)

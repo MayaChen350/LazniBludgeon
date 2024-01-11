@@ -117,7 +117,7 @@ namespace LazniCardGame
 
             p2PlayerCard.Visible = true;
             p2PlayerCard.Enabled = true;
-            
+
             for (int i = 0; i < p1SecCards.Length; i++)
             {
                 p1SecCards[i].Visible = true;
@@ -161,6 +161,9 @@ namespace LazniCardGame
 
         private void SetGame()
         {
+            // Things I only use for debugging and trying stuff
+            // It should ONLY be visible and accessible when in DEBUG mode
+
             // Activate the player card selector
             checkBoxPlayerCardConfirm.Visible = true;
             btnPlayerCardLeft.Visible = true;
@@ -693,7 +696,7 @@ namespace LazniCardGame
                 checkAtk.Checked = false;
                 UpdateCards();
                 // If each cards have played, finish the player's turn
-                if (!p1PlayerCard.Enabled && !p1SecondaryCard1.Enabled && !p1SecondaryCard2.Enabled && !p1SecondaryCard3.Enabled)
+                if (!p1PlayerCard.Enabled && (!p1SecondaryCard1.Enabled || !p1SecondaryCard1.Visible) && (!p1SecondaryCard2.Enabled || !p1SecondaryCard2.Visible) && (!p1SecondaryCard3.Enabled || !p1SecondaryCard3.Visible))
                 {
 #if DEBUG
                     Console.WriteLine("Player turn is over.");
