@@ -33,6 +33,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.startGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startGameToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cheatsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.theKillerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.healOf87ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deathEraserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textHP = new System.Windows.Forms.TextBox();
             this.textATK = new System.Windows.Forms.TextBox();
             this.textWallet = new System.Windows.Forms.TextBox();
@@ -83,10 +87,6 @@
             this.p1SecondaryCard1 = new System.Windows.Forms.PictureBox();
             this.p1PlayerCard = new System.Windows.Forms.PictureBox();
             this.cheatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cheatsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.theKillerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.healOf87ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deathEraserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.menuAbilities.SuspendLayout();
             this.RedBorderpanel1.SuspendLayout();
@@ -134,9 +134,38 @@
             // startGameToolStripMenuItem1
             // 
             this.startGameToolStripMenuItem1.Name = "startGameToolStripMenuItem1";
-            this.startGameToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.startGameToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.startGameToolStripMenuItem1.Text = "&New game";
             this.startGameToolStripMenuItem1.Click += new System.EventHandler(this.StartGameToolStripMenuItem1_Click);
+            // 
+            // cheatsToolStripMenuItem1
+            // 
+            this.cheatsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.theKillerToolStripMenuItem,
+            this.healOf87ToolStripMenuItem,
+            this.deathEraserToolStripMenuItem});
+            this.cheatsToolStripMenuItem1.Name = "cheatsToolStripMenuItem1";
+            this.cheatsToolStripMenuItem1.Size = new System.Drawing.Size(202, 20);
+            this.cheatsToolStripMenuItem1.Text = "Cheats (TESTING PURPOSES ONLY)";
+            // 
+            // theKillerToolStripMenuItem
+            // 
+            this.theKillerToolStripMenuItem.Name = "theKillerToolStripMenuItem";
+            this.theKillerToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.theKillerToolStripMenuItem.Text = "Instant kill";
+            this.theKillerToolStripMenuItem.Click += new System.EventHandler(this.theKillerToolStripMenuItem_Click);
+            // 
+            // healOf87ToolStripMenuItem
+            // 
+            this.healOf87ToolStripMenuItem.Name = "healOf87ToolStripMenuItem";
+            this.healOf87ToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.healOf87ToolStripMenuItem.Text = "Heal 100% hp";
+            // 
+            // deathEraserToolStripMenuItem
+            // 
+            this.deathEraserToolStripMenuItem.Name = "deathEraserToolStripMenuItem";
+            this.deathEraserToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.deathEraserToolStripMenuItem.Text = "Revive (if ever necessary)";
             // 
             // textHP
             // 
@@ -740,40 +769,6 @@
             this.cheatsToolStripMenuItem.Name = "cheatsToolStripMenuItem";
             this.cheatsToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
             this.cheatsToolStripMenuItem.Text = "Cheats";
-            // 
-            // cheatsToolStripMenuItem1
-            // 
-            this.cheatsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.theKillerToolStripMenuItem,
-            this.healOf87ToolStripMenuItem,
-            this.deathEraserToolStripMenuItem});
-            this.cheatsToolStripMenuItem1.Name = "cheatsToolStripMenuItem1";
-            this.cheatsToolStripMenuItem1.Size = new System.Drawing.Size(55, 20);
-            this.cheatsToolStripMenuItem1.Text = "Cheats";
-#if DEBUG
-            this.cheatsToolStripMenuItem1.Visible = true;
-#else
-            this.cheatsToolStripMenuItem1.Visible = false;
-#endif
-
-            // 
-            // theKillerToolStripMenuItem
-            // 
-            this.theKillerToolStripMenuItem.Name = "theKillerToolStripMenuItem";
-            this.theKillerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.theKillerToolStripMenuItem.Text = "The Killer";
-            // 
-            // healOf87ToolStripMenuItem
-            // 
-            this.healOf87ToolStripMenuItem.Name = "healOf87ToolStripMenuItem";
-            this.healOf87ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.healOf87ToolStripMenuItem.Text = "Heal of 87";
-            // 
-            // deathEraserToolStripMenuItem
-            // 
-            this.deathEraserToolStripMenuItem.Name = "deathEraserToolStripMenuItem";
-            this.deathEraserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deathEraserToolStripMenuItem.Text = "Death Eraser";
             // 
             // Game
             // 

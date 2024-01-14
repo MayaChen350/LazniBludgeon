@@ -23,27 +23,27 @@ namespace LazniCardGame
             AttackCardCalculation(p2PlayerCardData, p1PlayerCardData);
 
             AttackEachCardSeperately(cardChosenByOpponent);
-          /*  // Secondary cards (depends of which attack pattern the opponent uses)
-            switch (noOpponentPlay)
-            {
-                case 0:
-                    AttackEachCardSeperately(cardChosenByOpponent);
-                    break;
-                case 1:
-                    AttachEachCardAtATime(cardChosenByOpponent);
-                    break;
-                case 2:
-                    AlternateBetweenEach(cardChosenByOpponent);
-                    break;
-            }*/
+            /*  // Secondary cards (depends of which attack pattern the opponent uses)
+              switch (noOpponentPlay)
+              {
+                  case 0:
+                      AttackEachCardSeperately(cardChosenByOpponent);
+                      break;
+                  case 1:
+                      AttachEachCardAtATime(cardChosenByOpponent);
+                      break;
+                  case 2:
+                      AlternateBetweenEach(cardChosenByOpponent);
+                      break;
+              }*/
             UpdateCards();
         }
 
         private int HowManyp2CardLeft()
         {
             int count = 0;
-            for (int i = 0; i < 3; i++)
-                count += p2SecCardsData[i].Hp > 0 ? 1 : 0;
+            foreach (SecondaryCard card in p2SecCardsData)
+                count += card.Hp > 0 ? 1 : 0;
             return count;
         }
 
@@ -55,10 +55,15 @@ namespace LazniCardGame
             {
                 if (p1Cards[i].Hp <= 0)
                 {
-                    i -= 2;
-                    continue;
+                    for (int j = 0; j < 3; j++)
+                        if (p1Cards[j].Hp > 0)
+                        {
+                            indexes[i] = j;
+                            break;
+                        }
                 }
-                indexes[i] = i;
+                else
+                    indexes[i] = i;
             }
 #if DEBUG
             Console.Write("Opponent cards will attack:");

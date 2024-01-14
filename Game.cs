@@ -707,6 +707,12 @@ namespace LazniCardGame
                 }
             }
         }
+        #region CHEATS
+        private void theKillerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TheKiller();
+        }
+        #endregion
         #endregion
     }
 }
