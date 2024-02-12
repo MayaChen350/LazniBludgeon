@@ -20,7 +20,7 @@
 #else
             // CHEATS SHOULD NEVER BE AVAILABLE IN A RELEASE
             throw new System.Exception("Cheats are only available in DEBUG mode.");
-            // If this error happens, please set the property Visible of cheatsToolStripMenuItem1 in Game.cs [Design] or set cheatsToolStripMenuItem1.Visible to Game.Designer.cs to FALSE
+            // If this error happens, please set the property Visible of cheatsToolStripMenuItem1 in Game.cs [Design] or set cheatsToolStripMenuItem1.Visible in Game.Designer.cs to FALSE
             // It is generated code, and for some reasons it cannot be changed while running the program, so it's safer to change it the first way
 #endif
         }

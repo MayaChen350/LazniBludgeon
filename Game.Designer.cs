@@ -87,6 +87,7 @@
             this.p1SecondaryCard1 = new System.Windows.Forms.PictureBox();
             this.p1PlayerCard = new System.Windows.Forms.PictureBox();
             this.cheatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gameLogs = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.menuAbilities.SuspendLayout();
             this.RedBorderpanel1.SuspendLayout();
@@ -479,10 +480,10 @@
             this.checkAtk.BackColor = System.Drawing.Color.Brown;
             this.checkAtk.Enabled = false;
             this.checkAtk.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Bold);
-            this.checkAtk.Location = new System.Drawing.Point(3, 509);
+            this.checkAtk.Location = new System.Drawing.Point(0, 509);
             this.checkAtk.Name = "checkAtk";
             this.checkAtk.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkAtk.Size = new System.Drawing.Size(197, 89);
+            this.checkAtk.Size = new System.Drawing.Size(200, 89);
             this.checkAtk.TabIndex = 4;
             this.checkAtk.Text = "ATTACK";
             this.checkAtk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -496,10 +497,10 @@
             this.btnConfirm.Enabled = false;
             this.btnConfirm.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
             this.btnConfirm.ForeColor = System.Drawing.Color.Lime;
-            this.btnConfirm.Location = new System.Drawing.Point(3, 620);
+            this.btnConfirm.Location = new System.Drawing.Point(3, 611);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnConfirm.Size = new System.Drawing.Size(194, 42);
+            this.btnConfirm.Size = new System.Drawing.Size(194, 51);
             this.btnConfirm.TabIndex = 3;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -770,11 +771,29 @@
             this.cheatsToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
             this.cheatsToolStripMenuItem.Text = "Cheats";
             // 
+            // gameLogs
+            // 
+            this.gameLogs.AcceptsReturn = true;
+            this.gameLogs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gameLogs.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.gameLogs.CausesValidation = false;
+            this.gameLogs.Font = new System.Drawing.Font("Consolas", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameLogs.Location = new System.Drawing.Point(12, 247);
+            this.gameLogs.Multiline = true;
+            this.gameLogs.Name = "gameLogs";
+            this.gameLogs.ReadOnly = true;
+            this.gameLogs.Size = new System.Drawing.Size(235, 186);
+            this.gameLogs.TabIndex = 46;
+            this.gameLogs.TabStop = false;
+            this.gameLogs.WordWrap = false;
+            this.gameLogs.TextChanged += new System.EventHandler(this.gameLogs_TextChanged);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1629, 719);
+            this.Controls.Add(this.gameLogs);
             this.Controls.Add(this.RedBorderPlayer_panel);
             this.Controls.Add(this.RedBorderpanel3);
             this.Controls.Add(this.RedBorderpanel2);
@@ -819,7 +838,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Game";
-            this.Text = "The Lazni Card Game (ALPHA)";
+            this.Text = "Lazni Bludgeon (ALPHA)";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.menuAbilities.ResumeLayout(false);
@@ -907,6 +926,7 @@
         private System.Windows.Forms.ToolStripMenuItem theKillerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem healOf87ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deathEraserToolStripMenuItem;
+        private System.Windows.Forms.TextBox gameLogs;
     }
 }
 
