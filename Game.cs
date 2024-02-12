@@ -38,6 +38,8 @@ namespace LazniCardGame
         // empty secondary cards' data
         SecondaryCard[] p1SecCardsData = new SecondaryCard[3];
         SecondaryCard[] p2SecCardsData = new SecondaryCard[3];
+        // shuffled array of the soldier cards
+        IList<SoldierCard> soldierCardsMixUp;
 
         SecondaryCard p1SecondaryCardData1 = new SecondaryCard();
         SecondaryCard p1SecondaryCardData2 = new SecondaryCard();
@@ -84,29 +86,13 @@ namespace LazniCardGame
             soldierCards = new SoldierCard[] { Allemanie_A, Allemanie_B, Allemapon_A, Allemapon_B, Almahad_A, Almahad_B, Anglestan_A, Anglestan_B, Canalgeria_A, Canalgeria_B, Criota_A, Criota_B };
 
             // shuffled array of the soldier cards
-            IList<SoldierCard> soldierCardsMixUp = soldierCards.Shuffle();
+            soldierCardsMixUp = soldierCards.Shuffle();
 
-            int CardsUsedFromDeck = 0;
-            for (int i = 0; i < p1SecCards.Length; i++)
-            {
-                // Initiate each secondary cards on the player side
-                p1SecCardsData[i].Name = soldierCardsMixUp[CardsUsedFromDeck].Name;
-                p1SecCardsData[i].Hp = soldierCardsMixUp[CardsUsedFromDeck].Hp;
-                p1SecCardsData[i].Atk = soldierCardsMixUp[CardsUsedFromDeck].Atk;
-                p1SecCardsData[i].ImageLocation = soldierCardsMixUp[CardsUsedFromDeck].ImageLocation;
-                p1SecCards[i].Image = soldierCardsMixUp[CardsUsedFromDeck].ImageLocation;
-                p1SecCardsData[i].CardInGame = p1SecCards[i];
-                CardsUsedFromDeck++;
+            // Initiate each secondary cards on the player side
+            RetrieveCards(p1SecCardsData, p1SecCards);
 
-                // Initiate each secondary cards on the other player side
-                p2SecCardsData[i].Name = soldierCardsMixUp[CardsUsedFromDeck].Name;
-                p2SecCardsData[i].Hp = soldierCardsMixUp[CardsUsedFromDeck].Hp;
-                p2SecCardsData[i].Atk = soldierCardsMixUp[CardsUsedFromDeck].Atk;
-                p2SecCardsData[i].ImageLocation = soldierCardsMixUp[CardsUsedFromDeck].ImageLocation;
-                p2SecCards[i].Image = soldierCardsMixUp[CardsUsedFromDeck].ImageLocation;
-                p2SecCardsData[i].CardInGame = p2SecCards[i];
-                CardsUsedFromDeck++;
-            }
+            // Initiate each secondary cards on the other player side
+            RetrieveCards(p2SecCardsData, p2SecCards);
 
             // Activate all the cards in case
             p1PlayerCard.Visible = true;
@@ -213,6 +199,28 @@ namespace LazniCardGame
             p1SecondaryCard2.Enabled = true;
             p1SecondaryCard3.Enabled = true;
 
+        }
+
+        /// <summary>
+        /// Retrieve secondary cards and get their data. Player cards should not be retrieved.
+        /// </summary>
+        /// <param name="cardsData">The array of cards data</param>
+        /// <param name="visibleCards">The array of cards in-game</param>
+        private void RetrieveCards(SecondaryCard[] cardsData, PictureBox[] visibleCards)
+        {
+            for (int i = 0; i < visibleCards.Length; i++)
+            {
+                // Initiate each cards on a player side
+                cardsData[i].Name = soldierCardsMixUp[0].Name;
+                cardsData[i].Hp = soldierCardsMixUp[0].Hp;
+                cardsData[i].Atk = soldierCardsMixUp[0].Atk;
+                cardsData[i].ImageLocation = soldierCardsMixUp[0].ImageLocation;
+                visibleCards[i].Image = soldierCardsMixUp[0].ImageLocation;
+                cardsData[i].CardInGame = visibleCards[0];
+                // Remove the cards from the deck and add them to the bottom
+                soldierCardsMixUp.Append(soldierCardsMixUp[0]);
+                soldierCardsMixUp.RemoveAt(0);
+            }
         }
 
         /// <summary>
