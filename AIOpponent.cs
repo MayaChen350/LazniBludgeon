@@ -19,7 +19,11 @@ namespace LazniCardGame
 
         private void OpponentTurn()
         {
-#if DEBUG 
+            // Fish for new cards if all player cards have died
+            if (!p2SecondaryCard1.Visible && !p2SecondaryCard2.Visible && !p2SecondaryCard3.Visible)
+                RetrieveCards(p2SecCardsData, p2SecCards);
+
+#if DEBUG
             Console.WriteLine("Opponent turn started.");
             Console.WriteLine("-------------------------------");
 #endif

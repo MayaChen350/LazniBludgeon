@@ -118,14 +118,15 @@ namespace LazniCardGame
         /// <param name="visibleCard">The card box in game to be refreshed.</param>
         private void RefreshOrSetCard(MainCard cardData, PictureBox visibleCard)
         {
+            // Link the card data to their card in game
+            cardData.CardInGame = p1PlayerCard;
+
             cardData.Name = playerCards[playerCardIndex].Name;
             cardData.Hp = playerCards[playerCardIndex].Hp;
             cardData.Atk = playerCards[playerCardIndex].Atk;
             cardData.ImageLocation = playerCards[playerCardIndex].ImageLocation;
             visibleCard.Image = cardData.ImageLocation;
 
-            // Link the card data to their card in game
-            cardData.CardInGame = p1PlayerCard;
         }
 
         private void SetOpponent()
@@ -144,15 +145,16 @@ namespace LazniCardGame
             while (cpuCardIndex == playerCardIndex)
                 cpuCardIndex = random.Next(0, playerCards.Length);
 
+
+            // Link the player card data to the card in game
+            p2PlayerCardData.CardInGame = p2PlayerCard;
+
             // Load the card
             p2PlayerCardData.Name = playerCards[cpuCardIndex].Name;
             p2PlayerCardData.Hp = playerCards[cpuCardIndex].Hp;
             p2PlayerCardData.Atk = playerCards[cpuCardIndex].Atk;
             p2PlayerCardData.ImageLocation = playerCards[cpuCardIndex].ImageLocation;
             p2PlayerCard.Image = playerCards[cpuCardIndex].ImageLocation;
-
-            // Link the player card data to the card in game
-            p2PlayerCardData.CardInGame = p2PlayerCard;
 
 #if DEBUG
             Console.WriteLine("Opponent's player card is now set.");
@@ -184,6 +186,10 @@ namespace LazniCardGame
         }
         private void SetForTurn()
         {
+            // Fish for new cards if all player cards have died
+            if (!p1SecondaryCard1.Visible && !p1SecondaryCard2.Visible && !p1SecondaryCard3.Visible)
+                RetrieveCards(p1SecCardsData, p1SecCards);
+
             // Reset the selected card view
             CardView.Image = BackOfTheCard;
             textHP.Text = " ";
@@ -211,12 +217,12 @@ namespace LazniCardGame
             for (int i = 0; i < visibleCards.Length; i++)
             {
                 // Initiate each cards on a player side
+                cardsData[i].CardInGame = visibleCards[0];
                 cardsData[i].Name = soldierCardsMixUp[0].Name;
                 cardsData[i].Hp = soldierCardsMixUp[0].Hp;
                 cardsData[i].Atk = soldierCardsMixUp[0].Atk;
                 cardsData[i].ImageLocation = soldierCardsMixUp[0].ImageLocation;
                 visibleCards[i].Image = soldierCardsMixUp[0].ImageLocation;
-                cardsData[i].CardInGame = visibleCards[0];
                 // Remove the cards from the deck and add them to the bottom
                 soldierCardsMixUp.Append(soldierCardsMixUp[0]);
                 soldierCardsMixUp.RemoveAt(0);
@@ -301,6 +307,7 @@ namespace LazniCardGame
             // cardDef.hp - cardAtk.atk × (100% -cardDef.def%)
             pCardDef.Hp -= pCardAtk.Atk/*(1 - pCardDef.def)*/;
 
+            GameLogsTextChanged();
             gameLogs.Text += $"> {pCardAtk.Name} attacked {pCardDef.Name} for {pCardAtk.Atk} dmg\r\n";
 #if DEBUG
             Console.WriteLine($"PLAYER HAS DONE {pCardAtk.Atk} DMG to PLAYER (Before: {pCardDef.Hp + pCardAtk.Atk}hp Now: {pCardDef.Hp}hp)");
@@ -313,6 +320,7 @@ namespace LazniCardGame
             // cardDef.hp - cardAtk.atk × (100% -cardDef.def%)
             pCardDef.Hp -= pCardAtk.Atk/*(1 - pCardDef.def)*/;
 
+            GameLogsTextChanged();
             gameLogs.Text += $"> {pCardAtk.Name} attacked {pCardDef.Name} for {pCardAtk.Atk} dmg\n";
 #if DEBUG
             Console.WriteLine($"PLAYER HAS DONE {pCardAtk.Atk} DMG to SOLDIER (Before: {pCardDef.Hp + pCardAtk.Atk}hp Now: {pCardDef.Hp}hp)");
@@ -325,6 +333,7 @@ namespace LazniCardGame
             // card.hp - card.atk × (100% -card.def%)
             pCardDef.Hp -= pCardAtk.Atk/*(1 - pCardDef.def)*/;
 
+            GameLogsTextChanged();
             gameLogs.Text += $"> {pCardAtk.Name} attacked {pCardDef.Name} for {pCardAtk.Atk} dmg\r\n";
 #if DEBUG
             Console.WriteLine($"SOLDIER HAS DONE {pCardAtk.Atk} DMG to SOLDIER (Before: {pCardDef.Hp + pCardAtk.Atk}hp Now: {pCardDef.Hp}hp)");
@@ -337,6 +346,7 @@ namespace LazniCardGame
             // card.hp - card.atk × (100% -card.def%)
             pCardDef.Hp -= pCardAtk.Atk/*(1 - pCardDef.def)*/;
 
+            GameLogsTextChanged();
             gameLogs.Text += $"> {pCardAtk.Name} attacked {pCardDef.Name} for {pCardAtk.Atk} dmg\n";
 #if DEBUG
             Console.WriteLine($"SOLDIER HAS DONE {pCardAtk.Atk} DMGs to PLAYER (Before: {pCardDef.Hp + pCardAtk.Atk}hp Now: {pCardDef.Hp}hp)");
@@ -360,6 +370,7 @@ namespace LazniCardGame
 
                 if (card.Hp <= 0)
                 {
+                    GameLogsTextChanged();
                     gameLogs.Text += $"> {card.Name} has fainted\n";
 #if DEBUG
                     Console.WriteLine("Card visibility set to false.");
@@ -377,10 +388,7 @@ namespace LazniCardGame
 
             if (p2PlayerCardData.Hp <= 0)
             {
-                gameLogs.Text += $"> {p2PlayerCardData.Name} has fainted\n You won!";
-#if DEBUG
-                Console.WriteLine("P2 Card visibility set to false. You won!");
-#endif
+                GameEnd(true);
             }
 #if DEBUG
             Console.WriteLine("-------------------------------");
@@ -397,6 +405,7 @@ namespace LazniCardGame
                 card.CardInGame.Visible = card.Hp > 0;
                 if (card.Hp <= 0)
                 {
+                    GameLogsTextChanged();
                     gameLogs.Text += $"> {card.Name} has fainted\n";
 #if DEBUG
                     Console.WriteLine("Card visibility set to false.");
@@ -407,22 +416,42 @@ namespace LazniCardGame
 #endif
             }
 
+
+
 #if DEBUG
             Console.WriteLine($"P1 Card has {p1PlayerCardData.Hp}hp.");
 #endif
             p1PlayerCardData.CardInGame.Visible = p1PlayerCardData.Hp > 0;
 
-            if (p2PlayerCardData.Hp <= 0)
+            if (p1PlayerCardData.Hp <= 0)
             {
-                gameLogs.Text += $"> {p2PlayerCardData.Name} has fainted\n You lost!";
-#if DEBUG
-                Console.WriteLine("P1 Card visibility set to false. You lost!");
-#endif
+                GameEnd(false);
             }
 #if DEBUG
             Console.WriteLine("-------------------------------");
 #endif
             #endregion
+
+        }
+
+        private void GameEnd(bool won)
+        {
+            PictureBox[] cards = won ? p2SecCards : p1SecCards;
+            string state = won ? "won" : "lost";
+
+            // Disable cards of the player who lost
+            foreach (PictureBox card in cards)
+            {
+                card.Enabled = false;
+            }
+
+            GameLogsTextChanged();
+            gameLogs.Text += $"> {p2PlayerCardData.Name} has fainted\n You {state}!";
+#if DEBUG
+            string whichPlayer = won ? "P2" : "P1";
+
+            Console.WriteLine($"{whichPlayer} Card visibility set to false. Game ended.");
+#endif
 
         }
 
@@ -754,18 +783,10 @@ namespace LazniCardGame
                 }
             }
         }
-        #region CHEATS
-        private void theKillerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TheKiller();
-        }
-        #endregion
 
-        #endregion
-
-        private void gameLogs_TextChanged(object sender, EventArgs e)
+        public void GameLogsTextChanged()
         {
-            if (gameLogs.Lines.Length == 15)
+            if (gameLogs.Lines.Length == 14)
             {
                 StreamWriter save = new StreamWriter("Logs.txt");
 
@@ -777,5 +798,15 @@ namespace LazniCardGame
                 gameLogs.Clear();
             }
         }
+
+        #region CHEATS
+        private void theKillerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TheKiller();
+        }
+        #endregion
+
+        #endregion
+
     }
 }

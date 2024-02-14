@@ -118,6 +118,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="RULES.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\The-Lazni-Face-TM.ico" />
     <None Include="Resources\Images\Cards\Soldier\Criota_B.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

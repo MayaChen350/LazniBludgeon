@@ -1,6 +1,6 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace LazniCardGame
 {
@@ -42,9 +42,23 @@ namespace LazniCardGame
 
     class MainCard
     {
+        private int hp;
+        private int atk;
+
         public string Name;
-        public int Hp;
-        public int Atk;
+        public int Hp
+        {
+            get { return hp; }
+            set
+            {
+                hp = value < 0 ? 0 : value;
+            }
+        }
+        public int Atk
+        {
+            get { return atk < 0 ? 0 : atk; }
+            set { atk = value; }
+        }
         public Bitmap ImageLocation;
         public PictureBox CardInGame;
         public bool Used;
@@ -52,12 +66,46 @@ namespace LazniCardGame
 
     class SecondaryCard
     {
+        private int hp;
+        private int atk;
+
         public string Name;
-        public int Hp;
-        public int Atk;
+        public int Hp
+        {
+            get { return hp; }
+            set
+            {
+                hp = value < 0 ? 0 : value;
+#if DEBUG
+                Console.WriteLine($"Card has {hp}hp.");
+#endif
+                CardInGame.Visible = Hp > 0;
+            }
+        }
+        public int Atk
+        {
+            get { return atk < 0 ? 0 : atk; }
+            set { atk = value; }
+        }
         public Bitmap ImageLocation;
         public PictureBox CardInGame;
         public bool Used;
+
+        public string UpdateCard()
+        {
+            // Disable cards when their hp reached 0
+            if (Hp <= 0)
+            {
+#if DEBUG
+            Console.WriteLine("Card visibility set to false.");
+            Console.WriteLine("-------------------------------");
+#endif
+                CardInGame.Visible = false;
+                return $"> {Name} has fainted\n";
+            }
+
+            return "";
+        }
     }
 
     // UNUSED FOR NOW

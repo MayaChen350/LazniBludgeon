@@ -786,7 +786,6 @@
             this.gameLogs.TabIndex = 46;
             this.gameLogs.TabStop = false;
             this.gameLogs.WordWrap = false;
-            this.gameLogs.TextChanged += new System.EventHandler(this.gameLogs_TextChanged);
             // 
             // Game
             // 
