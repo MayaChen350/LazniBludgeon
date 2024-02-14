@@ -1,4 +1,6 @@
-﻿namespace LazniCardGame
+﻿using System.Windows.Forms;
+
+namespace LazniCardGame
 {
     /// THIS IS FOR DEBUG AND TESTING PURPOSES ONLY!
     /// Please set the cheats button to FALSE when doing a release (since visual studio somehow doesn't want to allow it to only appear when it's in 
@@ -8,6 +10,9 @@
         public void TheKiller()
         {
 #if DEBUG
+            if (checkBoxPlayerCardConfirm.Visible)
+                checkBoxPlayerCardConfirm.Checked = true;
+
             if (viewedCardPlayer == null)
             {
                 viewedCardSoldier.Hp = 0;

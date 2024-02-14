@@ -62,6 +62,7 @@ namespace LazniCardGame
         public Bitmap ImageLocation;
         public PictureBox CardInGame;
         public bool Used;
+        public bool Dead;
     }
 
     class SecondaryCard
@@ -76,10 +77,6 @@ namespace LazniCardGame
             set
             {
                 hp = value < 0 ? 0 : value;
-#if DEBUG
-                Console.WriteLine($"Card has {hp}hp.");
-#endif
-                CardInGame.Visible = Hp > 0;
             }
         }
         public int Atk
@@ -90,22 +87,7 @@ namespace LazniCardGame
         public Bitmap ImageLocation;
         public PictureBox CardInGame;
         public bool Used;
-
-        public string UpdateCard()
-        {
-            // Disable cards when their hp reached 0
-            if (Hp <= 0)
-            {
-#if DEBUG
-            Console.WriteLine("Card visibility set to false.");
-            Console.WriteLine("-------------------------------");
-#endif
-                CardInGame.Visible = false;
-                return $"> {Name} has fainted\n";
-            }
-
-            return "";
-        }
+        public bool Dead;
     }
 
     // UNUSED FOR NOW

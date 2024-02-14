@@ -163,9 +163,6 @@ namespace LazniCardGame
 
         private void SetGame()
         {
-            // Things I only use for debugging and trying stuff
-            // It should ONLY be visible and accessible when in DEBUG mode
-
             // Activate the player card selector
             checkBoxPlayerCardConfirm.Visible = true;
             btnPlayerCardLeft.Visible = true;
@@ -177,6 +174,7 @@ namespace LazniCardGame
             checkAbility2.Enabled = false;
             checkAtk.Enabled = false;
             btnConfirm.Enabled = false;
+            gameLogs.Clear();
             SetCards();
             SetForTurn();
 #if DEBUG
@@ -217,12 +215,15 @@ namespace LazniCardGame
             for (int i = 0; i < visibleCards.Length; i++)
             {
                 // Initiate each cards on a player side
-                cardsData[i].CardInGame = visibleCards[0];
+                cardsData[i].CardInGame = visibleCards[i];
                 cardsData[i].Name = soldierCardsMixUp[0].Name;
                 cardsData[i].Hp = soldierCardsMixUp[0].Hp;
                 cardsData[i].Atk = soldierCardsMixUp[0].Atk;
                 cardsData[i].ImageLocation = soldierCardsMixUp[0].ImageLocation;
+                cardsData[i].Used = false;
+                cardsData[i].Dead = false;
                 visibleCards[i].Image = soldierCardsMixUp[0].ImageLocation;
+
                 // Remove the cards from the deck and add them to the bottom
                 soldierCardsMixUp.Append(soldierCardsMixUp[0]);
                 soldierCardsMixUp.RemoveAt(0);
@@ -321,7 +322,7 @@ namespace LazniCardGame
             pCardDef.Hp -= pCardAtk.Atk/*(1 - pCardDef.def)*/;
 
             GameLogsTextChanged();
-            gameLogs.Text += $"> {pCardAtk.Name} attacked {pCardDef.Name} for {pCardAtk.Atk} dmg\n";
+            gameLogs.Text += $"> {pCardAtk.Name} attacked {pCardDef.Name} for {pCardAtk.Atk} dmg\r\n";
 #if DEBUG
             Console.WriteLine($"PLAYER HAS DONE {pCardAtk.Atk} DMG to SOLDIER (Before: {pCardDef.Hp + pCardAtk.Atk}hp Now: {pCardDef.Hp}hp)");
             Console.WriteLine("-------------------------------");
@@ -347,7 +348,7 @@ namespace LazniCardGame
             pCardDef.Hp -= pCardAtk.Atk/*(1 - pCardDef.def)*/;
 
             GameLogsTextChanged();
-            gameLogs.Text += $"> {pCardAtk.Name} attacked {pCardDef.Name} for {pCardAtk.Atk} dmg\n";
+            gameLogs.Text += $"> {pCardAtk.Name} attacked {pCardDef.Name} for {pCardAtk.Atk} dmg\r\n";
 #if DEBUG
             Console.WriteLine($"SOLDIER HAS DONE {pCardAtk.Atk} DMGs to PLAYER (Before: {pCardDef.Hp + pCardAtk.Atk}hp Now: {pCardDef.Hp}hp)");
             Console.WriteLine("-------------------------------");
@@ -371,7 +372,8 @@ namespace LazniCardGame
                 if (card.Hp <= 0)
                 {
                     GameLogsTextChanged();
-                    gameLogs.Text += $"> {card.Name} has fainted\n";
+                    gameLogs.Text += !card.Dead ? $"> {card.Name} has fainted\r\n" : "";
+                    card.Dead = true;
 #if DEBUG
                     Console.WriteLine("Card visibility set to false.");
 #endif
@@ -406,7 +408,8 @@ namespace LazniCardGame
                 if (card.Hp <= 0)
                 {
                     GameLogsTextChanged();
-                    gameLogs.Text += $"> {card.Name} has fainted\n";
+                    gameLogs.Text += !card.Dead ? $"> {card.Name} has fainted\r\n" : "";
+                    card.Dead = true;
 #if DEBUG
                     Console.WriteLine("Card visibility set to false.");
 #endif
@@ -446,7 +449,7 @@ namespace LazniCardGame
             }
 
             GameLogsTextChanged();
-            gameLogs.Text += $"> {p2PlayerCardData.Name} has fainted\n You {state}!";
+            gameLogs.Text += $"> {p2PlayerCardData.Name} has fainted\r\n You {state}!";
 #if DEBUG
             string whichPlayer = won ? "P2" : "P1";
 
