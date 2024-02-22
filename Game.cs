@@ -186,7 +186,7 @@ namespace LazniCardGame
         {
             // Fish for new cards if all player cards have died
             if (!p1SecondaryCard1.Visible && !p1SecondaryCard2.Visible && !p1SecondaryCard3.Visible)
-                RetrieveCards(p1SecCardsData, p1SecCards);
+                RetrieveCards(p1SecCardsData, p1SecCards, false);
 
             // Reset the selected card view
             CardView.Image = BackOfTheCard;
@@ -210,18 +210,33 @@ namespace LazniCardGame
         /// </summary>
         /// <param name="cardsData">The array of cards data</param>
         /// <param name="visibleCards">The array of cards in-game</param>
-        private void RetrieveCards(SecondaryCard[] cardsData, PictureBox[] visibleCards)
+        /// <param name="firstTurn">This method acts differently whether it is the first turn or not</param>
+        private void RetrieveCards(SecondaryCard[] cardsData, PictureBox[] visibleCards, bool firstTurn = true)
         {
             for (int i = 0; i < visibleCards.Length; i++)
             {
                 // Initiate each cards on a player side
                 cardsData[i].CardInGame = visibleCards[i];
                 cardsData[i].Name = soldierCardsMixUp[0].Name;
+
                 cardsData[i].Hp = soldierCardsMixUp[0].Hp;
                 cardsData[i].Atk = soldierCardsMixUp[0].Atk;
+
+                // Soldier cards when fished AFTER THE 1ST TURN
+                // have ATK/HP bonus from -20%/+20%
+                if (!firstTurn)
+                {
+                    cardsData[i].Hp += cardsData[i].RandomStats(cardsData[i].Hp);
+                    cardsData[i].Atk += cardsData[i].RandomStats(cardsData[i].Atk);
+                }
+
                 cardsData[i].ImageLocation = soldierCardsMixUp[0].ImageLocation;
+
+                // Initiliaze game states that change during the game
                 cardsData[i].Used = false;
                 cardsData[i].Dead = false;
+                
+                // Links the image from the date to the image in game
                 visibleCards[i].Image = soldierCardsMixUp[0].ImageLocation;
 
                 // Remove the cards from the deck and add them to the bottom
@@ -787,6 +802,9 @@ namespace LazniCardGame
             }
         }
 
+        /// <summary>
+        /// Makes sure that the limit of the gameLogs text box is never reached
+        /// </summary>
         public void GameLogsTextChanged()
         {
             if (gameLogs.Lines.Length == 14)

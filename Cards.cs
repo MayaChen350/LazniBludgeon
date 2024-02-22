@@ -1,11 +1,15 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace LazniCardGame
 {
     #region CARDS TYPES
-    class PlayerCard
+    /// <summary>
+    /// Player card original data
+    /// </summary>
+    internal class PlayerCard
     {
         readonly public string Name;
         readonly public int Hp;
@@ -23,6 +27,9 @@ namespace LazniCardGame
         }
     }
 
+    /// <summary>
+    /// Secondary card original data
+    /// </summary>
     class SoldierCard
     {
         readonly public string Name;
@@ -40,6 +47,9 @@ namespace LazniCardGame
         }
     }
 
+    /// <summary>
+    /// Instance of a player card in game
+    /// </summary>
     class MainCard
     {
         private int hp;
@@ -49,6 +59,7 @@ namespace LazniCardGame
         public int Hp
         {
             get { return hp; }
+            // Hp can't go below 0
             set
             {
                 hp = value < 0 ? 0 : value;
@@ -56,6 +67,7 @@ namespace LazniCardGame
         }
         public int Atk
         {
+            // Even if ATK will be displayed as 0 if below it, ATK nerfs can still stack
             get { return atk < 0 ? 0 : atk; }
             set { atk = value; }
         }
@@ -65,6 +77,9 @@ namespace LazniCardGame
         public bool Dead;
     }
 
+    /// <summary>
+    /// Instance of a secondary card in game
+    /// </summary>
     class SecondaryCard
     {
         private int hp;
@@ -74,6 +89,7 @@ namespace LazniCardGame
         public int Hp
         {
             get { return hp; }
+            // Hp can't go below 0
             set
             {
                 hp = value < 0 ? 0 : value;
@@ -81,6 +97,7 @@ namespace LazniCardGame
         }
         public int Atk
         {
+            // Even if ATK will be displayed as 0 if below it, ATK nerfs can still stack
             get { return atk < 0 ? 0 : atk; }
             set { atk = value; }
         }
@@ -88,6 +105,12 @@ namespace LazniCardGame
         public PictureBox CardInGame;
         public bool Used;
         public bool Dead;
+
+        public int RandomStats(int hpOrAtk)
+        {
+            double random = new Random().Next(-20, 20) * 0.01;
+            return (int)(hpOrAtk * (random));
+        }
     }
 
     // UNUSED FOR NOW
