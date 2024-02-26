@@ -37,7 +37,7 @@ Finn (Starvas)
 
 Tristou (Tristan)
 
-Giratina_Shiny/MayaChen350 (Khenaga)
+MayaChen350 (Khenaga)
 
 -----
 
@@ -45,10 +45,7 @@ Artworks:
 
 Hayxu (knows how to draw balls)
 
-Birbio56
-
-Giratina_Shiny/MayaChen350
-
+MayaChen350
 
 -----
 
@@ -73,6 +70,8 @@ Lexybooky
 Dregdom
 
 Opefulee
+
+Birbio56
 
 -----
 
