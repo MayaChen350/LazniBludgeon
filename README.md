@@ -41,14 +41,6 @@ MayaChen350 (Khenaga)
 
 -----
 
-Artworks:
-
-Hayxu (knows how to draw balls)
-
-MayaChen350
-
------
-
 Game programmed by MayaChen350 (knows how to make games)
 
 -----
