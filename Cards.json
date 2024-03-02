@@ -5,10 +5,12 @@
         "HP": 2850,
         "ATK": 350,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         },
         "AbilityB": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -19,10 +21,12 @@
         "HP": 3000,
         "ATK": 0,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         },
         "AbilityB": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -33,10 +37,12 @@
         "HP": 3450,
         "ATK": 100,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         },
         "AbilityB": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -47,10 +53,12 @@
         "HP": 3400,
         "ATK": 150,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         },
         "AbilityB": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -63,6 +71,7 @@
         "HP": 200,
         "ATK": 75,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -73,6 +82,7 @@
         "HP": 150,
         "ATK": 45,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -83,6 +93,7 @@
         "HP": 150,
         "ATK": 25,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -93,6 +104,7 @@
         "HP": 175,
         "ATK": 75,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -103,6 +115,7 @@
         "HP": 100,
         "ATK": 70,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -113,6 +126,7 @@
         "HP": 100,
         "ATK": 25,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -123,6 +137,7 @@
         "HP": 145,
         "ATK": 50,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -133,6 +148,7 @@
         "HP": 80,
         "ATK": 100,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -143,6 +159,7 @@
         "HP": 200,
         "ATK": 35,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -153,6 +170,7 @@
         "HP": 175,
         "ATK": 50,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -163,6 +181,7 @@
         "HP": 350,
         "ATK": 5,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -173,6 +192,7 @@
         "HP": 100,
         "ATK": 45,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -183,6 +203,7 @@
         "HP": 150,
         "ATK": 50,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
@@ -193,6 +214,7 @@
         "HP": 125,
         "ATK": 25,
         "AbilityA": {
+          "type": "Active/Passive",
           "name": "Enter Text Here",
           "Description": "Enter text here"
         }
