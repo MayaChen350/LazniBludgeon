@@ -189,7 +189,7 @@ namespace LazniCardGame
                 RetrieveCards(p1SecCardsData, p1SecCards, false);
 
             // Reset the selected card view
-            CardView.Image = BackOfTheCard;
+            CardView.BackgroundImage = BackOfTheCard;
             textHP.Text = " ";
             textATK.Text = " ";
 
@@ -235,7 +235,7 @@ namespace LazniCardGame
                 // Initiliaze game states that change during the game
                 cardsData[i].Used = false;
                 cardsData[i].Dead = false;
-                
+
                 // Links the image from the date to the image in game
                 visibleCards[i].Image = soldierCardsMixUp[0].ImageLocation;
 
@@ -253,7 +253,7 @@ namespace LazniCardGame
         private void ShowCard(MainCard pCardData)
         {
             // Change the ViewCard picture box and its labels for the selected Player card in the parameter
-            CardView.Image = pCardData.ImageLocation;
+            CardView.BackgroundImage = pCardData.ImageLocation;
             textHP.Text = pCardData.Hp.ToString();
             textATK.Text = pCardData.Atk.ToString();
 
@@ -287,7 +287,7 @@ namespace LazniCardGame
         private void ShowCard(SecondaryCard[] pCardData, int index)
         {
             // Change the ViewCard picture box and its labels for the selected Soldier card in the parameters
-            CardView.Image = pCardData[index].ImageLocation;
+            CardView.BackgroundImage = pCardData[index].ImageLocation;
             textHP.Text = pCardData[index].Hp.ToString();
             textATK.Text = pCardData[index].Atk.ToString();
 
@@ -784,7 +784,7 @@ namespace LazniCardGame
                 }
 
 
-                CardView.Image = BackOfTheCard;
+                CardView.BackgroundImage = BackOfTheCard;
 
                 btnConfirm.Checked = false;
                 checkAtk.Checked = false;
@@ -807,7 +807,7 @@ namespace LazniCardGame
         /// </summary>
         public void GameLogsTextChanged()
         {
-            if (gameLogs.Lines.Length == 14)
+            if (gameLogs.Lines.Length == 21)
             {
                 StreamWriter save = new StreamWriter("Logs.txt");
 
@@ -828,6 +828,5 @@ namespace LazniCardGame
         #endregion
 
         #endregion
-
     }
 }

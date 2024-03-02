@@ -1,9 +1,11 @@
-﻿using System.Drawing;
+﻿using System.ComponentModel;
+using System.Drawing;
 using System.Drawing.Imaging;
+using System.Windows.Forms;
 
 namespace LazniCardGame
 {
-    internal class Utils
+    public class Utils
     {
         static public Image SetImageOpacity(Image image, float opacity)
         {
