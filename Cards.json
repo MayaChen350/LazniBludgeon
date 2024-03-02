@@ -1,0 +1,202 @@
+{
+  "Player": [
+    {
+      "Slovanoya": {
+        "HP": 2850,
+        "ATK": 350,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        },
+        "AbilityB": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Allemapon": {
+        "HP": 3000,
+        "ATK": 0,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        },
+        "AbilityB": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Anglestan": {
+        "HP": 3450,
+        "ATK": 100,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        },
+        "AbilityB": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Garulmonie": {
+        "HP": 3400,
+        "ATK": 150,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        },
+        "AbilityB": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    }
+  ],
+  "Soldier": [
+    {
+      "Allemanie_A": {
+        "HP": 200,
+        "ATK": 75,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Allemanie_B": {
+        "HP": 150,
+        "ATK": 45,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Allemapon_A": {
+        "HP": 150,
+        "ATK": 25,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Allemapon_B": {
+        "HP": 175,
+        "ATK": 75,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Almahad_A": {
+        "HP": 100,
+        "ATK": 70,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Almahad_B": {
+        "HP": 100,
+        "ATK": 25,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Amelandia_A": {
+        "HP": 145,
+        "ATK": 50,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Amelandia_B": {
+        "HP": 80,
+        "ATK": 100,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Anglestan_A": {
+        "HP": 200,
+        "ATK": 35,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Anglestan_B": {
+        "HP": 175,
+        "ATK": 50,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Canalgeria_A": {
+        "HP": 350,
+        "ATK": 5,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Canalgeria_B": {
+        "HP": 100,
+        "ATK": 45,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Criota_A": {
+        "HP": 150,
+        "ATK": 50,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    },
+    {
+      "Criota_B": {
+        "HP": 125,
+        "ATK": 25,
+        "AbilityA": {
+          "name": "Enter Text Here",
+          "Description": "Enter text here"
+        }
+      }
+    }
+  ]
+}
