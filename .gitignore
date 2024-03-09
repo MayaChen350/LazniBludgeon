@@ -364,3 +364,6 @@ FodyWeavers.xsd
 
 # If in any case this would be lost inside
 *.zip
+
+# Cards with text on them, done when the project is built
+.Cards/

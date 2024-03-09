@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 
-namespace LazniCardGame
+namespace LazniBludgeon.Other
 {
     public class Utils
     {

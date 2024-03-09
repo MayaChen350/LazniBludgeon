@@ -1,4 +1,4 @@
-﻿namespace LazniCardGame
+﻿namespace LazniBludgeon.CardGame
 {
     partial class Game
     {
@@ -59,7 +59,6 @@
             this.p1SecondaryCard1 = new System.Windows.Forms.PictureBox();
             this.p1PlayerCard = new System.Windows.Forms.PictureBox();
             this.cheatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gameLogs = new System.Windows.Forms.TextBox();
             this.p1SecondaryCard4 = new System.Windows.Forms.PictureBox();
             this.checkAbility2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -68,6 +67,7 @@
             this.textATK = new System.Windows.Forms.Label();
             this.textHP = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gameLogs = new LazniBludgeon.Components.GameLogs(this.components);
             this.menuStrip1.SuspendLayout();
             this.RedBorderpanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard3)).BeginInit();
@@ -345,7 +345,6 @@
             // 
             this.p2PlayerCard.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.p2PlayerCard.BackColor = System.Drawing.Color.Transparent;
-            this.p2PlayerCard.Image = global::LazniCardGame.Properties.Resources.CardBack;
             this.p2PlayerCard.Location = new System.Drawing.Point(5, 4);
             this.p2PlayerCard.Name = "p2PlayerCard";
             this.p2PlayerCard.Size = new System.Drawing.Size(78, 109);
@@ -425,22 +424,6 @@
             this.cheatsToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
             this.cheatsToolStripMenuItem.Text = "Cheats";
             // 
-            // gameLogs
-            // 
-            this.gameLogs.AcceptsReturn = true;
-            this.gameLogs.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gameLogs.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.gameLogs.CausesValidation = false;
-            this.gameLogs.Font = new System.Drawing.Font("Consolas", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameLogs.Location = new System.Drawing.Point(1331, 398);
-            this.gameLogs.Multiline = true;
-            this.gameLogs.Name = "gameLogs";
-            this.gameLogs.ReadOnly = true;
-            this.gameLogs.Size = new System.Drawing.Size(271, 279);
-            this.gameLogs.TabIndex = 46;
-            this.gameLogs.TabStop = false;
-            this.gameLogs.WordWrap = false;
-            // 
             // p1SecondaryCard4
             // 
             this.p1SecondaryCard4.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -500,7 +483,7 @@
             // 
             // CardView
             // 
-            this.CardView.BackgroundImage = global::LazniCardGame.Properties.Resources.Allemanie_A;
+            this.CardView.BackgroundImage = global::LazniBludgeon.Properties.Resources.CardBack;
             this.CardView.Controls.Add(this.textATK);
             this.CardView.Controls.Add(this.textHP);
             this.CardView.ForeColor = System.Drawing.Color.White;
@@ -535,7 +518,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::LazniCardGame.Properties.Resources.CardBack;
+            this.pictureBox1.Image = global::LazniBludgeon.Properties.Resources.CardBack;
             this.pictureBox1.Location = new System.Drawing.Point(145, 325);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(78, 109);
@@ -543,16 +526,31 @@
             this.pictureBox1.TabIndex = 50;
             this.pictureBox1.TabStop = false;
             // 
+            // gameLogs
+            // 
+            this.gameLogs.AcceptsReturn = true;
+            this.gameLogs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gameLogs.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.gameLogs.Font = new System.Drawing.Font("Consolas", 7.5F);
+            this.gameLogs.Location = new System.Drawing.Point(1331, 398);
+            this.gameLogs.Multiline = true;
+            this.gameLogs.Name = "gameLogs";
+            this.gameLogs.ReadOnly = true;
+            this.gameLogs.Size = new System.Drawing.Size(271, 279);
+            this.gameLogs.TabIndex = 46;
+            this.gameLogs.TabStop = false;
+            this.gameLogs.WordWrap = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::LazniCardGame.Properties.Resources.Example;
+            this.BackgroundImage = global::LazniBludgeon.Properties.Resources.Example;
             this.ClientSize = new System.Drawing.Size(1629, 719);
+            this.Controls.Add(this.gameLogs);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.CardView);
             this.Controls.Add(this.p1SecondaryCard4);
-            this.Controls.Add(this.gameLogs);
             this.Controls.Add(this.RedBorderPlayer_panel);
             this.Controls.Add(this.RedBorderpanel3);
             this.Controls.Add(this.RedBorderpanel2);
@@ -627,7 +625,6 @@
         private System.Windows.Forms.ToolStripMenuItem theKillerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem healOf87ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deathEraserToolStripMenuItem;
-        private System.Windows.Forms.TextBox gameLogs;
         private System.Windows.Forms.PictureBox p1SecondaryCard4;
         private System.Windows.Forms.CheckBox checkAbility2;
         private System.Windows.Forms.CheckBox checkBox1;
@@ -636,6 +633,7 @@
         private System.Windows.Forms.Label textATK;
         private System.Windows.Forms.Label textHP;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public Components.GameLogs gameLogs;
     }
 }
 
