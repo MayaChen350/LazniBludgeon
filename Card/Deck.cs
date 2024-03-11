@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 
 namespace LazniBludgeon.Card
 {
@@ -22,7 +23,7 @@ namespace LazniBludgeon.Card
 
         private void InitPlayerCards()
         {
-            string playerCardsJson = File.ReadAllText("Card/CardData/PlayerCard.json");
+            string playerCardsJson = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("LazniBludgeon.Card.CardData.PlayerCard.json")).ReadToEnd();
             var playerCards = JsonConvert.DeserializeObject<dynamic>(playerCardsJson);
             List<PlayerCard> list = new List<PlayerCard>();
             foreach (var playerCard in playerCards)
@@ -34,7 +35,7 @@ namespace LazniBludgeon.Card
 
         private void InitSoldierCards()
         {
-            string SoldierCardsJson = File.ReadAllText("Card/CardData/SoldierCard.json");
+            string SoldierCardsJson = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("LazniBludgeon.Card.CardData.SoldierCard.json")).ReadToEnd();
             var cards = JsonConvert.DeserializeObject<dynamic>(SoldierCardsJson);
             List<SoldierCard> list = new List<SoldierCard>();
 

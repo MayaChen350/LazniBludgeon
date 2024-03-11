@@ -110,9 +110,7 @@
     <Compile Include="Card\SecondaryCard.cs" />
     <Compile Include="Card\SoldierCard.cs" />
     <None Include="Card\Ability\.gitkeep" />
-    <None Include="Card\CardData\PlayerCard.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <EmbeddedResource Include="Card\CardData\PlayerCard.json" />
     <None Include="Card\SpecialCard.cs" />
     <Compile Include="Components\GameLogs.cs">
       <SubType>Component</SubType>
@@ -150,9 +148,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Card\CardData\SoldierCard.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <EmbeddedResource Include="Card\CardData\SoldierCard.json" />
     <None Include="Card\CardData\CardsUnused.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -219,6 +215,7 @@
     <None Include="Resources\CardBack.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Compilation\WriteTextOnCards.py" />
     <Content Include="Resources\BG0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -334,7 +331,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Images\.Cards\" />
+    <Folder Include="Resources\Images\.Cards\Player\" />
+    <Folder Include="Resources\Images\.Cards\Soldier\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>
