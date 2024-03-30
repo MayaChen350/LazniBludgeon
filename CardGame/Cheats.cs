@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace LazniCardGame
+namespace LazniBludgeon.CardGame
 {
     /// THIS IS FOR DEBUG AND TESTING PURPOSES ONLY!
     /// Please set the cheats button to FALSE when doing a release (since visual studio somehow doesn't want to allow it to only appear when it's in 
@@ -21,7 +21,7 @@ namespace LazniCardGame
             {
                 viewedCardPlayer.Hp = 0;
             }
-            UpdateCards();
+            DetermineIfWinner();
 #else
             // CHEATS SHOULD NEVER BE AVAILABLE IN A RELEASE
             throw new System.Exception("Cheats are only available in DEBUG mode.");

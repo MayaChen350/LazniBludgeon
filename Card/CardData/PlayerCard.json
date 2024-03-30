@@ -1,0 +1,62 @@
+[
+  {
+    "Name": "Slovanoya",
+    "HP": 2850,
+    "ATK": 350,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    },
+    "AbilityB": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Allemapon",
+    "HP": 3000,
+    "ATK": 0,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    },
+    "AbilityB": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Anglestan",
+    "HP": 3450,
+    "ATK": 100,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    },
+    "AbilityB": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Garulmonie",
+    "HP": 3400,
+    "ATK": 150,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    },
+    "AbilityB": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "Name": "Allemanie_A",
+    "HP": 200,
+    "ATK": 75,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Allemanie_B",
+    "HP": 150,
+    "ATK": 45,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Allemapon_A",
+    "HP": 150,
+    "ATK": 25,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Allemapon_B",
+    "HP": 175,
+    "ATK": 75,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Almahad_A",
+    "HP": 100,
+    "ATK": 70,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Almahad_B",
+    "HP": 100,
+    "ATK": 25,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Amelandia_A",
+    "HP": 145,
+    "ATK": 50,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Amelandia_B",
+    "HP": 80,
+    "ATK": 100,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Anglestan_A",
+    "HP": 200,
+    "ATK": 35,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Anglestan_B",
+    "HP": 175,
+    "ATK": 50,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Canalgerie_A",
+    "HP": 350,
+    "ATK": 5,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Canalgerie_B",
+    "HP": 100,
+    "ATK": 45,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Criota_A",
+    "HP": 150,
+    "ATK": 50,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  },
+  {
+    "Name": "Criota_B",
+    "HP": 125,
+    "ATK": 25,
+    "AbilityA": {
+      "type": "Active/Passive",
+      "name": "Enter Text Here",
+      "Description": "Enter text here"
+    }
+  }
+]

@@ -1,0 +1,378 @@
+{
+  "Player": [
+    {
+      "Allemanie": {
+        "HP": 3500,
+        "ATK": 250
+      }
+    },
+    {
+      "Almahad": {
+        "HP": 3500,
+        "ATK": 250
+      }
+    },
+    {
+      "Canalgeria": {
+        "HP": 3500,
+        "ATK": 200
+      }
+    },
+    {
+      "Fitalie": {
+        "HP": 4000,
+        "ATK": 250
+      }
+    },
+    {
+      "Khenaga": {
+        "HP": 3350,
+        "ATK": 200
+      }
+    },
+    {
+      "Mulretonie": {
+        "HP": 3000,
+        "ATK": 300
+      }
+    },
+    {
+      "Nitralvie": {
+        "HP": 3250,
+        "ATK": 250
+      }
+    },
+    {
+      "Qaland": {
+        "HP": 3500,
+        "ATK": 225
+      }
+    },
+    {
+      "Starvas": {
+        "HP": 3550,
+        "ATK": 250
+      }
+    },
+    {
+      "TheLeaf": {
+        "HP": 3750,
+        "ATK": 150
+      }
+    },
+    {
+      "Traicere": {
+        "HP": 3600,
+        "ATK": 100
+      }
+    },
+    {
+      "Yedesna": {
+        "HP": 3350,
+        "ATK": 250
+      }
+    }
+  ],
+  "Soldier": [
+    {
+      "Ekota_A": {
+        "HP": 200,
+        "ATK": 15
+      }
+    },
+    {
+      "Ekota_B": {
+        "HP": 100,
+        "ATK": 50
+      }
+    },
+    {
+      "Finlonie_A": {
+        "HP": 125,
+        "ATK": 25
+      }
+    },
+    {
+      "Finlonie_B": {
+        "HP": 250,
+        "ATK": 75
+      }
+    },
+    {
+      "Fitalie_A": {
+        "HP": 100,
+        "ATK": 100
+      }
+    },
+    {
+      "Fitalie_B": {
+        "HP": 150,
+        "ATK": 25
+      }
+    },
+    {
+      "Garulmonie_A": {
+        "HP": 300,
+        "ATK": 10
+      }
+    },
+    {
+      "Garulmonie_B": {
+        "HP": 150,
+        "ATK": 35
+      }
+    },
+    {
+      "Hongoru_A": {
+        "HP": 125,
+        "ATK": 50
+      }
+    },
+    {
+      "Hongoru_B": {
+        "HP": 200,
+        "ATK": 0
+      }
+    },
+    {
+      "Huanvana_A": {
+        "HP": 75,
+        "ATK": 0
+      }
+    },
+    {
+      "Huanvana_B": {
+        "HP": 200,
+        "ATK": 0
+      }
+    },
+    {
+      "Kaenia_A": {
+        "HP": 125,
+        "ATK": 40
+      }
+    },
+    {
+      "Kaenia_B": {
+        "HP": 180,
+        "ATK": 60
+      }
+    },
+    {
+      "Kalontia_A": {
+        "HP": 200,
+        "ATK": 75
+      }
+    },
+    {
+      "Kalontia_B": {
+        "HP": 250,
+        "ATK": 25
+      }
+    },
+    {
+      "Khenaga_A": {
+        "HP": 175,
+        "ATK": 25
+      }
+    },
+    {
+      "Khenaga_B": {
+        "HP": 125,
+        "ATK": 50
+      }
+    },
+    {
+      "Mageria_A": {
+        "HP": 100,
+        "ATK": 50
+      }
+    },
+    {
+      "Mageria_B": {
+        "HP": 150,
+        "ATK": 50
+      }
+    },
+    {
+      "Maréquie_A": {
+        "HP": 150,
+        "ATK": 75
+      }
+    },
+    {
+      "Maréquie_B": {
+        "HP": 140,
+        "ATK": 40
+      }
+    },
+    {
+      "Mulretonie_A": {
+        "HP": 50,
+        "ATK": 100
+      }
+    },
+    {
+      "Mulretonie_B": {
+        "HP": 105,
+        "ATK": 65
+      }
+    },
+    {
+      "Neolantis_A": {
+        "HP": 80,
+        "ATK": 0
+      }
+    },
+    {
+      "Neolantis_B": {
+        "HP": 105,
+        "ATK": 45
+      }
+    },
+    {
+      "Nitralvie_A": {
+        "HP": 175,
+        "ATK": 75
+      }
+    },
+    {
+      "Nitralvie_B": {
+        "HP": 175,
+        "ATK": 45
+      }
+    },
+    {
+      "Onriance_A": {
+        "HP": 250,
+        "ATK": 0
+      }
+    },
+    {
+      "Onriance_B": {
+        "HP": 200,
+        "ATK": 65
+      }
+    },
+    {
+      "Qaland_A": {
+        "HP": 200,
+        "ATK": 40
+      }
+    },
+    {
+      "Qaland_B": {
+        "HP": 200,
+        "ATK": 75
+      }
+    },
+    {
+      "Qetu_A": {
+        "HP": 175,
+        "ATK": 25
+      }
+    },
+    {
+      "Qetu_B": {
+        "HP": "N/A",
+        "ATK": 0
+      }
+    },
+    {
+      "Slovanoya_A": {
+        "HP": 150,
+        "ATK": 75
+      }
+    },
+    {
+      "Slovanoya_B": {
+        "HP": 150,
+        "ATK": 25
+      }
+    },
+    {
+      "Starvas_A": {
+        "HP": 175,
+        "ATK": 65
+      }
+    },
+    {
+      "Starvas_B": {
+        "HP": 140,
+        "ATK": 50
+      }
+    },
+    {
+      "Tekay_A": {
+        "HP": 125,
+        "ATK": 5
+      }
+    },
+    {
+      "Tekay_B": {
+        "HP": 150,
+        "ATK": 65
+      }
+    },
+    {
+      "TheLeaf_A": {
+        "HP": 50,
+        "ATK": 100
+      }
+    },
+    {
+      "TheLeaf_B": {
+        "HP": 145,
+        "ATK": 25
+      }
+    },
+    {
+      "Traicere_A": {
+        "HP": 175,
+        "ATK": 25
+      }
+    },
+    {
+      "Traicere_B": {
+        "HP": 100,
+        "ATK": 30
+      }
+    },
+    {
+      "Tristan_A": {
+        "HP": 200,
+        "ATK": 60
+      }
+    },
+    {
+      "Tristan_B": {
+        "HP": 140,
+        "ATK": 45
+      }
+    },
+    {
+      "Tujar_A": {
+        "HP": 120,
+        "ATK": 40
+      }
+    },
+    {
+      "Tujar_B": {
+        "HP": 175,
+        "ATK": 40
+      }
+    },
+    {
+      "Yedesna_A": {
+        "HP": 225,
+        "ATK": 30
+      }
+    },
+    {
+      "Yedesna_B": {
+        "HP": 150,
+        "ATK": 50
+      }
+    }
+  ]
+}

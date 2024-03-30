@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Microsoft.CodeAnalysis.Sarif.Driver;
+using LazniBludgeon.Card;
 
-namespace LazniCardGame
+namespace LazniBludgeon.CardGame
 {
 
-    public partial class Game : Form
+    public partial class Game
     {
         int numberOfP2CardsAlive;
 
@@ -55,7 +56,7 @@ namespace LazniCardGame
                 }
             else
                 AttackPlayerCard();
-            UpdateCards();
+            DetermineIfWinner();
         }
 
         private int HowManyp2CardLeft()
