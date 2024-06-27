@@ -1,6 +1,6 @@
 [
   {
-    "Name": "Slovanoya",
+    "Name": "Player_1",
     "HP": 2850,
     "ATK": 350,
     "AbilityA": {
@@ -15,7 +15,7 @@
     }
   },
   {
-    "Name": "Allemapon",
+    "Name": "Player_2",
     "HP": 3000,
     "ATK": 0,
     "AbilityA": {
@@ -30,7 +30,7 @@
     }
   },
   {
-    "Name": "Anglestan",
+    "Name": "Player_3",
     "HP": 3450,
     "ATK": 100,
     "AbilityA": {
@@ -45,7 +45,7 @@
     }
   },
   {
-    "Name": "Garulmonie",
+    "Name": "Player_4",
     "HP": 3400,
     "ATK": 150,
     "AbilityA": {

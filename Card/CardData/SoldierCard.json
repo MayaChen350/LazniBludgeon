@@ -1,6 +1,6 @@
 [
   {
-    "Name": "Allemanie_A",
+    "Name": "Soldier_1_A",
     "HP": 200,
     "ATK": 75,
     "AbilityA": {
@@ -10,7 +10,7 @@
     }
   },
   {
-    "Name": "Allemanie_B",
+    "Name": "Soldier_1_B",
     "HP": 150,
     "ATK": 45,
     "AbilityA": {
@@ -20,7 +20,7 @@
     }
   },
   {
-    "Name": "Allemapon_A",
+    "Name": "Soldier_2_A",
     "HP": 150,
     "ATK": 25,
     "AbilityA": {
@@ -30,7 +30,7 @@
     }
   },
   {
-    "Name": "Allemapon_B",
+    "Name": "Soldier_2_B",
     "HP": 175,
     "ATK": 75,
     "AbilityA": {
@@ -40,7 +40,7 @@
     }
   },
   {
-    "Name": "Almahad_A",
+    "Name": "Soldier_3_A",
     "HP": 100,
     "ATK": 70,
     "AbilityA": {
@@ -50,7 +50,7 @@
     }
   },
   {
-    "Name": "Almahad_B",
+    "Name": "Soldier_3_B",
     "HP": 100,
     "ATK": 25,
     "AbilityA": {
@@ -60,7 +60,7 @@
     }
   },
   {
-    "Name": "Amelandia_A",
+    "Name": "Soldier_4_A",
     "HP": 145,
     "ATK": 50,
     "AbilityA": {
@@ -70,7 +70,7 @@
     }
   },
   {
-    "Name": "Amelandia_B",
+    "Name": "Soldier_4_B",
     "HP": 80,
     "ATK": 100,
     "AbilityA": {
@@ -80,7 +80,7 @@
     }
   },
   {
-    "Name": "Anglestan_A",
+    "Name": "Soldier_5_A",
     "HP": 200,
     "ATK": 35,
     "AbilityA": {
@@ -90,7 +90,7 @@
     }
   },
   {
-    "Name": "Anglestan_B",
+    "Name": "Soldier_5_B",
     "HP": 175,
     "ATK": 50,
     "AbilityA": {
@@ -100,7 +100,7 @@
     }
   },
   {
-    "Name": "Canalgerie_A",
+    "Name": "Soldier_6_A",
     "HP": 350,
     "ATK": 5,
     "AbilityA": {
@@ -110,7 +110,7 @@
     }
   },
   {
-    "Name": "Canalgerie_B",
+    "Name": "Soldier_6_B",
     "HP": 100,
     "ATK": 45,
     "AbilityA": {
@@ -120,7 +120,7 @@
     }
   },
   {
-    "Name": "Criota_A",
+    "Name": "Soldier_7_A",
     "HP": 150,
     "ATK": 50,
     "AbilityA": {
@@ -130,7 +130,7 @@
     }
   },
   {
-    "Name": "Criota_B",
+    "Name": "Soldier_7_B",
     "HP": 125,
     "ATK": 25,
     "AbilityA": {

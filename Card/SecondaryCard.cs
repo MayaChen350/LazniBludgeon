@@ -1,9 +1,9 @@
-﻿using LazniBludgeon.CardGame;
+﻿using WinformCardGame.CardGame;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace LazniBludgeon.Card
+namespace WinformCardGame.Card
 {
     /// <summary>
     /// Instance of a secondary card in game

@@ -1,6 +1,6 @@
-﻿namespace LazniBludgeon.Components
+﻿namespace WinformCardGame.Components
 {
-    partial class LazniCard
+    partial class Card
     {
         /// <summary>
         /// Required designer variable.

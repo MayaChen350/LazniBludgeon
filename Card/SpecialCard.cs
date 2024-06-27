@@ -1,4 +1,4 @@
-﻿namespace LazniBludgeon.Card
+﻿namespace WinformCardGame.Card
 {
     // UNUSED FOR NOW
     /*class SpecialCard

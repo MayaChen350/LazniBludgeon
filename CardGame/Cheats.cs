@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace LazniBludgeon.CardGame
+namespace WinformCardGame.CardGame
 {
     /// THIS IS FOR DEBUG AND TESTING PURPOSES ONLY!
     /// Please set the cheats button to FALSE when doing a release (since visual studio somehow doesn't want to allow it to only appear when it's in 

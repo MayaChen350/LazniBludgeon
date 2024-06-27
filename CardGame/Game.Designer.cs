@@ -1,4 +1,4 @@
-﻿namespace LazniBludgeon.CardGame
+﻿namespace WinformCardGame.CardGame
 {
     partial class Game
     {
@@ -67,7 +67,7 @@
             this.textATK = new System.Windows.Forms.Label();
             this.textHP = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.gameLogs = new LazniBludgeon.Components.GameLogs(this.components);
+            this.gameLogs = new WinformCardGame.Components.GameLogs(this.components);
             this.menuStrip1.SuspendLayout();
             this.RedBorderpanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p2SecondaryCard3)).BeginInit();
@@ -483,7 +483,6 @@
             // 
             // CardView
             // 
-            this.CardView.BackgroundImage = global::LazniBludgeon.Properties.Resources.CardBack;
             this.CardView.Controls.Add(this.textATK);
             this.CardView.Controls.Add(this.textHP);
             this.CardView.ForeColor = System.Drawing.Color.White;
@@ -518,7 +517,6 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::LazniBludgeon.Properties.Resources.CardBack;
             this.pictureBox1.Location = new System.Drawing.Point(145, 325);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(78, 109);
@@ -545,7 +543,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::LazniBludgeon.Properties.Resources.Example;
             this.ClientSize = new System.Drawing.Size(1629, 719);
             this.Controls.Add(this.gameLogs);
             this.Controls.Add(this.pictureBox1);
@@ -569,7 +566,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Game";
-            this.Text = "Lazni Bludgeon (ALPHA)";
+            this.Text = "Winform CardGame";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.RedBorderpanel1.ResumeLayout(false);

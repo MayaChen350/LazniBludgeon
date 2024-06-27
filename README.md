@@ -1,69 +1,8 @@
-# Lazni Bludgeon
+# Winform Card Game
 
 -----
-(WORK IN PROGRESS)
+This project might be abandonned (due to this project being kinda old, I'm working kinda differently now so it would be hard to get back on it when I'm more experimented that I was at the time of production, well hopefully I am more experimented), it was the first big project I did in C#, slash first big project I did at all! 
 
-For game's rules and mechanics, read Rules.txt
+Sadly, this game never got past the proof of concept. It was very well doable so that's why I went working on it on the first place. It was very fun to do though.
 
-### CREDITS:
-
-Based on the original game conceived by Hayxu and Tristou
-
-Card Text, Design and Art by Hayxu
-
------
-
-Based on the original characters (Laznis) of:
-
-Hayxu (Creator of Laznis)
-
-Bingisdead (Almahad, Fitalie)
-
-Coldcross (Qaland, Allemapon, Garulmonie, Mulretonie, Maréquie)
-
-Dar0ix (Yedesna)
-
-Joey (TheLeaf)
-
-Lorkatoka (Canalgeria, Khenaga)
-
-Mars (Allemanie)
-
-Jansenu (Kaenia)
-
-NaCl (Nitralvie)
-
-Finn (Starvas)
-
-Tristou (Tristan)
-
-MayaChen350 (Khenaga)
-
------
-
-Game programmed by MayaChen350 (knows how to make games)
-
------
-
-Special Thanks to:
-
-Nyx
-
-Lyzi
-
-Celiza
-
-Emie
-
-Flou
-
-Lexybooky
-
-Dregdom
-
-Opefulee
-
-Birbio56
-
------
-
+Feel free to look at my code. I learned a lot from programming just by doing it!

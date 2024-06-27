@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Microsoft.CodeAnalysis.Sarif.Driver;
-using LazniBludgeon.Card;
+using WinformCardGame.Card;
 
-namespace LazniBludgeon.CardGame
+namespace WinformCardGame.CardGame
 {
 
     public partial class Game

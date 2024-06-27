@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 
-namespace LazniBludgeon.Card
+namespace WinformCardGame.Card
 {
     /// <summary>
     /// Secondary card original data

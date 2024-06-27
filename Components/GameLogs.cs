@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 
-namespace LazniBludgeon.Components
+namespace WinformCardGame.Components
 {
     public partial class GameLogs : TextBox
     {

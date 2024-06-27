@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using LazniBludgeon.Card;
-using LazniBludgeon.Other;
+using WinformCardGame.Card;
+using WinformCardGame.Other;
 
-namespace LazniBludgeon.CardGame
+namespace WinformCardGame.CardGame
 {
     public partial class Game : Form
     {
@@ -19,7 +19,7 @@ namespace LazniBludgeon.CardGame
             Logger.SetLogTextBox(gameLogs);
         }
 
-        public static readonly Image BackOfTheCard = Properties.Resources.CardBack;
+        public static readonly Image BackOfTheCard = null;
 
         public static Random random = new Random();
 

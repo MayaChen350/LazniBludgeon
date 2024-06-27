@@ -1,7 +1,7 @@
-﻿using LazniBludgeon.Components;
+﻿using WinformCardGame.Components;
 using System.Windows.Forms;
 
-namespace LazniBludgeon.CardGame
+namespace WinformCardGame.CardGame
 {
     /// <summary>
     /// The logs in game. It is linked to the gameLogs text box.

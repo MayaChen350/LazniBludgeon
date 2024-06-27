@@ -1,16 +1,16 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace LazniBludgeon.Components
+namespace WinformCardGame.Components
 {
-    public partial class LazniCard : PictureBox
+    public partial class Card : PictureBox
     {
-        public LazniCard()
+        public Card()
         {
             InitializeComponent();
         }
 
-        public LazniCard(IContainer container)
+        public Card(IContainer container)
         {
             container.Add(this);
 

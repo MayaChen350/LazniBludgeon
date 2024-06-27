@@ -1,17 +1,16 @@
-Similar but different to the original Lazni Card Game.
 There are 4 types of cards; Player, Soldier, Special and Object cards
 There are 16 Player cards
-64 Soldier cards (2 per lazni)
+64 Soldier cards
 16 Special cards
 A Player card is your "main character", they have more powerful effects than soldiers and have a lot of HP, if this card dies, you loose.
 A Soldier card is a basic card, they are weak compared to player cards, having less HP and attack.
-A Special card is essentially a Soldier card on crack, they generally represent multiple laznis
+A Special card is essentially a Soldier card on crack
 
 A Player card has a set number of HP (generally 3500), an attack power (generally 250) and two abilities not found in Soldier cards.
 
 A Soldier card has a set number of HP (generally 100-200), an attack power (around 75) and one ability, they are useable until death.
 
-A Special card has a set number of HP (Depends on the amount of Laznis on the card), an attack power and one/two abilities, they are useable until death.
+A Special card has a set number of HP, an attack power and one/two abilities, they are useable until death.
 
 
 A Card with powerful abilities will have less HP/Attack Power

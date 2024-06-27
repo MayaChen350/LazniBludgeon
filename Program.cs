@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using LazniBludgeon.CardGame;
+using WinformCardGame.CardGame;
 
-namespace LazniBludgeon
+namespace WinformCardGame
 {
 
     internal static class Program
